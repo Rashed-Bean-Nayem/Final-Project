@@ -10,11 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Course\Course.cshtml" />
+    <None Include="Areas\Admin\Views\Candidate\Candidate.cshtml" />
     <None Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Areas\Admin\Views\Registration\Registration.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <None Include="Areas\Admin\Views\Student\Student.cshtml" />
+    <None Include="Areas\Admin\Views\Voter\Voter.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\admin\css\adminlte.css.map" />
     <None Include="wwwroot\admin\css\adminlte.min.css.map" />

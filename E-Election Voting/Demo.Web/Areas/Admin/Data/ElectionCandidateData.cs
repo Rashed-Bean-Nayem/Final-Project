@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Demo.DataAccessLayer;
 
-namespace Demo.Foundation.Entities
+namespace Demo.Web.Areas.Admin.Data
 {
-    public class ElectionCandidate:IEntity<int>
+    public class ElectionCandidateData:IEntity<int>
     {
         public int Id { get; set; }
         public string Name { get; set; }

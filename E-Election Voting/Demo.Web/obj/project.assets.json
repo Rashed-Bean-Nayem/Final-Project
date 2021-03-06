@@ -9435,11 +9435,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
+      "projectUniqueName": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
       "projectName": "Demo.Web",
-      "projectPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
+      "projectPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
       "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-      "outputPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Web\\obj\\",
+      "outputPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9459,14 +9459,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
-              "projectPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
+            "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
+              "projectPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
             },
-            "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
-              "projectPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
+            "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
+              "projectPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
             },
-            "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
-              "projectPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
+            "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
+              "projectPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
             }
           }
         }

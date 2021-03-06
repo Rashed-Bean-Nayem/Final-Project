@@ -11,52 +11,45 @@ namespace Demo.Web
 {
     public class IndexModel
     {
-        //public void Add()
-        //{
-        //    _purchaseService.AddProduct(new Product
-        //    {
-        //        Name = Name,
-        //        Price = 203
-        //    });
-        //}
         public int Id { get; set; }
         public string Name { get; set; }
 
 
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
-        private readonly IElectionService _purchaseService;
+        
 
 
         public IndexModel(IAddingService addingService,
-            IGetService getService,
-            IElectionService purchaseService)
+            IGetService getService)
         {
 
             _addingService = addingService;
             _getService = getService;
-            _purchaseService = purchaseService;
 
         }
-        public void AddModelStudent(StudentData studentData)
+
+        public void AddModelCandidate(ElectionCandidateData electionCandidateData)
         {
-            _addingService.AddStudent(new Student
+            _addingService.AddCandidate(new ElectionCandidate
             {
-
-                Name = studentData.Name,
-                DateOfBirth = studentData.DateOfBirth
-
+                 Name= electionCandidateData.Name,
+                 Address=electionCandidateData.Address,
+                 Description=electionCandidateData.Description,
+                 Mobile= electionCandidateData.Mobile,
+                 NID= electionCandidateData.NID,
+                 ImageUrl=electionCandidateData.ImageUrl
             });
         }
-        public void AddModelCourse(CourseData courseData)
+        public void AddModelVoter(ElectionVoterData electionVoterData) 
         {
-            _addingService.AddCourse(new Course
+            _addingService.AddVoter(new ElectionVoter
             {
-
-                Title = courseData.Title,
-                SeatCount = courseData.SeatCount,
-                Fee = courseData.Fee
-
+                 Name=electionVoterData.Name,
+                 Address=electionVoterData.Address,
+                 Mobile=electionVoterData.Mobile,
+                 NID=electionVoterData.NID,
+                 DateOfBirth=electionVoterData.DateOfBirth
             });
         }
 
@@ -72,13 +65,6 @@ namespace Demo.Web
 
             });
         }
-
-        //public IList<Student> GetModelStudentsList() 
-        //{
-
-
-        //    return _getService.GetstudentList(); 
-        //}
 
         public void DeleteAllData(StudentRegistration studentRegistration)
         {

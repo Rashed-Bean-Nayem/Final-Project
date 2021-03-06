@@ -9,7 +9,8 @@ namespace Demo.Foundation.Services
     {
         void AddStudent(Student student); 
         void AddCourse(Course course); 
-        void AddRegistration(StudentRegistration studentRegistration); 
-
+        void AddRegistration(StudentRegistration studentRegistration);
+        void AddCandidate(ElectionCandidate electionCandidate);
+        void AddVoter(ElectionVoter electionVoter);
     }
 }

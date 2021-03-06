@@ -50,8 +50,6 @@ namespace Foundation
                 .InstancePerLifetimeScope();
             builder.RegisterType<ElectionUnitOfWork>().As<IElectionUnitOfWork>()
                 .InstancePerLifetimeScope();
-            builder.RegisterType<ElectionService>().As<IElectionService>()
-                .InstancePerLifetimeScope();
 
             base.Load(builder);
         }

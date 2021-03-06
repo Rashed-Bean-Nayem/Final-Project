@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {}
+    "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {}
   },
   "projects": {
-    "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
+    "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
+        "projectUniqueName": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
         "projectName": "Demo.Membership",
-        "projectPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
+        "projectPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
         "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-        "outputPath": "E:\\4_DIU\\Final Project\\E-Election Voting\\Demo.Membership\\obj\\",
+        "outputPath": "E:\\4_DIU\\Project\\Final-Project\\E-Election Voting\\Demo.Membership\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

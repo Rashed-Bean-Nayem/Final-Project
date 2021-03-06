@@ -19,73 +19,32 @@ namespace Demo.Web.Areas.Admin.Controllers
             return View();
         }
 
-
-
+      
         //public IActionResult Registration()
         //{
-        //    var model = Startup.AutofacContainer.Resolve<IndexModel>();
-        //    dynamic data = new ExpandoObject();
-        //    data.StudentView = model.GetModelStudentsList();
-
-
-        //    return View(data);
-        //}
-
-      
-        public IActionResult Registration()
-        {
-            var model = Startup.AutofacContainer.Resolve<RegistrationData>();
-            model.LoadStudents();
-            model.LoadCourses();
-
-            return View(model);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Registration(RegistrationData registrationData)
-        {
-            var model = Startup.AutofacContainer.Resolve<IndexModel>();
-            var model2 = Startup.AutofacContainer.Resolve<RegistrationData>();
-            if (ModelState.IsValid)
-            {
-                
-                   
-                    model.AddModelRegistration(registrationData);
-                    model2.LoadStudents();
-                    model2.LoadCourses();
-                    return View(model2);
-               
-            }
-
-           
-            return View(model2);
-
-        }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult RegisterCourse(CreateRegisterCourseViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            model.AddRegisterCourse();
-        //            model.LoadStudents();
-        //            model.LoadCourses();
-        //            return View(model);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            _logger.LogError(ex.Message, ex);
-        //        }
-        //    }
-
+        //    var model = Startup.AutofacContainer.Resolve<RegistrationData>();
         //    model.LoadStudents();
         //    model.LoadCourses();
 
         //    return View(model);
         //}
-
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult Registration(RegistrationData registrationData)
+        //{
+        //    var model = Startup.AutofacContainer.Resolve<IndexModel>();
+        //    var model2 = Startup.AutofacContainer.Resolve<RegistrationData>();
+        //    if (ModelState.IsValid)
+        //    {
+                
+                   
+        //            model.AddModelRegistration(registrationData);
+        //            model2.LoadStudents();
+        //            model2.LoadCourses();
+        //            return View(model2);
+               
+        //    }
+        //    return View(model2);
+        //}
     }
 }

@@ -11,7 +11,6 @@ namespace Demo.Web.Areas.Admin.Data
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
-
         public IList<StudentRegistration> StuReg { get; set; }
     }
 }
