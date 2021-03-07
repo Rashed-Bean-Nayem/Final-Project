@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Demo.Foundation.Repositories
 {
-    public class RegistrationRepository: Repository<StudentRegistration, int, RegistrationContext>, IRegistrationRepository
+    public class RegistrationRepository: Repository<ElectionRegistration, int, RegistrationContext>, IRegistrationRepository
     {
         public RegistrationRepository(RegistrationContext dbContext) 
             : base(dbContext)
@@ -15,7 +15,7 @@ namespace Demo.Foundation.Repositories
 
         }
 
-        public IList<StudentRegistration> GetLatestRegistraion()
+        public IList<ElectionRegistration> GetLatestRegistraion()
         {
             throw new NotImplementedException();
         }

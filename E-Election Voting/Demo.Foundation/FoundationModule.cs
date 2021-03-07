@@ -23,27 +23,19 @@ namespace Foundation
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ElectionContext>()
-                .WithParameter("connectionString", _connectionString)
-                .WithParameter("migrationAssemblyName", _migrationAssemblyName)
-                .InstancePerLifetimeScope();
             builder.RegisterType<RegistrationContext>()
                 .WithParameter("connectionString", _connectionString)
                 .WithParameter("migrationAssemblyName", _migrationAssemblyName)
                 .InstancePerLifetimeScope();
-            builder.RegisterType<CourseRepository>().As<ICourseRepository>()
-               .InstancePerLifetimeScope();
-            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
-                .InstancePerLifetimeScope();
-            builder.RegisterType<RegistrationRepository>().As<IRegistrationRepository>()
-                .InstancePerLifetimeScope();
+            
             builder.RegisterType<RegistrationUnitOfWork>().As<IRegistrationUnitOfWork>()
                 .InstancePerLifetimeScope();
             builder.RegisterType<AddingService>().As<IAddingService>()
                 .InstancePerLifetimeScope();
             builder.RegisterType<GetService>().As<IGetService>()
                .InstancePerLifetimeScope();
-
+            builder.RegisterType<RegistrationRepository>().As<IRegistrationRepository>()
+                .InstancePerLifetimeScope();
             builder.RegisterType<VoterRepository>().As<IVoterRepository>()
                 .InstancePerLifetimeScope();
             builder.RegisterType<CandidateRepository>().As<ICandidateRepository>()

@@ -10,15 +10,15 @@ namespace Demo.Web.Areas.Admin.Data
 {
     public class RegistrationData
     {
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public int CandidateId { get; set; }
+        public ElectionCandidate ElectionCandidate { get; set; }
+        public int VoterId { get; set; }
+        public ElectionVoter ElectionVoter { get; set; }
         public DateTime EnrollDate { get; set; }
         public bool IsPaymentComplete { get; set; }
         public int Id { get; set; }
-        public IList<Student> Students { get; set; }
-        public IList<Course> Courses { get; set; }
+        public IList<ElectionVoter> ElectionVoters { get; set; }
+        public IList<ElectionCandidate> ElectionCandidates { get; set; }
 
         private readonly IGetService _getService;
 
@@ -36,14 +36,14 @@ namespace Demo.Web.Areas.Admin.Data
 
         }
       
-        public void LoadStudents()
+        public void LoadVoters()
         {
-            Students = _getService.GetstudentList();
+            ElectionVoters = _getService.GetVoterList();
         }
 
-        public void LoadCourses()
+        public void LoadCandidates() 
         {
-            Courses = _getService.GetcourseList();
+            ElectionCandidates = _getService.GetCandidateList();
         }
     }
 }

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Demo.Foundation.Repositories
 {
-    public interface IRegistrationRepository: IRepository<StudentRegistration, int, RegistrationContext>
+    public interface IRegistrationRepository: IRepository<ElectionRegistration, int, RegistrationContext>
     {
-        IList<StudentRegistration> GetLatestRegistraion();
+        IList<ElectionRegistration> GetLatestRegistraion();
        
     }
 }

@@ -5,8 +5,8 @@ namespace Demo.Foundation.Contexts
 {
     public interface IRegistrationContext
     {
-        DbSet<Student> Students { get; set; }
-        DbSet<Course> Courses { get; set; }
-        DbSet<StudentRegistration> StuReg { get; set; }
+        DbSet<ElectionCandidate> ElectionCandidates { get; set; }
+        DbSet<ElectionVoter> ElectionVoters { get; set; }
+        DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
     }
 }

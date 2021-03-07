@@ -32,25 +32,11 @@ namespace Demo.Foundation.Contexts
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder.Entity<Product>()
-            //    .HasMany(p => p.Images)
-            //    .WithOne(i => i.Product);
-
-            //builder.Entity<ProductCategory>()
-            //    .HasOne(pc => pc.Product)
-            //    .WithMany(p => p.Categories)
-            //    .HasForeignKey(pc => pc.ProductId);
-
-            //builder.Entity<ProductCategory>()
-            //    .HasOne(pc => pc.Category)
-            //    .WithMany(c => c.Categories)
-            //    .HasForeignKey(pc => pc.CategoryId);
-
             base.OnModelCreating(builder);
         }
 
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<StudentRegistration> StuReg { get; set; }
+       public DbSet<ElectionCandidate> ElectionCandidates { get; set; }
+       public DbSet<ElectionVoter> ElectionVoters { get; set; }
+       public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
     }
 }

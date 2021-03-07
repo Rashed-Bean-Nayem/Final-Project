@@ -9,9 +9,9 @@ using Demo.Foundation.Entities;
 
 namespace Demo.Foundation.Repositories
 {
-    public class VoterRepository : Repository<ElectionVoter, int, ElectionContext>, IVoterRepository
+    public class VoterRepository : Repository<ElectionVoter, int, RegistrationContext>, IVoterRepository
     {
-        public VoterRepository(ElectionContext dbContext)
+        public VoterRepository(RegistrationContext dbContext)
             : base(dbContext)
         {
 

@@ -7,8 +7,8 @@ namespace Demo.Foundation.Services
 {
     public interface IGetService
     {
-        IList<Student> GetstudentList(); 
-        IList<Course> GetcourseList();
-        void RemoveAllData(StudentRegistration studentRegistration);
+        IList<ElectionVoter> GetVoterList();
+        IList<ElectionCandidate> GetCandidateList();
+        void RemoveAllData(ElectionRegistration electionRegistration);
     }
 }

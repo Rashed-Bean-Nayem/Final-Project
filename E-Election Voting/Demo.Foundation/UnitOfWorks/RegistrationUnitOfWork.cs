@@ -9,19 +9,18 @@ namespace Demo.Foundation.UnitOfworks
 {
     public class RegistrationUnitOfWork : UnitOfWork, IRegistrationUnitOfWork
     {
-        public IStudentRepository StudentRepository { get; set; }
-        public ICourseRepository CourseRepository { get; set; }
+        public ICandidateRepository CandidateRepository { get; set; }
+        public IVoterRepository VoterRepository { get; set; }
         public IRegistrationRepository RegistrationRepository { get; set; }
 
-      
-
-        public RegistrationUnitOfWork(RegistrationContext context, 
-            IStudentRepository studentRepository,
-            ICourseRepository courseRepository, IRegistrationRepository registrationRepository)
+        public RegistrationUnitOfWork(RegistrationContext context,
+            ICandidateRepository candidateRepository,
+            IVoterRepository voterRepository, 
+            IRegistrationRepository registrationRepository)
             : base(context)
         {
-            StudentRepository = studentRepository;
-            CourseRepository = courseRepository;
+            CandidateRepository = candidateRepository;
+            VoterRepository = voterRepository;
             RegistrationRepository = registrationRepository;
         }
     }

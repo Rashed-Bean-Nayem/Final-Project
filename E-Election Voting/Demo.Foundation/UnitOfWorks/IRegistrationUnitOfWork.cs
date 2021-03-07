@@ -9,8 +9,8 @@ namespace Demo.Foundation.UnitOfworks
 {
     public interface IRegistrationUnitOfWork : IUnitOfWork
     {
-        IStudentRepository StudentRepository { get; set; }
-        ICourseRepository CourseRepository { get; set; }
+        ICandidateRepository CandidateRepository { get; set; }
+        IVoterRepository VoterRepository { get; set; }
         IRegistrationRepository RegistrationRepository { get; set; } 
     }
 }

@@ -11,22 +11,14 @@ namespace Demo.Web
 {
     public class IndexModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
         
-
-
         public IndexModel(IAddingService addingService,
             IGetService getService)
         {
-
             _addingService = addingService;
             _getService = getService;
-
         }
 
         public void AddModelCandidate(ElectionCandidateData electionCandidateData)
@@ -55,18 +47,17 @@ namespace Demo.Web
 
         public void AddModelRegistration(RegistrationData registrationData)
         {
-            _addingService.AddRegistration(new StudentRegistration
+            _addingService.AddRegistration(new ElectionRegistration
             {
 
-                StudentId = registrationData.StudentId,
-                CourseId = registrationData.CourseId,
+                VoterId = registrationData.VoterId,
+                CandidateId = registrationData.CandidateId,
                 EnrollDate = registrationData.EnrollDate,
                 IsPaymentComplete = registrationData.IsPaymentComplete
-
             });
         }
 
-        public void DeleteAllData(StudentRegistration studentRegistration)
+        public void DeleteAllData(ElectionRegistration studentRegistration)
         {
             _getService.RemoveAllData(studentRegistration);
         }

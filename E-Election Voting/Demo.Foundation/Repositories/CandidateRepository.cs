@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Demo.Foundation.Repositories
 {
-    public class CandidateRepository : Repository<ElectionCandidate, int, ElectionContext>, ICandidateRepository
+    public class CandidateRepository : Repository<ElectionCandidate, int, RegistrationContext>, ICandidateRepository
     {
-        public CandidateRepository(ElectionContext dbContext)
+        public CandidateRepository(RegistrationContext dbContext)
             : base(dbContext)
         {
 

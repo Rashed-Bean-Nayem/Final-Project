@@ -7,9 +7,7 @@ namespace Demo.Foundation.Services
 {
     public interface IAddingService
     {
-        void AddStudent(Student student); 
-        void AddCourse(Course course); 
-        void AddRegistration(StudentRegistration studentRegistration);
+        void AddRegistration(ElectionRegistration studentRegistration);
         void AddCandidate(ElectionCandidate electionCandidate);
         void AddVoter(ElectionVoter electionVoter);
     }

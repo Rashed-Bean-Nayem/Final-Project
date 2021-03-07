@@ -20,9 +20,9 @@
                         <div class="form-group">
 
                             <label>Select Student</label><br />
-                            <select asp-for="StudentId" class="form-control">
+                            <select asp-for="CandidateId" class="form-control">
                                 
-                                @foreach (var item in Model.Students)
+                                @foreach (var item in Model.ElectionCandidates)
                                 {
                                     
                                     <option value=@item.Id>@item.Name</option>
@@ -38,12 +38,12 @@
                         <div class="form-group">
 
                             <label>Select Course</label><br />
-                            <select asp-for="CourseId" class="form-control">
+                            <select asp-for="VoterId" class="form-control">
                                
-                                 @foreach (var item in Model.Courses)
+                                 @foreach (var item in Model.ElectionVoters)
                                 {
                                     
-                                    <option value=@item.Id>@item.Title</option>
+                                    <option value=@item.Id>@item.Name</option>
                                     
                                 }
                             </select>

@@ -27,29 +27,10 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.VoterRepository.Add(electionVoter);
             _electionUnitOfWork.Save();
         }
-
-
-
-
-
-
-
-
-        public void AddStudent(Student student)  
+        public void AddRegistration(ElectionRegistration electionRegistration)
         {
-            _registrationUnitOfWork.StudentRepository.Add(student);
-            _registrationUnitOfWork.Save();
+            _electionUnitOfWork.RegistrationRepository.Add(electionRegistration);
+            _electionUnitOfWork.Save();
         }
-        public void AddCourse(Course course)  
-        {
-            _registrationUnitOfWork.CourseRepository.Add(course);
-            _registrationUnitOfWork.Save();
-        }
-        public void AddRegistration(StudentRegistration studentRegistration)
-        {
-            _registrationUnitOfWork.RegistrationRepository.Add(studentRegistration);
-            _registrationUnitOfWork.Save();
-        }
-
     }
 }

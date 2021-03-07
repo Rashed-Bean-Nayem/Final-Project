@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Demo.Foundation.Repositories
 {
-    public interface ICandidateRepository : IRepository<ElectionCandidate, int, ElectionContext>
+    public interface ICandidateRepository : IRepository<ElectionCandidate, int, RegistrationContext>
     {
         IList<ElectionCandidate> GetLatestElectionCandidate(); 
     }

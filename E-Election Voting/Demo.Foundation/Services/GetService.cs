@@ -8,30 +8,26 @@ namespace Demo.Foundation.Services
 {
     public class GetService : IGetService
     {
-        private readonly IRegistrationUnitOfWork _shopingUnitOfWork;
+        private readonly IRegistrationUnitOfWork _registrationUnitOfWork;
 
 
-        public GetService(IRegistrationUnitOfWork shopingUnitOfWork)
+        public GetService(IRegistrationUnitOfWork registrationUnitOfWork)
         {
-            _shopingUnitOfWork = shopingUnitOfWork;
+            _registrationUnitOfWork = registrationUnitOfWork;
         }
 
 
-        public IList<Student> GetstudentList() 
+        public IList<ElectionVoter> GetVoterList()  
         {
-            return _shopingUnitOfWork.StudentRepository.GetAll();
+            return _registrationUnitOfWork.VoterRepository.GetAll();
         }
-        public IList<Course> GetcourseList() 
+        public IList<ElectionCandidate> GetCandidateList()  
         {
-            return _shopingUnitOfWork.CourseRepository.GetAll();
-        }
-
-        
-        public void RemoveAllData(StudentRegistration studentRegistration)
+            return _registrationUnitOfWork.CandidateRepository.GetAll();
+        }        
+        public void RemoveAllData(ElectionRegistration studentRegistration)
         {
-            _shopingUnitOfWork.RegistrationRepository.Remove(studentRegistration);
-        }
-
-        
+            _registrationUnitOfWork.RegistrationRepository.Remove(studentRegistration);
+        }        
     }
 }

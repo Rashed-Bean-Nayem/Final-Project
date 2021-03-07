@@ -62,9 +62,6 @@ namespace Demo.Web
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssemblyName)));
-
-            services.AddDbContext<ElectionContext>(options =>
-                options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssemblyName)));
             services.AddDbContext<RegistrationContext>(options =>
                   options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssemblyName)));
 
