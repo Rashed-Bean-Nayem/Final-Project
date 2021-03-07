@@ -10,12 +10,10 @@ namespace Demo.Foundation.Services
     {
         private readonly IRegistrationUnitOfWork _registrationUnitOfWork;
 
-
         public GetService(IRegistrationUnitOfWork registrationUnitOfWork)
         {
             _registrationUnitOfWork = registrationUnitOfWork;
         }
-
 
         public IList<ElectionVoter> GetVoterList()  
         {

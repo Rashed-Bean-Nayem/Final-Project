@@ -18,33 +18,28 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             return View();
         }
+        public IActionResult Registration()
+        {
+            var model = Startup.AutofacContainer.Resolve<RegistrationData>();
+            model.LoadCandidates();
+            model.LoadVoters();
 
-      
-        //public IActionResult Registration()
-        //{
-        //    var model = Startup.AutofacContainer.Resolve<RegistrationData>();
-        //    model.LoadStudents();
-        //    model.LoadCourses();
-
-        //    return View(model);
-        //}
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Registration(RegistrationData registrationData)
-        //{
-        //    var model = Startup.AutofacContainer.Resolve<IndexModel>();
-        //    var model2 = Startup.AutofacContainer.Resolve<RegistrationData>();
-        //    if (ModelState.IsValid)
-        //    {
-                
-                   
-        //            model.AddModelRegistration(registrationData);
-        //            model2.LoadStudents();
-        //            model2.LoadCourses();
-        //            return View(model2);
-               
-        //    }
-        //    return View(model2);
-        //}
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Registration(RegistrationData registrationData)
+        {
+            var model = Startup.AutofacContainer.Resolve<IndexModel>();
+            var model2 = Startup.AutofacContainer.Resolve<RegistrationData>();
+            if (ModelState.IsValid)
+            {
+                model.AddModelRegistration(registrationData);
+                model2.LoadVoters();
+                model2.LoadCandidates();
+                return View(model2);
+            }
+            return View(model2);
+        }
     }
 }

@@ -7,13 +7,10 @@ using System.Text;
 namespace Demo.Foundation.Services
 {
     public class AddingService : IAddingService
-    {
-        private readonly IRegistrationUnitOfWork _registrationUnitOfWork;
+    {        
         private readonly IElectionUnitOfWork _electionUnitOfWork; 
-        public AddingService(IRegistrationUnitOfWork registrationUnitOfWork,
-                             IElectionUnitOfWork electionUnitOfWork) 
+        public AddingService(IElectionUnitOfWork electionUnitOfWork) 
         {
-            _registrationUnitOfWork = registrationUnitOfWork;
             _electionUnitOfWork = electionUnitOfWork;
         }
 

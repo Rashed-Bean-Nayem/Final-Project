@@ -16,3 +16,12 @@ E:\4_DIU\Final Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstand
 E:\4_DIU\Final Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.csproj.CoreCompileInputs.cache
 E:\4_DIU\Final Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.dll
 E:\4_DIU\Final Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.pdb
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.deps.json
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.dll
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.pdb
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.csprojAssemblyReference.cache
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.AssemblyInfoInputs.cache
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.AssemblyInfo.cs
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.dll
+E:\4_DIU\Project\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.pdb
