@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Demo.DataAccessLayer;
+using Microsoft.AspNetCore.Http;
 
 namespace Demo.Web.Areas.Admin.Data
 {
@@ -13,6 +14,7 @@ namespace Demo.Web.Areas.Admin.Data
         public string Mobile { get; set; }
         public string NID { get; set; }
         public string Description { get; set; }
-        public string ImageUrl { get; set; } 
+        public string ImageUrl { get; set; }
+        public IFormFile ImageFile { get; set; }
     }
 }

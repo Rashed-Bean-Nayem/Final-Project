@@ -21,7 +21,7 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [ValidateAntiForgeryToken, HttpPost]
         public IActionResult Candidate(ElectionCandidateData electionCandidateData) 
         {
             var model = Startup.AutofacContainer.Resolve<IndexModel>();

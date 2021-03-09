@@ -2,6 +2,7 @@
 using Demo.Foundation.Entities;
 using Demo.Foundation.Services;
 using Demo.Web.Areas.Admin.Data;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Demo.Web
 {
-    public class IndexModel
+    public class IndexModel:BaseModel
     {
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
@@ -25,14 +26,22 @@ namespace Demo.Web
         {
             _addingService.AddCandidate(new ElectionCandidate
             {
-                 Name= electionCandidateData.Name,
-                 Address=electionCandidateData.Address,
-                 Description=electionCandidateData.Description,
-                 Mobile= electionCandidateData.Mobile,
-                 NID= electionCandidateData.NID,
-                 ImageUrl=electionCandidateData.ImageUrl
-            });
+                Name = electionCandidateData.Name,
+                Address = electionCandidateData.Address,
+                Description = electionCandidateData.Description,
+                Mobile = electionCandidateData.Mobile,
+                NID = electionCandidateData.NID,
+                ImageUrl= ImagePath(electionCandidateData.ImageFile)
+            });            
         }
+
+        private string ImagePath(IFormFile ImageFile)
+        {
+            var imageInfo = StoreFile(ImageFile);
+            var Location = imageInfo.filePath;
+            return Location;
+        }
+
         public void AddModelVoter(ElectionVoterData electionVoterData) 
         {
             _addingService.AddVoter(new ElectionVoter
