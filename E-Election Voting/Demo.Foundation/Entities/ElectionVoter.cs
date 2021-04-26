@@ -12,6 +12,6 @@ namespace Demo.Foundation.Entities
         public string Address { get; set; }
         public string Mobile { get; set; }
         public string NID { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Demo.Web.Areas.Admin.Data
 {
@@ -14,6 +15,7 @@ namespace Demo.Web.Areas.Admin.Data
         public ElectionCandidate ElectionCandidate { get; set; }
         public int VoterId { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
+        [Required(ErrorMessage = "Please select the Dtae")]
         public DateTime EnrollDate { get; set; }
         public bool IsPaymentComplete { get; set; }
         public int Id { get; set; }

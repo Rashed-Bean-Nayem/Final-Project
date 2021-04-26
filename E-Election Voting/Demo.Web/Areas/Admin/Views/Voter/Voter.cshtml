@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Voter";
 }
-@model ElectionVoterData;
+@model ElectionVoterDataBO;
     <div>
         <div class="col-md-6">
             <div class="card card-primary">
@@ -12,24 +12,29 @@
                 <form method="post" asp-area="Admin" asp-controller="Voter" asp-action="Voter">
 
                     <div class="form-group">
-                        <label>Voter Name</label>
+                        <label asp-for="Name"></label>
                         <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label>Date Of Birth</label>
+                        <label asp-for="DateOfBirth"></label>
                         <input type="date" asp-for="DateOfBirth" class="form-control" placeholder="Date Of Birth">
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label>NID Number</label>
+                        <label asp-for="NID"></label>
                         <input asp-for="NID" class="form-control" placeholder="NID">
+                        <span asp-validation-for="NID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label>Mobile</label>
+                        <label asp-for="Mobile"></label>
                         <input asp-for="Mobile" class="form-control" placeholder="Mobile">
+                        <span asp-validation-for="Mobile" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
+                        <label asp-for="Address"></label>
                         <input asp-for="Address" class="form-control" placeholder="Address">
+                        <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Add Voter" class="btn btn-primary" />

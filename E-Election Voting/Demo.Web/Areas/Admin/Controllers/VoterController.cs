@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Demo.Web.Areas.Admin.Data;
 using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
+using System.Security.Claims;
+using System.Linq;
 
 namespace Demo.Web.Areas.Admin.Controllers
 {
@@ -26,9 +28,15 @@ namespace Demo.Web.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Voter(ElectionVoterDataBO electionVoterData) 
         {
-            var model = Startup.AutofacContainer.Resolve<IndexModel>();
-            model.AddModelVoter(electionVoterData);
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (ModelState.IsValid)
+            {
+                var model = Startup.AutofacContainer.Resolve<IndexModel>();
+                model.AddModelVoter(electionVoterData);
+                return RedirectToAction(nameof(Voter));               
+            }
             return View();
+
         }
 
     }
