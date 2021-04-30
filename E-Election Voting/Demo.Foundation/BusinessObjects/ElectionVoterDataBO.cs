@@ -10,6 +10,8 @@ namespace Demo.Foundation.BusinessObjects
     public class ElectionVoterDataBO:IEntity<int>
     {
         public int Id { get; set; }
+        
+        public string UserId { get; set; }
         [StringLength(100, MinimumLength = 2)]
         [Required(ErrorMessage = "Please enter the Name")]
         public string Name { get; set; }
@@ -25,5 +27,8 @@ namespace Demo.Foundation.BusinessObjects
        
         [Required(ErrorMessage = "Please select the DOB")]
         public DateTime? DateOfBirth { get; set; }
+        [Required(ErrorMessage = "Please select the cover photo ")]
+        [Display(Name = "Cover Photo")]
+        public IFormFile CoverPhoto { get; set; }
     }
 }

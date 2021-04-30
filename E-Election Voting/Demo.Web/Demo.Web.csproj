@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="Views\Voter\AddVoter.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,8 +15,8 @@
     <None Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Areas\Admin\Views\Registration\Registration.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <None Include="Areas\Admin\Views\Voter\Voter.cshtml" />
     <None Include="compilerconfig.json" />
+    <None Include="Views\Voter\AddVoter.cshtml" />
     <None Include="wwwroot\admin\css\adminlte.css.map" />
     <None Include="wwwroot\admin\css\adminlte.min.css.map" />
     <None Include="wwwroot\admin\css\alt\adminlte.components.css.map" />
@@ -49,7 +50,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
   </ItemGroup>

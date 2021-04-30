@@ -10,34 +10,41 @@ using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
 using System.Security.Claims;
 using System.Linq;
+using Demo.Web.Models;
 
-namespace Demo.Web.Areas.Admin.Controllers
+namespace Demo.Web.Controllers
 {
-    [Area("Admin")]
-    [Authorize(Roles = "Admin,SuperAdmin")]
+    //[Area("Admin")]
+    //[Authorize(Roles = "Admin,SuperAdmin")]
     public class VoterController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Voter()
+        public IActionResult AddVoter() 
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Voter(ElectionVoterDataBO electionVoterData) 
+        public IActionResult AddVoter(ElectionVoterDataBO electionVoterData)  
         {
-            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            electionVoterData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (ModelState.IsValid)
             {
                 var model = Startup.AutofacContainer.Resolve<IndexModel>();
                 model.AddModelVoter(electionVoterData);
-                return RedirectToAction(nameof(Voter));               
+                return RedirectToAction(nameof(AddVoter));               
             }
             return View();
-
         }
 
+        public ViewResult VoterProfile() 
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            model.LoadSingleVoter(UserId);
+            return View(model);
+        }
     }
 }

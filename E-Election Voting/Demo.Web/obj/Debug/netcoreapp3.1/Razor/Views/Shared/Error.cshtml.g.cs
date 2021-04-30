@@ -13,21 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
+#line 3 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
 using Demo.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
+#line 4 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
 using Demo.Web.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
+using Demo.Foundation.BusinessObjects;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
+using Demo.Web.Areas.Admin.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e9b428d6abbdcb72b73ff607f90df9da0f39adf7", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ebde99bf5bdc2bb485194e3efce6328ffef6fa4e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5140140905c8f4036bf3f25aad680c8881800627", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

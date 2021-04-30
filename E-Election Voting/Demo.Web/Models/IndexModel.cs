@@ -47,11 +47,13 @@ namespace Demo.Web
         {
             _addingService.AddVoter(new ElectionVoter
             {
+                 UserId=electionVoterData.UserId,
                  Name=electionVoterData.Name,
                  Address=electionVoterData.Address,
                  Mobile=electionVoterData.Mobile,
                  NID=electionVoterData.NID,
-                 DateOfBirth=electionVoterData.DateOfBirth
+                 DateOfBirth=electionVoterData.DateOfBirth,
+                 CoverPhotoUrl= ImagePath(electionVoterData.CoverPhoto)
             });
         }
 

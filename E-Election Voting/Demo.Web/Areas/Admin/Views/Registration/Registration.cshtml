@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Registration";
+    ViewData["Title"] = "Add Election";
 }
 @model RegistrationData;
 
@@ -12,46 +12,40 @@
             </div>
             <form method="post" asp-area="Admin" asp-controller="Registration" asp-action="Registration">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Select Candidate</label><br />
-                            <select asp-for="CandidateId" class="form-control">
-
-                                @foreach (var item in Model.ElectionCandidates)
-                                {
-                                    <option value=@item.Id>@item.Name</option>
-                                }
-                            </select>
-                            <br><br>
-                        </div>
+                    <div class="col">
+                        <label>Select Candidate</label><br />
+                        <select asp-for="CandidateId" class="form-control">
+                            <option value="" disabled selected>--Select--</option>
+                            @foreach (var item in Model.ElectionCandidates)
+                            {
+                                <option value=@item.Id>@item.Name</option>
+                            }
+                        </select>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Select Voter</label><br />
-                            <select asp-for="VoterId" class="form-control">
+                    <div class="col">
+                        <label>Select Voter</label><br />
+                        <select asp-for="VoterId" class="form-control">
+                            <option value="" disabled selected>--Select--</option>
+                            @foreach (var item in Model.ElectionVoters)
+                            {
+                                <option value=@item.Id>@item.Name</option>
 
-                                @foreach (var item in Model.ElectionVoters)
-                                {
-                                    <option value=@item.Id>@item.Name</option>
-
-                                }
-                            </select>
-                            <br><br>
-                        </div>
+                            }
+                        </select>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EnrollDate"></label>
-                    <input type="date" asp-for="EnrollDate" class="form-control" placeholder="EnrollDate">
-                    <span asp-validation-for="EnrollDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" asp-for="IsPaymentComplete">
-                    <label>Payment is complete</label>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Add Registration" class="btn btn-primary" />
-                </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label asp-for="EnrollDate"></label>
+                            <input type="date" asp-for="EnrollDate" class="form-control" placeholder="EnrollDate">
+                            <span asp-validation-for="EnrollDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" asp-for="IsPaymentComplete">
+                            <label>Payment is complete</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Add Registration" class="btn btn-primary" />
+                        </div>
             </form>
         </div>
     </div>

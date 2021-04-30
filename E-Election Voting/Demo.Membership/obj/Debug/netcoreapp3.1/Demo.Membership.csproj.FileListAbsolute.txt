@@ -34,3 +34,12 @@ E:\4_DIU\Project\Final-Project\New folder\E-Election Voting\Demo.Membership\obj\
 E:\4_DIU\Project\Final-Project\New folder\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.csproj.CoreCompileInputs.cache
 E:\4_DIU\Project\Final-Project\New folder\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.dll
 E:\4_DIU\Project\Final-Project\New folder\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.pdb
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\bin\Debug\netcoreapp3.1\Demo.Membership.deps.json
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\bin\Debug\netcoreapp3.1\Demo.Membership.dll
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\bin\Debug\netcoreapp3.1\Demo.Membership.pdb
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.csprojAssemblyReference.cache
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.AssemblyInfoInputs.cache
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.AssemblyInfo.cs
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.csproj.CoreCompileInputs.cache
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.dll
+E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Membership\obj\Debug\netcoreapp3.1\Demo.Membership.pdb

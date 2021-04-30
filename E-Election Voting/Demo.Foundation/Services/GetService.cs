@@ -26,6 +26,12 @@ namespace Demo.Foundation.Services
         public void RemoveAllData(ElectionRegistration studentRegistration)
         {
             _registrationUnitOfWork.RegistrationRepository.Remove(studentRegistration);
-        }        
+        }
+        public IList<ElectionVoter> GetVoter(string userId)
+        {
+            return _registrationUnitOfWork.VoterRepository.Get(option => option.UserId == userId);
+        }
+      
+
     }
 }

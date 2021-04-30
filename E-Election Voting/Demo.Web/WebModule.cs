@@ -2,6 +2,7 @@
 using Demo.Foundation.BusinessObjects;
 using Demo.Foundation.Contexts;
 using Demo.Web.Areas.Admin.Data;
+using Demo.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Demo.Web
 
             builder.RegisterType<IndexModel>().AsSelf();
             builder.RegisterType<RegistrationData>().AsSelf();
+            builder.RegisterType<ViewData>().AsSelf();
 
             base.Load(builder);
         }
