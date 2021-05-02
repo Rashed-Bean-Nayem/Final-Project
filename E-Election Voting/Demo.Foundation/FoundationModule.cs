@@ -30,6 +30,8 @@ namespace Foundation
             
             builder.RegisterType<RegistrationUnitOfWork>().As<IRegistrationUnitOfWork>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<ElectionUnitOfWork>().As<IElectionUnitOfWork>()
+               .InstancePerLifetimeScope();
             builder.RegisterType<AddingService>().As<IAddingService>()
                 .InstancePerLifetimeScope();
             builder.RegisterType<GetService>().As<IGetService>()
@@ -40,7 +42,8 @@ namespace Foundation
                 .InstancePerLifetimeScope();
             builder.RegisterType<CandidateRepository>().As<ICandidateRepository>()
                 .InstancePerLifetimeScope();
-            builder.RegisterType<ElectionUnitOfWork>().As<IElectionUnitOfWork>()
+
+            builder.RegisterType<MakeElectionRepository>().As<IMakeElectionRepository>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

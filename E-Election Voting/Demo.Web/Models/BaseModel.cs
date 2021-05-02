@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Autofac;
 using System.IO;
 
-namespace Demo.Web.Areas.Admin.Data
+namespace Demo.Web.Models
 {
     public class BaseModel
     {
@@ -17,7 +17,6 @@ namespace Demo.Web.Areas.Admin.Data
         private readonly IWebHostEnvironment _webHostEnvironment;
         protected readonly IHttpContextAccessor _httpContextAccessor;
         private const string IMAGE_PATH = "temp";
-
         public BaseModel()
         {
             _webHostEnvironment = Startup.AutofacContainer.Resolve<IWebHostEnvironment>();
@@ -50,10 +49,9 @@ namespace Demo.Web.Areas.Admin.Data
             }
             return (newFileName, path);
         }
-
-        public string FormatImageUrl(string imageName)
+        public string FormatFileUrl(string filePath) 
         {
-            return $"/{IMAGE_PATH}/{imageName}";
+            return $"/{IMAGE_PATH}/{Path.GetFileName(filePath)}";
         }
     }
 }

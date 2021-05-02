@@ -11,5 +11,9 @@ namespace Demo.Foundation.Services
         IList<ElectionCandidate> GetCandidateList();
         void RemoveAllData(ElectionRegistration electionRegistration);
         IList<ElectionVoter> GetVoter(string userId);
+        ElectionCandidate GetElectionCandidate(int id);
+        IList<MakeElection> GetMakeElectionList();
+        MakeElection GetSingleMakeElection(int id);
+        ElectionCandidate GetSingleElectionCandidate(int id);
     }
 }

@@ -2,7 +2,7 @@
 using Demo.Foundation.Contexts;
 using Demo.Foundation.Entities;
 using Demo.Foundation.Services;
-using Demo.Web.Areas.Admin.Data;
+using Demo.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -14,15 +14,13 @@ namespace Demo.Web
     public class IndexModel:BaseModel
     {
         private readonly IAddingService _addingService;
-        private readonly IGetService _getService;
-        
+        private readonly IGetService _getService;        
         public IndexModel(IAddingService addingService,
             IGetService getService)
         {
             _addingService = addingService;
             _getService = getService;
         }
-
         public void AddModelCandidate(ElectionCandidateDataBO electionCandidateData)
         {
             _addingService.AddCandidate(new ElectionCandidate
@@ -42,7 +40,6 @@ namespace Demo.Web
             var Location = imageInfo.filePath;
             return Location;
         }
-
         public void AddModelVoter(ElectionVoterDataBO electionVoterData) 
         {
             _addingService.AddVoter(new ElectionVoter
@@ -56,21 +53,26 @@ namespace Demo.Web
                  CoverPhotoUrl= ImagePath(electionVoterData.CoverPhoto)
             });
         }
-
-        public void AddModelRegistration(RegistrationData registrationData)
+        public void AddModelRElection(RegistrationData registrationData) 
         {
-            _addingService.AddRegistration(new ElectionRegistration
+            var getVoterObj1 = new ElectionCandidate();
+            var getVoterObj2 = new ElectionCandidate();
+            getVoterObj1 = _getService.GetElectionCandidate((int)registrationData.CID1);
+            getVoterObj2 = _getService.GetElectionCandidate((int)registrationData.CID2);
+            _addingService.AddElection(new MakeElection
             {
-                VoterId = registrationData.VoterId,
-                CandidateId = registrationData.CandidateId,
-                EnrollDate = registrationData.EnrollDate,
-                IsPaymentComplete = registrationData.IsPaymentComplete
+                CID1 = registrationData.CID1,
+                CDName1 = getVoterObj1.Name,
+                CID2 = registrationData.CID2,
+                CDName2 = getVoterObj2.Name,
+                ElectionName = registrationData.ElectionName,
+                ElectionDate = registrationData.ElectionDate
             });
+            
         }
-
-        public void DeleteAllData(ElectionRegistration studentRegistration)
-        {
-            _getService.RemoveAllData(studentRegistration);
-        }
+        //public void DeleteAllData(ElectionRegistration studentRegistration)
+        //{
+        //    _getService.RemoveAllData(studentRegistration);
+        //}
     }
 }

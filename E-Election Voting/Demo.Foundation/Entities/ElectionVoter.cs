@@ -1,6 +1,7 @@
 ﻿using Demo.DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Demo.Foundation.Entities
@@ -13,6 +14,7 @@ namespace Demo.Foundation.Entities
         public string Address { get; set; }
         public string Mobile { get; set; }
         public string NID { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
         public string CoverPhotoUrl { get; set; }
     }

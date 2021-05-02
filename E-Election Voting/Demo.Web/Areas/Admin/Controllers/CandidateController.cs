@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Microsoft.AspNetCore.Mvc;
-using Demo.Web.Areas.Admin.Data;
+using Demo.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
 using System.Security.Claims;
@@ -26,7 +26,6 @@ namespace Demo.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken, HttpPost]
         public IActionResult Candidate(ElectionCandidateDataBO electionCandidateData) 
         {
-            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (ModelState.IsValid)
             {
                 var model = Startup.AutofacContainer.Resolve<IndexModel>();

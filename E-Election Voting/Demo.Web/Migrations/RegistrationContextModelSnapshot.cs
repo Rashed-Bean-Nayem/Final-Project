@@ -62,23 +62,12 @@ namespace Demo.Web.Migrations
                     b.Property<int?>("ElectionCandidateId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ElectionVoterId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("EnrollDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsPaymentComplete")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("VoterId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ElectionCandidateId");
-
-                    b.HasIndex("ElectionVoterId");
 
                     b.ToTable("ElectionRegistrations");
                 });
@@ -116,15 +105,41 @@ namespace Demo.Web.Migrations
                     b.ToTable("ElectionVoters");
                 });
 
+            modelBuilder.Entity("Demo.Foundation.Entities.MakeElection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CDName1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CDName2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CID1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CID2")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ElectionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ElectionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MakeElections");
+                });
+
             modelBuilder.Entity("Demo.Foundation.Entities.ElectionRegistration", b =>
                 {
                     b.HasOne("Demo.Foundation.Entities.ElectionCandidate", "ElectionCandidate")
                         .WithMany()
                         .HasForeignKey("ElectionCandidateId");
-
-                    b.HasOne("Demo.Foundation.Entities.ElectionVoter", "ElectionVoter")
-                        .WithMany()
-                        .HasForeignKey("ElectionVoterId");
                 });
 #pragma warning restore 612, 618
         }

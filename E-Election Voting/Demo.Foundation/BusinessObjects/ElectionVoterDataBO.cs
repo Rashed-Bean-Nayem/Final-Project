@@ -26,6 +26,7 @@ namespace Demo.Foundation.BusinessObjects
         public string NID { get; set; }
        
         [Required(ErrorMessage = "Please select the DOB")]
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
         [Required(ErrorMessage = "Please select the cover photo ")]
         [Display(Name = "Cover Photo")]

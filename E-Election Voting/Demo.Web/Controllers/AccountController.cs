@@ -70,7 +70,7 @@ namespace Demo.Web.Controllers
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    await _userManager.AddToRoleAsync(user, "Admin");
+                    await _userManager.AddToRoleAsync(user, "Customer");
 
                     //await _userManager.AddClaimAsync(user, 
                     //    new System.Security.Claims.Claim("FullName", model.FullName));

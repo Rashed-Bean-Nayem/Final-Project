@@ -11,6 +11,7 @@ namespace Demo.Foundation.UnitOfworks
     {
         ICandidateRepository CandidateRepository { get; set; }
         IVoterRepository VoterRepository { get; set; }
-        IRegistrationRepository RegistrationRepository { get; set; } 
+        IRegistrationRepository RegistrationRepository { get; set; }
+        IMakeElectionRepository MakeElectionRepository { get; set; }
     }
 }

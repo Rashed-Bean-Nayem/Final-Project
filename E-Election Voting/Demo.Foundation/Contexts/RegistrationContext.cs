@@ -35,8 +35,9 @@ namespace Demo.Foundation.Contexts
             base.OnModelCreating(builder);
         }
 
-       public DbSet<ElectionCandidate> ElectionCandidates { get; set; }
-       public DbSet<ElectionVoter> ElectionVoters { get; set; }
-       public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
+        public DbSet<ElectionCandidate> ElectionCandidates { get; set; }
+        public DbSet<ElectionVoter> ElectionVoters { get; set; }
+        public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
+        public DbSet<MakeElection> MakeElections { get; set; }
     }
 }

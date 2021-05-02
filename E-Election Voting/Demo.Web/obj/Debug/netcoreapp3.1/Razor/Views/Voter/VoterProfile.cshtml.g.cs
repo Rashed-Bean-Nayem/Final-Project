@@ -34,13 +34,6 @@ using Demo.Foundation.BusinessObjects;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\_ViewImports.cshtml"
-using Demo.Web.Areas.Admin.Data;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 1 "E:\6_DIU\DIU PROJECT\Final-Project\E-Election Voting\Demo.Web\Views\Voter\VoterProfile.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -48,7 +41,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"284dd884ef21667512860c8a43633471486f76b1", @"/Views/Voter/VoterProfile.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5140140905c8f4036bf3f25aad680c8881800627", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"863371a83d966e3b3c663b269d19b7144fce8728", @"/Views/_ViewImports.cshtml")]
     public class Views_Voter_VoterProfile : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ViewData>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Voter", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -213,7 +206,7 @@ using Microsoft.AspNetCore.Identity;
     <div class=""container emp-profile"">
        
         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "284dd884ef21667512860c8a43633471486f76b18027", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "284dd884ef21667512860c8a43633471486f76b17825", async() => {
                 WriteLiteral("\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <div class=\"profile-img\">\r\n                        <img");
                 BeginWriteAttribute("src", " src=\"", 2740, "\"", 2780, 1);
 #nullable restore
@@ -233,7 +226,7 @@ WriteAttributeValue("", 2746, Model.ElectionVoter.CoverPhotoUrl, 2746, 34, false
 #line hidden
 #nullable disable
                 WriteLiteral("\r\n            </h5>\r\n            <h6>\r\n                Registered Voter\r\n            </h6>\r\n        </div>\r\n    </div>\r\n    <div class=\"btn-group col-md-2\">\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "284dd884ef21667512860c8a43633471486f76b19487", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "284dd884ef21667512860c8a43633471486f76b19285", async() => {
                     WriteLiteral("<button class=\"btn btn-primary profile-button\" type=\"button\">Edit Profile</button>");
                 }
                 );

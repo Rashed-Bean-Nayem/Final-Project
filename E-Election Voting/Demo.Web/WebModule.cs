@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Demo.Foundation.BusinessObjects;
 using Demo.Foundation.Contexts;
-using Demo.Web.Areas.Admin.Data;
+using Demo.Foundation.Entities;
 using Demo.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -33,6 +33,7 @@ namespace Demo.Web
             builder.RegisterType<IndexModel>().AsSelf();
             builder.RegisterType<RegistrationData>().AsSelf();
             builder.RegisterType<ViewData>().AsSelf();
+            builder.RegisterType<MakeElection>().AsSelf();
 
             base.Load(builder);
         }

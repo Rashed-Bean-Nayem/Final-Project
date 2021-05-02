@@ -29,5 +29,11 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.RegistrationRepository.Add(electionRegistration);
             _electionUnitOfWork.Save();
         }
+
+        public void AddElection(MakeElection makeElection)
+        {
+            _electionUnitOfWork.MakeElectionRepository.Add(makeElection);
+            _electionUnitOfWork.Save();
+        }
     }
 }

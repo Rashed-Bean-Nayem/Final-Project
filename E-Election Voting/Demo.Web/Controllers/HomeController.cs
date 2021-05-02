@@ -21,7 +21,7 @@ namespace Demo.Web.Controllers
 
         public IActionResult Index()
         {
-            var model = Startup.AutofacContainer.Resolve<IndexModel>();
+            
             return View();
         }
 

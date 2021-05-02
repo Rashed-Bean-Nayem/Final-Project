@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 using Autofac;
 using Demo.Foundation.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Demo.Web.Areas.Admin.Data;
+using Demo.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
 using System.Security.Claims;
-using System.Linq;
-using Demo.Web.Models;
+
 
 namespace Demo.Web.Controllers
 {

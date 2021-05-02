@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Add Election";
+    ViewData["Title"] = "Add New Election";
 }
 @model RegistrationData;
 
@@ -13,8 +13,13 @@
             <form method="post" asp-area="Admin" asp-controller="Registration" asp-action="Registration">
                 <div class="row">
                     <div class="col">
+                        <label asp-for="ElectionName"></label>
+                        <input asp-for="ElectionName" class="form-control" />
+                        <span asp-validation-for="ElectionName" class="text-danger"></span>
+                    </div>
+                    <div class="col">
                         <label>Select Candidate</label><br />
-                        <select asp-for="CandidateId" class="form-control">
+                        <select asp-for="CID1" class="form-control">
                             <option value="" disabled selected>--Select--</option>
                             @foreach (var item in Model.ElectionCandidates)
                             {
@@ -23,28 +28,23 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label>Select Voter</label><br />
-                        <select asp-for="VoterId" class="form-control">
+                        <label>Select Candidate</label><br />
+                        <select asp-for="CID2" class="form-control">
                             <option value="" disabled selected>--Select--</option>
-                            @foreach (var item in Model.ElectionVoters)
+                            @foreach (var item in Model.ElectionCandidates)
                             {
                                 <option value=@item.Id>@item.Name</option>
-
                             }
                         </select>
                     </div>
-                        </div>                        
+                </div>                        
                         <div class="form-group">
-                            <label asp-for="EnrollDate"></label>
-                            <input type="date" asp-for="EnrollDate" class="form-control" placeholder="EnrollDate">
-                            <span asp-validation-for="EnrollDate" class="text-danger"></span>
+                            <label asp-for="ElectionDate"></label>
+                            <input type="date" asp-for="ElectionDate" class="form-control" placeholder="EnrollDate">
+                            <span asp-validation-for="ElectionDate" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" asp-for="IsPaymentComplete">
-                            <label>Payment is complete</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Add Registration" class="btn btn-primary" />
+                            <input type="submit" value="Add Election" class="btn btn-primary" />
                         </div>
             </form>
         </div>

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "GetElection";
+}
+@model ViewData;
+<h1>Election</h1>
+
+<p>@Model.MakeSingleElection.ElectionName</p>
+<p>@Model.MakeSingleElection.ElectionDate</p>
+<p>@Model.MakeSingleElection.CDName1  </p>
+<div class="btn-group">
+    <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID1 class="btn btn-sm btn-outline-primary">Profile</a>
+</div>
+<p>@Model.MakeSingleElection.CDName2</p>
+<div class="btn-group">
+    <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID2 class="btn btn-sm btn-outline-primary">Profile</a>
+</div>
+

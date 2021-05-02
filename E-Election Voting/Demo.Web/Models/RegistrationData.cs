@@ -7,42 +7,33 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Demo.Web.Areas.Admin.Data
+namespace Demo.Web.Models
 {
     public class RegistrationData
     {
-        public int CandidateId { get; set; }
-        public ElectionCandidate ElectionCandidate { get; set; }
-        public int VoterId { get; set; }
-        public ElectionVoter ElectionVoter { get; set; }
-        [Required(ErrorMessage = "Please select the Dtae")]
-        public DateTime EnrollDate { get; set; }
-        public bool IsPaymentComplete { get; set; }
-        public int Id { get; set; }
+        [Required(ErrorMessage = "Please enter the Election Name")]
+        [Display(Name = "Election Name")]
+        public string ElectionName { get; set; }
+        [Required(ErrorMessage = "Please select the Election Date")]
+        [Display(Name = "Election Date")]
+        [DataType(DataType.Date)]
+        public DateTime? ElectionDate { get; set; }
+        [Required(ErrorMessage = "Please select the Candidate")]
+        public int? CID1 { get; set; }
+        [Required(ErrorMessage = "Please select the Candidate")]
+        public int? CID2 { get; set; }
         public IList<ElectionVoter> ElectionVoters { get; set; }
         public IList<ElectionCandidate> ElectionCandidates { get; set; }
 
         private readonly IGetService _getService;
-
-
         public RegistrationData(IGetService getService)
         {
-
             _getService = getService;
-
         }
         public RegistrationData()
         {
-
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
-
         }
-
-        public void LoadVoters()
-        {
-            ElectionVoters = _getService.GetVoterList();
-        }
-
         public void LoadCandidates()
         {
             ElectionCandidates = _getService.GetCandidateList();

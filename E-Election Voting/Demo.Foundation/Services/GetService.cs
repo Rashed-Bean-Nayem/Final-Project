@@ -31,7 +31,23 @@ namespace Demo.Foundation.Services
         {
             return _registrationUnitOfWork.VoterRepository.Get(option => option.UserId == userId);
         }
-      
 
+        public ElectionCandidate GetElectionCandidate(int id) 
+        { 
+            return _registrationUnitOfWork.CandidateRepository.GetById(id); 
+        }
+        public IList<MakeElection> GetMakeElectionList() 
+        {
+            return _registrationUnitOfWork.MakeElectionRepository.GetAll(); 
+        }
+        public MakeElection GetSingleMakeElection(int id)
+        {
+            return _registrationUnitOfWork.MakeElectionRepository.GetById(id);
+        }
+
+        public ElectionCandidate GetSingleElectionCandidate(int id)
+        {
+            return _registrationUnitOfWork.CandidateRepository.GetById(id);
+        }
     }
 }
