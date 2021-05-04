@@ -11,5 +11,6 @@ namespace Demo.Foundation.Services
         void AddCandidate(ElectionCandidate electionCandidate);
         void AddVoter(ElectionVoter electionVoter);
         void AddElection(MakeElection makeElection);
+        void EditElection(MakeElection makeElection);
     }
 }

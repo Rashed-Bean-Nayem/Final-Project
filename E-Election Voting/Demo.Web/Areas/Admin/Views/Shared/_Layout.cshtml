@@ -33,6 +33,12 @@
                     <li class="nav-item d-none d-sm-inline-block">
                         <a asp-area="admin" asp-controller="Registration" asp-action="Registration" class="nav-link">Add New Election</a>
                     </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a asp-area="admin" asp-controller="Registration" asp-action="Registration" class="nav-link">Election Result</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">User Site</a>
+                    </li>
                 </ul>
             </b>
         </nav>
@@ -65,6 +71,12 @@
                                 <p>Add New Election</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a asp-area="admin" asp-controller="Registration" asp-action="Registration" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>Election Result</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -73,12 +85,12 @@
             @RenderBody()
         </div>
         @*<footer class="main-footer">
-            <strong>Copyright &copy; @DateTime.Now.Year <a href="http://ee.io">Election Commission</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.0.4
-            </div>
-        </footer>*@
+                <strong>Copyright &copy; @DateTime.Now.Year <a href="http://ee.io">Election Commission</a>.</strong>
+                All rights reserved.
+                <div class="float-right d-none d-sm-inline-block">
+                    <b>Version</b> 3.0.4
+                </div>
+            </footer>*@
         <footer class="border-top footer main-footer text-muted text-center">
             <div class="container">
                 &copy; @DateTime.Now.Year Election Commission
@@ -87,24 +99,24 @@
         <aside class="control-sidebar control-sidebar-dark"></aside>
 
     </div>
-    <script src="/admin/plugins/jquery/jquery.min.js"></script>   
+    <script src="/admin/plugins/jquery/jquery.min.js"></script>
     <script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
-   
+
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
-    <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>  
-    <script src="/admin/plugins/chart.js/Chart.min.js"></script>  
+    <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/plugins/chart.js/Chart.min.js"></script>
     <script src="/admin/plugins/sparklines/sparkline.js"></script>
     <script src="/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>    
-    <script src="/admin/plugins/jquery-knob/jquery.knob.min.js"></script>   
+    <script src="/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
     <script src="/admin/plugins/moment/moment.min.js"></script>
     <script src="/admin/plugins/daterangepicker/daterangepicker.js"></script>
     <script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="/admin/plugins/summernote/summernote-bs4.min.js"></script>
     <script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="/admin/js/adminlte.js"></script>  
+    <script src="/admin/js/adminlte.js"></script>
     <script src="/admin/js/pages/dashboard.js"></script>
     <script src="/admin/js/demo.js"></script>
 </body>

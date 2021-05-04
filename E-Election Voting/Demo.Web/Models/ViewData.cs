@@ -13,13 +13,26 @@ namespace Demo.Web.Models
 {
     public class ViewData : BaseModel
     {
+        public int EId { get; set; }
+        public string Count1 { get; set; }
+        public string Count2 { get; set; }
+
+
+
+
+
+
+
+
+
+
         public IList<MakeElection> MakeElections { get; set; }
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
 
-        private readonly IGetService _getService;       
-        public ViewData(IGetService getService) 
+        private readonly IGetService _getService;
+        public ViewData(IGetService getService)
         {
             _getService = getService;
         }
@@ -27,12 +40,12 @@ namespace Demo.Web.Models
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
         }
-        public void LoadSingleVoter(string userId)  
+        public void LoadSingleVoter(string userId)
         {
             ElectionVoter = ConvertToVoter(_getService.GetVoter(userId));
         }
 
-        public ElectionVoter ConvertToVoter(IList<ElectionVoter> electionVoter)   
+        public ElectionVoter ConvertToVoter(IList<ElectionVoter> electionVoter)
         {
             var electionVoterObj = new ElectionVoter();
             foreach (var item in electionVoter)
@@ -47,31 +60,31 @@ namespace Demo.Web.Models
             return electionVoterObj;
         }
 
-        public void LoadElections() 
+        public void LoadElections()
         {
-            MakeElections = ConvertToElectionList(_getService.GetMakeElectionList()); 
+            MakeElections = ConvertToElectionList(_getService.GetMakeElectionList());
         }
         private IList<MakeElection> ConvertToElectionList(IList<MakeElection> makeElections)
         {
-            IList<MakeElection> electionList = new List<MakeElection>(); 
+            IList<MakeElection> electionList = new List<MakeElection>();
 
-            foreach (var electionItem in makeElections) 
+            foreach (var electionItem in makeElections)
             {
                 electionList.Add(new MakeElection()
                 {
-                    Id=electionItem.Id,
-                    ElectionName= electionItem.ElectionName,
-                    ElectionDate=electionItem.ElectionDate,
-                    CDName1=electionItem.CDName1,
-                    CDName2=electionItem.CDName2,
-                    CID1=electionItem.CID1,
-                    CID2=electionItem.CID2
+                    Id = electionItem.Id,
+                    ElectionName = electionItem.ElectionName,
+                    ElectionDate = electionItem.ElectionDate,
+                    CDName1 = electionItem.CDName1,
+                    CDName2 = electionItem.CDName2,
+                    CID1 = electionItem.CID1,
+                    CID2 = electionItem.CID2
                 });
             }
             return electionList;
         }
 
-        public void LoadSingleMakeElection(int id) 
+        public void LoadSingleMakeElection(int id)
         {
             MakeSingleElection = ConvertToSingleMakeElection(_getService.GetSingleMakeElection(id));
         }
@@ -92,7 +105,7 @@ namespace Demo.Web.Models
 
         public void LoadSingleCandidate(int id)
         {
-            ElectionCandidate = ConvertToCandidate(_getService.GetSingleElectionCandidate(id)); 
+            ElectionCandidate = ConvertToCandidate(_getService.GetSingleElectionCandidate(id));
         }
         public ElectionCandidate ConvertToCandidate(ElectionCandidate electionCandidate)
         {
@@ -106,8 +119,9 @@ namespace Demo.Web.Models
             electionCandidateObj.Address = electionCandidate.Address;
             electionCandidateObj.ImageUrl = FormatFileUrl(electionCandidate.ImageUrl);
 
-            return electionCandidateObj;           
+            return electionCandidateObj;
         }
+
 
     }
 }

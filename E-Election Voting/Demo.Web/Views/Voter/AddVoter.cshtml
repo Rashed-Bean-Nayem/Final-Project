@@ -125,7 +125,9 @@
 <div class="container rounded bg-white mt-4 mb-5">
     <div class="row">
         <div class="col-md-5 border-right">
+
             <div class="p-3 py-5">
+                <h3>Edit Profile</h3>
                 <form method="post" asp-area="" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
                     <div class="row mt-2">
                         <div class="col-md-6">
@@ -162,12 +164,12 @@
                             <input type="file" asp-for="CoverPhoto" class="form-control">
                             <span asp-validation-for="CoverPhoto" class="text-danger"></span>
                         </div>
-                    </div>  
+                    </div>
                     <div class="row mt-2">
                         <div class="col-md-6">
                             <button class="btn btn-primary profile-button" type="submit">Save</button>
-                         </div>                       
-                    </div>                        
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

@@ -13,8 +13,10 @@ namespace Demo.Foundation.Entities
         [DataType(DataType.Date)]
         public DateTime? ElectionDate { get; set; }
         public int? CID1 { get; set; }
-        public string CDName1 { get; set; } 
+        public string CDName1 { get; set; }
         public int? CID2 { get; set; }
-        public string CDName2 { get; set; } 
+        public string CDName2 { get; set; }
+        public int Count1 { get; set; }
+        public int Count2 { get; set; }
     }
 }

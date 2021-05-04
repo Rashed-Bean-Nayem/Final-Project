@@ -16,27 +16,39 @@ namespace Demo.Web.Controllers
         {
             return View();
         }
-        public IActionResult GetAllElection() 
+        public IActionResult GetAllElection()
         {
-            var model = Startup.AutofacContainer.Resolve<ViewData>(); 
+            var model = Startup.AutofacContainer.Resolve<ViewData>();
             model.LoadElections();
             return View(model);
         }
-        public ViewResult GetElection(int id) 
+        public IActionResult GetElection(int id)
         {
             // var url = HttpContext.Request.Path.Value;
-           
             var model = Startup.AutofacContainer.Resolve<ViewData>();
             model.LoadSingleMakeElection(id);
             return View(model);
         }
-        public ViewResult GetCandidate(int id)
-        {            
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult GetElection(ViewData viewData)
+        {
+            var model = Startup.AutofacContainer.Resolve<IndexModel>();
+            model.AddModelElectionPOST(viewData);
+            return RedirectToAction(nameof(GetAllElection));
+        }
+        public IActionResult GetCandidate(int id)
+        {
             var model = Startup.AutofacContainer.Resolve<ViewData>();
             model.LoadSingleCandidate(id);
             return View(model);
         }
-
+        public IActionResult ViewResults()
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewData>();
+           // model.LoadSingleCandidate(id);
+            return View(model);
+        }
 
     }
 }

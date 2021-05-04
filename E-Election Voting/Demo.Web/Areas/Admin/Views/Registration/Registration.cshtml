@@ -10,6 +10,16 @@
             <div class="card-header">
                 <h3 class="card-title">Organise Election</h3>
             </div>
+            @if (ViewBag.IsSuccess == true)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Done! </strong>New Election is added successfully. <br />
+                    @*Click <a asp-controller="Book" asp-action="GetBook" asp-route-id=@ViewBag.BookId>here</a> to view the details*@
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
             <form method="post" asp-area="Admin" asp-controller="Registration" asp-action="Registration">
                 <div class="row">
                     <div class="col">
@@ -26,6 +36,7 @@
                                 <option value=@item.Id>@item.Name</option>
                             }
                         </select>
+                        <span asp-validation-for="CID1" class="text-danger"></span>
                     </div>
                     <div class="col">
                         <label>Select Candidate</label><br />
@@ -36,16 +47,17 @@
                                 <option value=@item.Id>@item.Name</option>
                             }
                         </select>
+                        <span asp-validation-for="CID2" class="text-danger"></span>
                     </div>
-                </div>                        
-                        <div class="form-group">
-                            <label asp-for="ElectionDate"></label>
-                            <input type="date" asp-for="ElectionDate" class="form-control" placeholder="EnrollDate">
-                            <span asp-validation-for="ElectionDate" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Add Election" class="btn btn-primary" />
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ElectionDate"></label>
+                    <input type="date" asp-for="ElectionDate" class="form-control" placeholder="EnrollDate">
+                    <span asp-validation-for="ElectionDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add Election" class="btn btn-primary" />
+                </div>
             </form>
         </div>
     </div>

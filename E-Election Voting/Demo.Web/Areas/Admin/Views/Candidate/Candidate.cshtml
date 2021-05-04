@@ -11,6 +11,16 @@
             <div class="card-header">
                 <h3 class="card-title">Candidate Form</h3>
             </div>
+            @if (ViewBag.IsSuccess == true)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Done! </strong>New Candidate is added successfully. <br />
+                    @*Click <a asp-controller="Book" asp-action="GetBook" asp-route-id=@ViewBag.BookId>here</a> to view the details*@
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
             <form method="post" asp-area="Admin" asp-controller="Candidate" asp-action="Candidate" asp-antiforgery="true" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="row">

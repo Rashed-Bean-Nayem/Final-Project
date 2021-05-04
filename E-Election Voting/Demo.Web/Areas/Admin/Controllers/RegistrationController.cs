@@ -18,25 +18,23 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        public IActionResult Registration()
+        public IActionResult Registration(bool isSuccess = false)
         {
+            ViewBag.IsSuccess = isSuccess;
             var model = Startup.AutofacContainer.Resolve<RegistrationData>();
             model.LoadCandidates();
             return View(model);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken, HttpPost]
         public IActionResult Registration(RegistrationData registrationData)
         {
-            var indexModel = Startup.AutofacContainer.Resolve<IndexModel>();
-            var registrationDataModel = Startup.AutofacContainer.Resolve<RegistrationData>();
             if (ModelState.IsValid)
             {
+                var indexModel = Startup.AutofacContainer.Resolve<IndexModel>();
                 indexModel.AddModelRElection(registrationData);
-                registrationDataModel.LoadCandidates();
-                return View(registrationDataModel);
+                return RedirectToAction(nameof(Registration), new { isSuccess = true });
             }
-            return View(registrationDataModel);
+            return View();
         }
     }
 }

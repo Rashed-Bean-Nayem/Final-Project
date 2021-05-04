@@ -19,8 +19,9 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        public IActionResult Candidate() 
+        public IActionResult Candidate(bool isSuccess = false) 
         {
+            ViewBag.IsSuccess = isSuccess;
             return View();
         }
         [ValidateAntiForgeryToken, HttpPost]
@@ -30,7 +31,7 @@ namespace Demo.Web.Areas.Admin.Controllers
             {
                 var model = Startup.AutofacContainer.Resolve<IndexModel>();
                 model.AddModelCandidate(electionCandidateData);
-                return RedirectToAction(nameof(Candidate));
+                return RedirectToAction(nameof(Candidate), new { isSuccess = true });
             }                
             return View();
         }
