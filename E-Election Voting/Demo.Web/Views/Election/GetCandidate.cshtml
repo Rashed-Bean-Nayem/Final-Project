@@ -202,6 +202,18 @@
                                 <p>@Model.ElectionCandidate.Description</p>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Documents</label>
+                            </div>
+                            <div class="col-md-6">
+                                @foreach (var item in Model.ElectionCandidate.PdfListUrl)
+                                {
+                                    <a class="btn btn-outline-primary" href="@item.URL">Read Now</a>
+                                }
+                                
+                            </div>
+                        </div>
 
                     </div>
                 </div>

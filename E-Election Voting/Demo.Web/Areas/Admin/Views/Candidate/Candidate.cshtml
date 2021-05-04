@@ -25,14 +25,26 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
-                            <label asp-for="Name"></label>
-                            <input asp-for="Name" class="form-control" placeholder="Name">
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control" placeholder="Name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
                         </div>
+                        <div class="col">
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control" placeholder="NID">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col">
                             <label asp-for="NID"></label>
                             <input asp-for="NID" class="form-control" placeholder="NID">
                             <span asp-validation-for="NID" class="text-danger"></span>
+                        </div> 
+                        <div class="col">
+                            <label asp-for="PdfListBOfiles"></label>
+                            <input type="file" asp-for="PdfListBOfiles" class="form-control" multiple>
+                            <span asp-validation-for="PdfListBOfiles" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row">
@@ -54,13 +66,10 @@
                             <input asp-for="Address" class="form-control" placeholder="Address">
                             <span asp-validation-for="Address" class="text-danger"></span>
                         </div>
-                        <div class="col">
-                            <div class="form-group">
+                        <div class="col">                          
                                 <label asp-for="Description"></label>
                                 <input asp-for="Description" class="form-control" placeholder="Description">
-                                <span asp-validation-for="Description" class="text-danger"></span>
-                            </div>
-
+                                <span asp-validation-for="Description" class="text-danger"></span>                          
                         </div>
                     </div>
                     <div class="form-group">

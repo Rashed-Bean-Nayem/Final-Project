@@ -9,5 +9,6 @@ namespace Demo.Foundation.Contexts
         DbSet<ElectionVoter> ElectionVoters { get; set; }
         DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
         DbSet<MakeElection> MakeElections { get; set; }
+        DbSet<PdfList> PdfLists { get; set; } 
     }
 }

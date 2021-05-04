@@ -46,9 +46,8 @@ namespace Demo.Web.Controllers
         public IActionResult ViewResults()
         {
             var model = Startup.AutofacContainer.Resolve<ViewData>();
-           // model.LoadSingleCandidate(id);
+            model.LoadResults();
             return View(model);
         }
-
     }
 }

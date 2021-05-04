@@ -24,6 +24,12 @@ namespace Demo.Web.Models
             _userService = Startup.AutofacContainer.Resolve<UserManager<ApplicationUser>>();
         }
 
+        public string FilePath(IFormFile ImageFile)
+        {
+            var imageInfo = StoreFile(ImageFile);
+            var Location = imageInfo.filePath;
+            return Location;
+        }
         public virtual (string fileName, string filePath) StoreFile(IFormFile file)
         {
             var randomName = Path.GetRandomFileName().Replace(".", string.Empty);

@@ -23,23 +23,27 @@ namespace Demo.Web
         }
         public void AddModelCandidate(ElectionCandidateDataBO electionCandidateData)
         {
+            var list = new List<PdfList>();
+            foreach (var item in electionCandidateData.PdfListBOfiles)
+            {
+                list.Add(new PdfList
+                {
+                    Name = item.FileName,
+                    URL = FilePath(item)
+                });
+            }
             _addingService.AddCandidate(new ElectionCandidate
             {
-                Name = electionCandidateData.Name,
+                Name = electionCandidateData.FirstName+" "+electionCandidateData.LastName,
                 Address = electionCandidateData.Address,
                 Description = electionCandidateData.Description,
                 Mobile = electionCandidateData.Mobile,
                 NID = electionCandidateData.NID,
-                ImageUrl = ImagePath(electionCandidateData.ImageFile)
+                ImageUrl = FilePath(electionCandidateData.ImageFile),
+                PdfListUrl=list
             });
         }
-
-        private string ImagePath(IFormFile ImageFile)
-        {
-            var imageInfo = StoreFile(ImageFile);
-            var Location = imageInfo.filePath;
-            return Location;
-        }
+        
         public void AddModelVoter(ElectionVoterDataBO electionVoterData)
         {
             _addingService.AddVoter(new ElectionVoter
@@ -50,10 +54,10 @@ namespace Demo.Web
                 Mobile = electionVoterData.Mobile,
                 NID = electionVoterData.NID,
                 DateOfBirth = electionVoterData.DateOfBirth,
-                CoverPhotoUrl = ImagePath(electionVoterData.CoverPhoto)
+                CoverPhotoUrl = FilePath(electionVoterData.CoverPhoto)
             });
         }
-        public void AddModelRElection(RegistrationData registrationData)
+        public void AddModelElection(RegistrationData registrationData)
         {
             var getVoterObj1 = new ElectionCandidate();
             var getVoterObj2 = new ElectionCandidate();

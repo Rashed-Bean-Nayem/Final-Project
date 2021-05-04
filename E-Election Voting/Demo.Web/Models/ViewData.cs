@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Demo.Foundation.BusinessObjects;
 using Demo.Foundation.Contexts;
 using Demo.Foundation.Entities;
 using Demo.Foundation.Services;
@@ -16,29 +17,24 @@ namespace Demo.Web.Models
         public int EId { get; set; }
         public string Count1 { get; set; }
         public string Count2 { get; set; }
-
-
-
-
-
-
-
-
-
-
+        public IList<ViewResultDataBO> ViewResults { get; set; } 
         public IList<MakeElection> MakeElections { get; set; }
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
+        private const string IMAGE_PATH = "temp";
 
         private readonly IGetService _getService;
-        public ViewData(IGetService getService)
+        private readonly RegistrationContext _registrationContext; 
+        public ViewData(IGetService getService, RegistrationContext registrationContext)
         {
             _getService = getService;
+            _registrationContext = registrationContext;
         }
         public ViewData()
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
+            _registrationContext = Startup.AutofacContainer.Resolve<RegistrationContext>();
         }
         public void LoadSingleVoter(string userId)
         {
@@ -84,6 +80,33 @@ namespace Demo.Web.Models
             return electionList;
         }
 
+        public void LoadResults()
+        {
+            ViewResults = ConvertToViewResultList(_getService.GetMakeElectionList());
+        }
+        private IList<ViewResultDataBO> ConvertToViewResultList(IList<MakeElection> makeElections)
+        {
+            var results  = new List<ViewResultDataBO>();
+
+            foreach (var electionItem in makeElections)
+            {
+                results.Add(new ViewResultDataBO()
+                {
+                    Id = electionItem.Id,
+                    ElectionName = electionItem.ElectionName,
+                    ElectionDate = electionItem.ElectionDate,
+                    CDName1 = electionItem.CDName1,
+                    CDName2 = electionItem.CDName2,
+                    CID1 = electionItem.CID1,
+                    CID2 = electionItem.CID2,
+                    Winner=(electionItem.Count1 >= electionItem.Count2) ? electionItem.CDName1 :  electionItem.CDName2,
+                    WinnerVote= (electionItem.Count1 >= electionItem.Count2) ? electionItem.Count1 : electionItem.Count2,
+                    WinnerID= (electionItem.Count1 >= electionItem.Count2) ? electionItem.CID1 : electionItem.CID2
+                });
+            }
+            return results;
+        }
+
         public void LoadSingleMakeElection(int id)
         {
             MakeSingleElection = ConvertToSingleMakeElection(_getService.GetSingleMakeElection(id));
@@ -105,23 +128,37 @@ namespace Demo.Web.Models
 
         public void LoadSingleCandidate(int id)
         {
-            ElectionCandidate = ConvertToCandidate(_getService.GetSingleElectionCandidate(id));
+            //ElectionCandidate = ConvertToCandidate(_getService.GetSingleElectionCandidate(id));
+            ElectionCandidate = ConvertToCandidate(id);
         }
-        public ElectionCandidate ConvertToCandidate(ElectionCandidate electionCandidate)
+        public ElectionCandidate ConvertToCandidate(int id)
         {
-            var electionCandidateObj = new ElectionCandidate();
 
-            electionCandidateObj.Id = electionCandidate.Id;
-            electionCandidateObj.Name = electionCandidate.Name;
-            electionCandidateObj.NID = electionCandidate.NID;
-            electionCandidateObj.Mobile = electionCandidate.Mobile;
-            electionCandidateObj.Description = electionCandidate.Description;
-            electionCandidateObj.Address = electionCandidate.Address;
-            electionCandidateObj.ImageUrl = FormatFileUrl(electionCandidate.ImageUrl);
+            var electionCandidateObj = new ElectionCandidate();
+            electionCandidateObj = _registrationContext.ElectionCandidates.Where(x => x.Id == id).Select(item => new ElectionCandidate()
+            {
+                
+                Id = item.Id,
+                Name = item.Name,
+                Address = item.Address,
+                Description = item.Description,
+                Mobile = item.Mobile,
+                NID = item.NID,
+                ImageUrl= FormatFileUrl(item.ImageUrl),
+                PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
+                {
+                    Id = g.Id,
+                    Name = g.Name,
+                    URL = FormatFileUrl(g.URL)
+                }).ToList()
+            }).FirstOrDefault();
+
 
             return electionCandidateObj;
         }
-
-
+        private static string FormatFileUrl(string filePath)
+        {
+            return $"/{IMAGE_PATH}/{Path.GetFileName(filePath)}";
+        }
     }
 }

@@ -5,3 +5,15 @@
 2021-05-04 00:47:46.448 +06:00 [INF] User logged in.
 2021-05-04 11:22:08.524 +06:00 [INF] Application Starting up
 2021-05-04 11:23:44.124 +06:00 [INF] User logged in.
+2021-05-04 13:51:14.168 +06:00 [INF] Application Starting up
+2021-05-04 13:53:43.275 +06:00 [INF] User logged in.
+2021-05-04 14:36:39.216 +06:00 [INF] Application Starting up
+2021-05-04 14:38:21.505 +06:00 [WRN] Invalid password for user 1c9e53a4-c11b-4028-12b6-08d90e605307.
+2021-05-04 14:38:21.521 +06:00 [WRN] User 1c9e53a4-c11b-4028-12b6-08d90e605307 failed to provide the correct password.
+2021-05-04 14:38:36.646 +06:00 [WRN] Invalid password for user 1c9e53a4-c11b-4028-12b6-08d90e605307.
+2021-05-04 14:38:36.647 +06:00 [WRN] User 1c9e53a4-c11b-4028-12b6-08d90e605307 failed to provide the correct password.
+2021-05-04 14:38:53.275 +06:00 [INF] User logged in.
+2021-05-04 21:01:20.448 +06:00 [INF] Application Starting up
+2021-05-04 21:04:57.234 +06:00 [INF] User logged in.
+2021-05-04 22:18:53.572 +06:00 [INF] Application Starting up
+2021-05-04 22:21:24.319 +06:00 [INF] User logged in.

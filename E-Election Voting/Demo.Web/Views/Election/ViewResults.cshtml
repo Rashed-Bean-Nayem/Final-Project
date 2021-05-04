@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Election Results";
+}
+@model ViewData;
+<div class="container">
+    <h5>Election Results</h5>
+    <div class="row">
+
+        @foreach (var results in Model.ViewResults) 
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/images/thequint_2021-02_00c2feea-de12-4212-b58b-cd883723960c_Election.jpg" width="100%" height="200" alt="Photo" />
+                    <div class="card-body">
+                        <h3 class="card-title">@results.ElectionName</h3>
+                        <p class="card-text">Held on   <b>@results.ElectionDate</b> </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <p>  <b>Winner:  </b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></p>
+                            </div>
+                            <div class="btn-group">
+                                <small class="text-muted"><b>Total Vote </b>@results.WinnerVote</small>
+                            </div>
+                            @*<small class="text-muted"><b>Winner</b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></small>*@                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

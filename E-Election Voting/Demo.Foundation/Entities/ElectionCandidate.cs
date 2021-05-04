@@ -13,6 +13,7 @@ namespace Demo.Foundation.Entities
         public string Mobile { get; set; }
         public string NID { get; set; }
         public string Description { get; set; }
-        public string ImageUrl { get; set; } 
+        public string ImageUrl { get; set; }
+        public IList<PdfList> PdfListUrl { get; set; } 
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OlTfi8Mn7jmIkvxxDtV0XFj0KCCxqEr6ubtygYn+Z9vT6j1ZFOoBB9GsPiWGvBM31K70w/X+IhtX70aY7eeySw==",
+  "dgSpecHash": "ImoMHD1ZykQOzdqErzkQjrhOc1oo9BacTF1sSgAlXIcNu9fDtH+TlZ+kw691TWnJerJuPuNlCqj8jS51yNDebg==",
   "success": true,
-  "projectFilePath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
+  "projectFilePath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DCL\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\DCL\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
