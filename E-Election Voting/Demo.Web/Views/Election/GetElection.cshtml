@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "GetElection";
+    ViewData["Title"] = "Vote";
 }
 @model ViewData;
 <style>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-4">
-                            <label><input asp-for="Count1" value="SecondCand" type="radio" checked />@Model.MakeSingleElection.CDName2</label>
+                            <label><p> <input asp-for="Count1" value="SecondCand" type="radio" checked />@Model.MakeSingleElection.CDName2</p></label>
                         </div>
                         <div class="col-md-4">
                             <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID2 class="btn btn-sm btn-outline-primary">Profile</a>

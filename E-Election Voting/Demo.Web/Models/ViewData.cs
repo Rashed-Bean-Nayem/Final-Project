@@ -40,7 +40,6 @@ namespace Demo.Web.Models
         {
             ElectionVoter = ConvertToVoter(_getService.GetVoter(userId));
         }
-
         public ElectionVoter ConvertToVoter(IList<ElectionVoter> electionVoter)
         {
             var electionVoterObj = new ElectionVoter();
@@ -123,17 +122,14 @@ namespace Demo.Web.Models
             makeElectionObj.CID2 = makeElection.CID2;
 
             return makeElectionObj;
-
         }
 
         public void LoadSingleCandidate(int id)
-        {
-            //ElectionCandidate = ConvertToCandidate(_getService.GetSingleElectionCandidate(id));
+        {            
             ElectionCandidate = ConvertToCandidate(id);
         }
         public ElectionCandidate ConvertToCandidate(int id)
         {
-
             var electionCandidateObj = new ElectionCandidate();
             electionCandidateObj = _registrationContext.ElectionCandidates.Where(x => x.Id == id).Select(item => new ElectionCandidate()
             {
@@ -145,6 +141,8 @@ namespace Demo.Web.Models
                 Mobile = item.Mobile,
                 NID = item.NID,
                 ImageUrl= FormatFileUrl(item.ImageUrl),
+                Motto=item.Motto,
+                LogoImageUrl= FormatFileUrl(item.LogoImageUrl),
                 PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
                 {
                     Id = g.Id,
@@ -152,7 +150,6 @@ namespace Demo.Web.Models
                     URL = FormatFileUrl(g.URL)
                 }).ToList()
             }).FirstOrDefault();
-
 
             return electionCandidateObj;
         }

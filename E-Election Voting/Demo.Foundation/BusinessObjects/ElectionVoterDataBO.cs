@@ -9,12 +9,14 @@ namespace Demo.Foundation.BusinessObjects
 {
     public class ElectionVoterDataBO:IEntity<int>
     {
-        public int Id { get; set; }
-        
+        public int Id { get; set; }        
         public string UserId { get; set; }
         [StringLength(100, MinimumLength = 2)]
-        [Required(ErrorMessage = "Please enter the Name")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "Please enter the First Name")]
+        public string FirstName { get; set; }
+        [StringLength(100, MinimumLength = 2)]
+        [Required(ErrorMessage = "Please enter the Last Name")]
+        public string LastName { get; set; } 
         [StringLength(100, MinimumLength = 2)]
         [Required(ErrorMessage = "Please enter the Address")]
         public string Address { get; set; }

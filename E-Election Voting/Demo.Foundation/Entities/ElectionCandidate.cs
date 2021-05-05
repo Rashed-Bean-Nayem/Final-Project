@@ -14,6 +14,8 @@ namespace Demo.Foundation.Entities
         public string NID { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public IList<PdfList> PdfListUrl { get; set; } 
+        public IList<PdfList> PdfListUrl { get; set; }
+        public string Motto { get; set; }
+        public string LogoImageUrl { get; set; } 
     }
 }

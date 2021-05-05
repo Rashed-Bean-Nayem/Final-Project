@@ -40,7 +40,9 @@ namespace Demo.Web
                 Mobile = electionCandidateData.Mobile,
                 NID = electionCandidateData.NID,
                 ImageUrl = FilePath(electionCandidateData.ImageFile),
-                PdfListUrl=list
+                PdfListUrl=list,
+                Motto=electionCandidateData.Motto,
+                LogoImageUrl= FilePath(electionCandidateData.LogoImageFile)
             });
         }
         
@@ -49,7 +51,7 @@ namespace Demo.Web
             _addingService.AddVoter(new ElectionVoter
             {
                 UserId = electionVoterData.UserId,
-                Name = electionVoterData.Name,
+                Name = electionVoterData.FirstName+" "+electionVoterData.LastName,
                 Address = electionVoterData.Address,
                 Mobile = electionVoterData.Mobile,
                 NID = electionVoterData.NID,
@@ -74,7 +76,6 @@ namespace Demo.Web
                 Count1 = 0,
                 Count2 = 0
             });
-
         }
         public void AddModelElectionPOST(ViewData viewData)
         {

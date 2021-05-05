@@ -17,14 +17,13 @@
                         <p class="card-text">Held on   <b>@results.ElectionDate</b> </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <p>  <b>Winner:  </b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></p>
+                                <small class="text-muted"><p>  <b>Winner:  </b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></p></small>
                             </div>
                             <div class="btn-group">
                                 <small class="text-muted"><b>Total Vote </b>@results.WinnerVote</small>
                             </div>
-                            @*<small class="text-muted"><b>Winner</b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></small>*@                            
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         }

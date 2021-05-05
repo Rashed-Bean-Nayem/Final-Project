@@ -131,9 +131,14 @@
                 <form method="post" asp-area="" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
                     <div class="row mt-2">
                         <div class="col-md-6">
-                            <label asp-for="Name"></label>
-                            <input asp-for="Name" class="form-control" placeholder="Name">
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control" placeholder="Name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control" placeholder="Name">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
                             <label asp-for="DateOfBirth"></label>
@@ -180,63 +185,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-@*<div class="container">
-        <div class="col-md-6">
-            <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Voter Form</h3>
-                </div>
-                <form method="post" asp-area="" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label asp-for="Name"></label>
-                                <input asp-for="Name" class="form-control" placeholder="Name">
-                                <span asp-validation-for="Name" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label asp-for="DateOfBirth"></label>
-                                <input type="date" asp-for="DateOfBirth" class="form-control" placeholder="Date Of Birth">
-                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label asp-for="NID"></label>
-                                <input asp-for="NID" class="form-control" placeholder="NID">
-                                <span asp-validation-for="NID" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label asp-for="Mobile"></label>
-                                <input asp-for="Mobile" class="form-control" placeholder="Mobile">
-                                <span asp-validation-for="Mobile" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Address"></label>
-                        <input asp-for="Address" class="form-control" placeholder="Address">
-                        <span asp-validation-for="Address" class="text-danger"></span>
-                    </div>
-                    <div class="col">
-                        <label asp-for="CoverPhoto"></label>
-                        <input type="file" asp-for="CoverPhoto" class="form-control">
-                        <span asp-validation-for="CoverPhoto" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Add Voter" class="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>*@
