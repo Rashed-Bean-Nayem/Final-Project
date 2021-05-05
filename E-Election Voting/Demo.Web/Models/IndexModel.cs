@@ -83,7 +83,7 @@ namespace Demo.Web
 
             getElectionObj1 = _getService.GetSingleMakeElection(viewData.EId);
 
-            if (viewData.Count1 == "firstCand")
+            if (viewData.CandName == getElectionObj1.CDName1)
             {
                 _addingService.EditElection(new MakeElection
                 {

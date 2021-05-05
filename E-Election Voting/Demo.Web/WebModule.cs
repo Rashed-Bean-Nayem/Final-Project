@@ -34,6 +34,7 @@ namespace Demo.Web
             builder.RegisterType<RegistrationData>().AsSelf();
             builder.RegisterType<ViewData>().AsSelf();
             builder.RegisterType<MakeElection>().AsSelf();
+            builder.RegisterType<NewGetElectionDataBO>().AsSelf(); 
 
             base.Load(builder);
         }

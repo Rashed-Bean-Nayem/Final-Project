@@ -3,166 +3,269 @@
     ViewData["Title"] = "Vote";
 }
 @model ViewData;
-<style>
+<div class="container">
+    <h5>@Model.ElectionName</h5>
+    <h5>@Model.ElectionDate</h5>
+   
+        <div class="row">
 
-    body {
-        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    }
+            @foreach (var elections in Model.MixedClass)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="@elections.LogoImageUrl" width="100%" height="200" alt="Photo" />
+                        <div class="card-body">
+                            <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@elections.CandidateId><h3 class="card-title">@elections.CandidateName</h3></a></font>
+                          
+                            <p class="card-text">@elections.Motto</p>
+                            <form method="post" asp-controller="Election" asp-action="GetElection" asp-antiforgery="true" enctype="multipart/form-data">
 
-    .emp-profile {
-        padding: 3%;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        border-radius: 0.5rem;
-        background: #fff;
-    }
+                                <label asp-for="EId" hidden></label>
+                                <input hidden asp-for="EId" class="form-control" value="@elections.EId">
+                                <label asp-for="CandName" hidden></label>
+                                <input hidden asp-for="CandName" class="form-control" value="@elections.CandidateName">
 
-    .profile-img {
-        text-align: center;
-    }
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary profile-button" type="submit">Vote</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    
+</div>
 
-        .profile-img img {
-            width: 30%;
-            height: 40%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<style>
+
+        body {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
         }
 
-        .profile-img .file {
-            position: relative;
-            overflow: hidden;
-            margin-top: -20%;
-            width: 70%;
-            border: none;
-            border-radius: 0;
-            font-size: 15px;
-            background: #212529b8;
+        .emp-profile {
+            padding: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 0.5rem;
+            background: #fff;
         }
 
-            .profile-img .file input {
-                position: absolute;
-                opacity: 0;
-                right: 0;
-                top: 0;
+        .profile-img {
+            text-align: center;
+        }
+
+            .profile-img img {
+                width: 30%;
+                height: 40%;
             }
 
-    .profile-head h5 {
-        color: #333;
-    }
-
-    .profile-head h6 {
-        color: #0062cc;
-    }
-
-    .profile-edit-btn {
-        border: none;
-        border-radius: 1.5rem;
-        width: 70%;
-        padding: 2%;
-        font-weight: 600;
-        color: #6c757d;
-        cursor: pointer;
-    }
-
-    .proile-rating {
-        font-size: 12px;
-        color: #818182;
-        margin-top: 5%;
-    }
-
-        .proile-rating span {
-            color: #495057;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-    .profile-head .nav-tabs {
-        margin-bottom: 5%;
-    }
-
-        .profile-head .nav-tabs .nav-link {
-            font-weight: 600;
-            border: none;
-        }
-
-            .profile-head .nav-tabs .nav-link.active {
+            .profile-img .file {
+                position: relative;
+                overflow: hidden;
+                margin-top: -20%;
+                width: 70%;
                 border: none;
-                border-bottom: 2px solid #0062cc;
+                border-radius: 0;
+                font-size: 15px;
+                background: #212529b8;
             }
 
-    .profile-work {
-        padding: 14%;
-        margin-top: -15%;
-    }
+                .profile-img .file input {
+                    position: absolute;
+                    opacity: 0;
+                    right: 0;
+                    top: 0;
+                }
 
-        .profile-work p {
+        .profile-head h5 {
+            color: #333;
+        }
+
+        .profile-head h6 {
+            color: #0062cc;
+        }
+
+        .profile-edit-btn {
+            border: none;
+            border-radius: 1.5rem;
+            width: 70%;
+            padding: 2%;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+        }
+
+        .proile-rating {
             font-size: 12px;
             color: #818182;
+            margin-top: 5%;
+        }
+
+            .proile-rating span {
+                color: #495057;
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+        .profile-head .nav-tabs {
+            margin-bottom: 5%;
+        }
+
+            .profile-head .nav-tabs .nav-link {
+                font-weight: 600;
+                border: none;
+            }
+
+                .profile-head .nav-tabs .nav-link.active {
+                    border: none;
+                    border-bottom: 2px solid #0062cc;
+                }
+
+        .profile-work {
+            padding: 14%;
+            margin-top: -15%;
+        }
+
+            .profile-work p {
+                font-size: 12px;
+                color: #818182;
+                font-weight: 600;
+                margin-top: 10%;
+            }
+
+            .profile-work a {
+                text-decoration: none;
+                color: #495057;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .profile-work ul {
+                list-style: none;
+            }
+
+        .profile-tab label {
             font-weight: 600;
-            margin-top: 10%;
         }
 
-        .profile-work a {
-            text-decoration: none;
-            color: #495057;
+        .profile-tab p {
             font-weight: 600;
-            font-size: 14px;
+            color: #0062cc;
         }
-
-        .profile-work ul {
-            list-style: none;
-        }
-
-    .profile-tab label {
-        font-weight: 600;
-    }
-
-    .profile-tab p {
-        font-weight: 600;
-        color: #0062cc;
-    }
-</style>
-<div class="container rounded bg-white mt-4 mb-5">
-    <div class="row">
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <h4>Election Name: <font color="blue">@Model.MakeSingleElection.ElectionName</font> </h4>
-                <h6>Date: @Model.MakeSingleElection.ElectionDate</h6>
-                <br />
-                <br />
-                <form method="post" asp-area="" asp-controller="Election" asp-action="GetElection" asp-antiforgery="true" enctype="multipart/form-data">
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <label><input asp-for="Count1" value="firstCand" type="radio" />@Model.MakeSingleElection.CDName1</label>
-                        </div>
-                        <div class="col-md-4">
-                            <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID1 class="btn btn-sm btn-outline-primary">Profile</a>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <label><p> <input asp-for="Count1" value="SecondCand" type="radio" checked />@Model.MakeSingleElection.CDName2</p></label>
-                        </div>
-                        <div class="col-md-4">
-                            <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID2 class="btn btn-sm btn-outline-primary">Profile</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <label asp-for="EId" hidden></label>
-                            <input hidden asp-for="EId" class="form-control" placeholder="NID" value="@Model.MakeSingleElection.Id">
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <button class="btn btn-primary profile-button" type="submit">Vote</button>
+    </style>
+    <div class="container rounded bg-white mt-4 mb-5">
+        <div class="row">
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <h4>Election Name: <font color="blue">@Model.MakeSingleElection.ElectionName</font> </h4>
+                    <h6>Date: @Model.MakeSingleElection.ElectionDate</h6>
+                    <br />
+                    <br />
+                    <form method="post" asp-area="" asp-controller="Election" asp-action="GetElection" asp-antiforgery="true" enctype="multipart/form-data">
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <label><input asp-for="Count1" value="firstCand" type="radio" />@Model.MakeSingleElection.CDName1</label>
+                            </div>
+                            <div class="col-md-4">
+                                <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID1 class="btn btn-sm btn-outline-primary">Profile</a>
                             </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <label><p> <input asp-for="Count1" value="SecondCand" type="radio" checked />@Model.MakeSingleElection.CDName2</p></label>
+                            </div>
+                            <div class="col-md-4">
+                                <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@Model.MakeSingleElection.CID2 class="btn btn-sm btn-outline-primary">Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <label asp-for="EId" hidden></label>
+                                <input hidden asp-for="EId" class="form-control" placeholder="NID" value="@Model.MakeSingleElection.Id">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <button class="btn btn-primary profile-button" type="submit">Vote</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
