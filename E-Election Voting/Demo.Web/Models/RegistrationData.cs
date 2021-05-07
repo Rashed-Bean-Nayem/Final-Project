@@ -22,7 +22,6 @@ namespace Demo.Web.Models
         public int? CID1 { get; set; }
         [Required(ErrorMessage = "Please select the Candidate")]
         public int? CID2 { get; set; }
-        public IList<ElectionVoter> ElectionVoters { get; set; }
         public IList<ElectionCandidate> ElectionCandidates { get; set; }
 
         private readonly IGetService _getService;

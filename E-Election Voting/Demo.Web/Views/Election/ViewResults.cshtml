@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Election Results";
 }
-@model ViewData;
+@model ViewModel;
 <div class="container">
     <h5>Election Results</h5>
     <div class="row">
@@ -17,10 +17,10 @@
                         <p class="card-text">Held on   <b>@results.ElectionDate</b> </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <small class="text-muted"><p>  <b>Winner:  </b> <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></p></small>
+                                <p>  <b>Winner:   <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@results.WinnerID> @results.Winner</a></font></b></p>
                             </div>
                             <div class="btn-group">
-                                <small class="text-muted"><b>Total Vote </b>@results.WinnerVote</small>
+                                <p><b>Vote: </b>@results.WinnerVote</p>
                             </div>
                             </div>
                         </div>

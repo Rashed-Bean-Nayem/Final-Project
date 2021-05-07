@@ -7,6 +7,7 @@ using System.Linq;
 using System.Dynamic;
 using System.Threading.Tasks;
 using Demo.Foundation.Entities;
+using System.Security.Claims;
 
 namespace Demo.Web.Controllers
 {
@@ -18,34 +19,38 @@ namespace Demo.Web.Controllers
         }
         public IActionResult GetAllElection()
         {
-            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
             model.LoadElections();
             return View(model);
         }
         public IActionResult GetElection(int id)
         {
             // var url = HttpContext.Request.Path.Value;
-            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadVoterCheck(id, UserId);
             model.LoadSingleMakeElection(id);
+
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult GetElection(ViewData viewData)
+        public IActionResult GetElection(ViewModel viewData)
         {
-            var model = Startup.AutofacContainer.Resolve<IndexModel>();
+            viewData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = Startup.AutofacContainer.Resolve<AdditionModel>();
             model.AddModelElectionPOST(viewData);
             return RedirectToAction(nameof(GetAllElection));
         }
         public IActionResult GetCandidate(int id)
         {
-            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
             model.LoadSingleCandidate(id);
             return View(model);
         }
         public IActionResult ViewResults()
         {
-            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
             model.LoadResults();
             return View(model);
         }

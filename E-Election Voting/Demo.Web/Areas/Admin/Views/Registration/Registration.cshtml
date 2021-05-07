@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Organise Election</h3>
+                <h3 class="card-title">Add New Election</h3>
             </div>
             @if (ViewBag.IsSuccess == true)
             {
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col">
                         <label asp-for="ElectionName"></label>
-                        <input asp-for="ElectionName" class="form-control" />
+                        <input asp-for="ElectionName" class="form-control" placeholder="Election Name" />
                         <span asp-validation-for="ElectionName" class="text-danger"></span>
                     </div>
                     <div class="col">

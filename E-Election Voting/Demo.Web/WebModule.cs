@@ -21,7 +21,6 @@ namespace Demo.Web
             _connectionString = connectionString;
             _migrationAssemblyName = migrationAssemblyName;
         }
-
         protected override void Load(ContainerBuilder builder)
         {
            
@@ -30,9 +29,9 @@ namespace Demo.Web
               .WithParameter("migrationAssemblyName", _migrationAssemblyName)
               .InstancePerLifetimeScope();
 
-            builder.RegisterType<IndexModel>().AsSelf();
+            builder.RegisterType<AdditionModel>().AsSelf();
             builder.RegisterType<RegistrationData>().AsSelf();
-            builder.RegisterType<ViewData>().AsSelf();
+            builder.RegisterType<ViewModel>().AsSelf();
             builder.RegisterType<MakeElection>().AsSelf();
             builder.RegisterType<NewGetElectionDataBO>().AsSelf(); 
 

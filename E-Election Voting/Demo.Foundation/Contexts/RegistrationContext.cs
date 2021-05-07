@@ -40,5 +40,6 @@ namespace Demo.Foundation.Contexts
         public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
         public DbSet<MakeElection> MakeElections { get; set; }
         public DbSet<PdfList> PdfLists { get; set; }
+        public DbSet<VoterCheck> VoterChecks { get; set; }
     }
 }

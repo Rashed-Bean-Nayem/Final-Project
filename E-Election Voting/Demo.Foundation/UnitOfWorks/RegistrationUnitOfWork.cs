@@ -13,18 +13,21 @@ namespace Demo.Foundation.UnitOfworks
         public IVoterRepository VoterRepository { get; set; }
         public IRegistrationRepository RegistrationRepository { get; set; }
         public IMakeElectionRepository MakeElectionRepository { get; set; }
+        public IVoterCheckRepository VoterCheckRepository { get; set; }
 
         public RegistrationUnitOfWork(RegistrationContext context,
             ICandidateRepository candidateRepository,
             IVoterRepository voterRepository, 
             IRegistrationRepository registrationRepository,
-            IMakeElectionRepository makeElectionRepository)
+            IMakeElectionRepository makeElectionRepository,
+            IVoterCheckRepository voterCheckRepository)
             : base(context)
         {
             CandidateRepository = candidateRepository;
             VoterRepository = voterRepository;
             RegistrationRepository = registrationRepository;
             MakeElectionRepository = makeElectionRepository;
+            VoterCheckRepository = voterCheckRepository;
         }
     }
 }

@@ -13,8 +13,6 @@ using System.Security.Claims;
 
 namespace Demo.Web.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = "Admin,SuperAdmin")]
     public class VoterController : Controller
     {
         public IActionResult Index()
@@ -31,7 +29,7 @@ namespace Demo.Web.Controllers
             electionVoterData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (ModelState.IsValid)
             {
-                var model = Startup.AutofacContainer.Resolve<IndexModel>();
+                var model = Startup.AutofacContainer.Resolve<AdditionModel>();
                 model.AddModelVoter(electionVoterData);
                 return RedirectToAction(nameof(VoterProfile));
             }
@@ -40,7 +38,7 @@ namespace Demo.Web.Controllers
 
         public ViewResult VoterProfile()
         {
-            var model = Startup.AutofacContainer.Resolve<ViewData>();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
             var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             model.LoadSingleVoter(UserId);
             return View(model);

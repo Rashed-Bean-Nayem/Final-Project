@@ -4,14 +4,16 @@ using Demo.Foundation.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Demo.Web.Migrations
 {
     [DbContext(typeof(RegistrationContext))]
-    partial class RegistrationContextModelSnapshot : ModelSnapshot
+    [Migration("20210506135535_MyChV1")]
+    partial class MyChV1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

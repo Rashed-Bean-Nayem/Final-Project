@@ -31,6 +31,10 @@ namespace Demo.Foundation.Services
         {
             return _registrationUnitOfWork.VoterRepository.Get(option => option.UserId == userId);
         }
+        public IList<VoterCheck> GetVoterCheck(string userId)
+        {
+            return _registrationUnitOfWork.VoterCheckRepository.Get(option => option.UserId == userId);
+        }
 
         public ElectionCandidate GetElectionCandidate(int id) 
         { 

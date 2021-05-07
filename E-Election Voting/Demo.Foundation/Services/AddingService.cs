@@ -34,6 +34,11 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.MakeElectionRepository.Add(makeElection);
             _electionUnitOfWork.Save();
         }
+        public void AddVoterCheck(VoterCheck voterCheck)
+        {
+            _electionUnitOfWork.VoterCheckRepository.Add(voterCheck);
+            _electionUnitOfWork.Save();
+        }
 
         public void EditElection(MakeElection makeElection)
         {

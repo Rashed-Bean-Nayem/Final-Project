@@ -29,7 +29,7 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var model = Startup.AutofacContainer.Resolve<IndexModel>();
+                var model = Startup.AutofacContainer.Resolve<AdditionModel>();
                 model.AddModelCandidate(electionCandidateData);
                 return RedirectToAction(nameof(Candidate), new { isSuccess = true });
             }                

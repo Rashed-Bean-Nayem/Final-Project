@@ -12,28 +12,30 @@ using System.Threading.Tasks;
 
 namespace Demo.Web.Models
 {
-    public class ViewData : BaseModel
+    public class ViewModel : BaseModel
     {
         public int EId { get; set; }
         public string CandName { get; set; }
         public string ElectionName { get; set; }
+        public string UserId { get; set; }
         public DateTime? ElectionDate { get; set; } 
         public IList<NewGetElectionDataBO> MixedClass{ get; set; }
         public IList<ViewResultDataBO> ViewResults { get; set; }
         public IList<MakeElection> MakeElections { get; set; }
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
+        public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
         private const string IMAGE_PATH = "temp";
 
         private readonly IGetService _getService;
         private readonly RegistrationContext _registrationContext; 
-        public ViewData(IGetService getService, RegistrationContext registrationContext)
+        public ViewModel(IGetService getService, RegistrationContext registrationContext)
         {
             _getService = getService;
             _registrationContext = registrationContext;
         }
-        public ViewData()
+        public ViewModel()
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
             _registrationContext = Startup.AutofacContainer.Resolve<RegistrationContext>();
@@ -55,6 +57,24 @@ namespace Demo.Web.Models
                 electionVoterObj.CoverPhotoUrl = FormatFileUrl(item.CoverPhotoUrl);
             }
             return electionVoterObj;
+        }
+
+        public void LoadVoterCheck(int eId, string userId)
+        {
+            VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId); 
+        }
+        public VoterCheck ConvertToVoterCheck(IList<VoterCheck> voterChecks, int eId)
+        {
+            var voterCheckObj = new VoterCheck(); 
+            foreach (var item in voterChecks) 
+            {
+                if (item.Eid== eId)
+                {
+                    voterCheckObj.Eid = item.Eid;
+                    voterCheckObj.UserId = item.UserId;
+                }
+            }
+            return voterCheckObj;
         }
 
         public void LoadElections()
@@ -80,29 +100,6 @@ namespace Demo.Web.Models
             }
             return electionList;
         }
-
-
-
-
-  
-
-        //public void LoadSingleMakeElection(int id)
-        //{
-        //    MakeSingleElection = ConvertToSingleMakeElection(_getService.GetSingleMakeElection(id));
-        //}
-        //public MakeElection ConvertToSingleMakeElection(MakeElection makeElection)
-        //{
-        //    var makeElectionObj = new MakeElection();
-        //    makeElectionObj.Id = makeElection.Id;
-        //    makeElectionObj.ElectionName = makeElection.ElectionName;
-        //    makeElectionObj.ElectionDate = makeElection.ElectionDate;
-        //    makeElectionObj.CDName1 = makeElection.CDName1;
-        //    makeElectionObj.CDName2 = makeElection.CDName2;
-        //    makeElectionObj.CID1 = makeElection.CID1;
-        //    makeElectionObj.CID2 = makeElection.CID2;
-
-        //    return makeElectionObj;
-        //}
         public void LoadSingleMakeElection(int id)
         {
             MixedClass = ConvertToSingleMakeElection(_getService.GetSingleMakeElection(id));
@@ -144,7 +141,6 @@ namespace Demo.Web.Models
 
             return newGetElectionDataBO;
         }
-
         public void LoadSingleCandidate(int id)
         {            
             ElectionCandidate = ConvertToCandidate(id);

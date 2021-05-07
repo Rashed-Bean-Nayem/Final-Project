@@ -42,8 +42,9 @@ namespace Foundation
                 .InstancePerLifetimeScope();
             builder.RegisterType<CandidateRepository>().As<ICandidateRepository>()
                 .InstancePerLifetimeScope();
-
             builder.RegisterType<MakeElectionRepository>().As<IMakeElectionRepository>()
+                .InstancePerLifetimeScope();
+            builder.RegisterType<VoterCheckRepository>().As<IVoterCheckRepository>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

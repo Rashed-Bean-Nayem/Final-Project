@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Demo.Web
 {
-    public class IndexModel : BaseModel
+    public class AdditionModel : BaseModel
     {
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
-        public IndexModel(IAddingService addingService,
+        public AdditionModel(IAddingService addingService,
             IGetService getService)
         {
             _addingService = addingService;
@@ -77,8 +77,15 @@ namespace Demo.Web
                 Count2 = 0
             });
         }
-        public void AddModelElectionPOST(ViewData viewData)
+        public void AddModelElectionPOST(ViewModel viewData)
         {
+            _addingService.AddVoterCheck(new VoterCheck()
+            {
+                Eid = viewData.EId,
+                UserId = viewData.UserId
+
+            });
+
             var getElectionObj1 = new MakeElection();
 
             getElectionObj1 = _getService.GetSingleMakeElection(viewData.EId);

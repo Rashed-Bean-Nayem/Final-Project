@@ -30,7 +30,7 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var indexModel = Startup.AutofacContainer.Resolve<IndexModel>();
+                var indexModel = Startup.AutofacContainer.Resolve<AdditionModel>();
                 indexModel.AddModelElection(registrationData);
                 return RedirectToAction(nameof(Registration), new { isSuccess = true });
             }
