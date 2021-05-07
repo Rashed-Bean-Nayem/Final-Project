@@ -28,7 +28,6 @@ namespace Demo.Foundation.BusinessObjects
         [Required(ErrorMessage = "Please enter the About")]
         [Display(Name = "About")]
         public string Description { get; set; }
-        //public string ImageUrl { get; set; }
         [Required(ErrorMessage = "Please select the Image")]
         [Display(Name = "Photo")]
         public IFormFile ImageFile { get; set; }

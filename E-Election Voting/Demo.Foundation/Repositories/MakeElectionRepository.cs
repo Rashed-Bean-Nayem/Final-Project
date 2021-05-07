@@ -14,7 +14,6 @@ namespace Demo.Foundation.Repositories
         {
 
         }
-
         public IList<MakeElection> GetLatestMakeElection() 
         {
             throw new NotImplementedException();

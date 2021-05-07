@@ -17,7 +17,6 @@ namespace Demo.Foundation.Contexts
             _connectionString = connectionString;
             _migrationAssemblyName = migrationAssemblyName;
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
             if (!dbContextOptionsBuilder.IsConfigured)
@@ -34,7 +33,6 @@ namespace Demo.Foundation.Contexts
         {
             base.OnModelCreating(builder);
         }
-
         public DbSet<ElectionCandidate> ElectionCandidates { get; set; }
         public DbSet<ElectionVoter> ElectionVoters { get; set; }
         public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }

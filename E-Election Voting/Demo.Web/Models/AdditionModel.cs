@@ -44,8 +44,7 @@ namespace Demo.Web
                 Motto=electionCandidateData.Motto,
                 LogoImageUrl= FilePath(electionCandidateData.LogoImageFile)
             });
-        }
-        
+        }        
         public void AddModelVoter(ElectionVoterDataBO electionVoterData)
         {
             _addingService.AddVoter(new ElectionVoter

@@ -58,7 +58,6 @@ namespace Demo.Web.Models
             }
             return electionVoterObj;
         }
-
         public void LoadVoterCheck(int eId, string userId)
         {
             VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId); 
@@ -76,7 +75,6 @@ namespace Demo.Web.Models
             }
             return voterCheckObj;
         }
-
         public void LoadElections()
         {
             MakeElections = ConvertToElectionList(_getService.GetMakeElectionList());

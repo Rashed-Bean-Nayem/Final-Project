@@ -9,7 +9,6 @@ namespace Demo.Foundation.Repositories
 {
     public interface IRegistrationRepository: IRepository<ElectionRegistration, int, RegistrationContext>
     {
-        IList<ElectionRegistration> GetLatestRegistraion();
-       
+        IList<ElectionRegistration> GetLatestRegistraion();       
     }
 }

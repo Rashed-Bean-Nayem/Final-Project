@@ -6,11 +6,20 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        li a:hover {
+            background-color: #6AE76A;
+        }
+        li form button :hover {
+            background-color: #6AE76A;
+        }
+    </style>
+
 </head>
-<body>
+<body style="background-color: #B7BBCA;">
     <header>
         <b>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #4EC04C;" >
                 <div class="container">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">E-Election Voting</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -19,9 +28,9 @@
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                         <partial name="_LoginPartial" />
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <ul class="navbar-nav flex-grow-1 ml-auto topnav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -29,18 +38,18 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav>     
         </b>
        
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container"  >
+        <main role="main" class="pb-3" >
             @RenderBody()
         </main>
     </div>
     <footer class="border-top footer main-footer text-muted text-center">
         <div class="container">
-            &copy; @DateTime.Now.Year E-Election Voting - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <font color="Black"><b>   &copy; @DateTime.Now.Year E-Election Voting @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@</b></font>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

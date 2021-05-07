@@ -12,7 +12,6 @@ namespace Demo.Foundation.Entities
         public int CandidateId { get; set; }
         [DataType(DataType.Date)]
         public DateTime EnrollDate { get; set; } 
-        public ElectionCandidate ElectionCandidate { get; set; }
-        
+        public ElectionCandidate ElectionCandidate { get; set; }        
     }
 }

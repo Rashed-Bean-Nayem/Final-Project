@@ -20,7 +20,6 @@ namespace Foundation
             _connectionString = connectionString;
             _migrationAssemblyName = migrationAssemblyName;
         }
-
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<RegistrationContext>()

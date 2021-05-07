@@ -35,7 +35,6 @@ namespace Demo.Web.Controllers
             }
             return View();
         }
-
         public ViewResult VoterProfile()
         {
             var model = Startup.AutofacContainer.Resolve<ViewModel>();

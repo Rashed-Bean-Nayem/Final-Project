@@ -14,7 +14,6 @@ namespace Demo.Foundation.Repositories
         {
 
         }
-
         public IList<ElectionCandidate> GetLatestElectionCandidate() 
         {
             throw new NotImplementedException();
