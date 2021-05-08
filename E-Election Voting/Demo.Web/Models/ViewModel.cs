@@ -58,45 +58,80 @@ namespace Demo.Web.Models
             }
             return electionVoterObj;
         }
-        public void LoadVoterCheck(int eId, string userId)
+        public void LoadSingleCandidate(int id)
         {
-            VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId); 
+            ElectionCandidate = ConvertToCandidate(id);
         }
-        public VoterCheck ConvertToVoterCheck(IList<VoterCheck> voterChecks, int eId)
+        public ElectionCandidate ConvertToCandidate(int? id)
         {
-            var voterCheckObj = new VoterCheck(); 
-            foreach (var item in voterChecks) 
+            var electionCandidateObj = new ElectionCandidate();
+            electionCandidateObj = _registrationContext.ElectionCandidates.Where(x => x.Id == id).Select(item => new ElectionCandidate()
             {
-                if (item.Eid== eId)
+
+                Id = item.Id,
+                Name = item.Name,
+                Address = item.Address,
+                Description = item.Description,
+                Mobile = item.Mobile,
+                NID = item.NID,
+                ImageUrl = FormatFileUrl(item.ImageUrl),
+                Motto = item.Motto,
+                LogoImageUrl = FormatFileUrl(item.LogoImageUrl),
+                PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
                 {
-                    voterCheckObj.Eid = item.Eid;
-                    voterCheckObj.UserId = item.UserId;
-                }
-            }
-            return voterCheckObj;
+                    Id = g.Id,
+                    Name = g.Name,
+                    URL = FormatFileUrl(g.URL)
+                }).ToList()
+            }).FirstOrDefault();
+
+            return electionCandidateObj;
         }
+
         public void LoadElections()
         {
             MakeElections = ConvertToElectionList(_getService.GetMakeElectionList());
         }
         private IList<MakeElection> ConvertToElectionList(IList<MakeElection> makeElections)
         {
+            int result;
             IList<MakeElection> electionList = new List<MakeElection>();
 
             foreach (var electionItem in makeElections)
             {
-                electionList.Add(new MakeElection()
+                result = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
+                if (result >= 0)
                 {
-                    Id = electionItem.Id,
-                    ElectionName = electionItem.ElectionName,
-                    ElectionDate = electionItem.ElectionDate,
-                    CDName1 = electionItem.CDName1,
-                    CDName2 = electionItem.CDName2,
-                    CID1 = electionItem.CID1,
-                    CID2 = electionItem.CID2
-                });
+                    electionList.Add(new MakeElection()
+                    {
+                        Id = electionItem.Id,
+                        ElectionName = electionItem.ElectionName,
+                        ElectionDate = electionItem.ElectionDate,
+                        CDName1 = electionItem.CDName1,
+                        CDName2 = electionItem.CDName2,
+                        CID1 = electionItem.CID1,
+                        CID2 = electionItem.CID2
+                    });
+                }
             }
             return electionList;
+        }
+        public void LoadVoterCheck(int eId, string userId)
+        {
+            VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId);
+        }
+        public VoterCheck ConvertToVoterCheck(IList<VoterCheck> voterChecks, int eId)
+        {
+            var voterCheckObj = new VoterCheck();
+            foreach (var item in voterChecks)
+            {
+                if (item.Eid == eId)
+                {
+                    voterCheckObj.Eid = item.Eid;
+                    voterCheckObj.UserId = item.UserId;
+                }
+            }
+            return voterCheckObj;
         }
         public void LoadSingleMakeElection(int id)
         {
@@ -139,35 +174,6 @@ namespace Demo.Web.Models
 
             return newGetElectionDataBO;
         }
-        public void LoadSingleCandidate(int id)
-        {            
-            ElectionCandidate = ConvertToCandidate(id);
-        }
-        public ElectionCandidate ConvertToCandidate(int? id)
-        {
-            var electionCandidateObj = new ElectionCandidate();
-            electionCandidateObj = _registrationContext.ElectionCandidates.Where(x => x.Id == id).Select(item => new ElectionCandidate()
-            {
-                
-                Id = item.Id,
-                Name = item.Name,
-                Address = item.Address,
-                Description = item.Description,
-                Mobile = item.Mobile,
-                NID = item.NID,
-                ImageUrl= FormatFileUrl(item.ImageUrl),
-                Motto=item.Motto,
-                LogoImageUrl= FormatFileUrl(item.LogoImageUrl),
-                PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
-                {
-                    Id = g.Id,
-                    Name = g.Name,
-                    URL = FormatFileUrl(g.URL)
-                }).ToList()
-            }).FirstOrDefault();
-
-            return electionCandidateObj;
-        }
         public void LoadResults()
         {
             ViewResults = ConvertToViewResultList(_getService.GetMakeElectionList());
@@ -175,22 +181,46 @@ namespace Demo.Web.Models
         private IList<ViewResultDataBO> ConvertToViewResultList(IList<MakeElection> makeElections)
         {
             var results = new List<ViewResultDataBO>();
-
+            int resultCheck;
             foreach (var electionItem in makeElections)
             {
-                results.Add(new ViewResultDataBO()
+                resultCheck = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
+
+                if (resultCheck<0)
                 {
-                    Id = electionItem.Id,
-                    ElectionName = electionItem.ElectionName,
-                    ElectionDate = electionItem.ElectionDate,
-                    CDName1 = electionItem.CDName1,
-                    CDName2 = electionItem.CDName2,
-                    CID1 = electionItem.CID1,
-                    CID2 = electionItem.CID2,
-                    Winner = (electionItem.Count1 >= electionItem.Count2) ? electionItem.CDName1 : electionItem.CDName2,
-                    WinnerVote = (electionItem.Count1 >= electionItem.Count2) ? electionItem.Count1 : electionItem.Count2,
-                    WinnerID = (electionItem.Count1 >= electionItem.Count2) ? electionItem.CID1 : electionItem.CID2
-                });
+                    if (electionItem.Count1 != 0 || electionItem.Count2 != 0)
+                    {
+                         results.Add(new ViewResultDataBO()
+                        {
+                            Id = electionItem.Id,
+                            ElectionName = electionItem.ElectionName,
+                            ElectionDate = electionItem.ElectionDate,
+                            CDName1 = electionItem.CDName1,
+                            CDName2 = electionItem.CDName2,
+                            CID1 = electionItem.CID1,
+                            CID2 = electionItem.CID2,
+                            Winner = (electionItem.Count1 >= electionItem.Count2) ? electionItem.CDName1 : electionItem.CDName2,
+                            WinnerVote = (electionItem.Count1 >= electionItem.Count2) ? electionItem.Count1 : electionItem.Count2,
+                            WinnerID = (electionItem.Count1 >= electionItem.Count2) ? electionItem.CID1 : electionItem.CID2
+                        });
+                    }
+                    else
+                    {
+                        results.Add(new ViewResultDataBO()
+                        {
+                            Id = electionItem.Id,
+                            ElectionName = electionItem.ElectionName,
+                            ElectionDate = electionItem.ElectionDate,
+                            CDName1 = electionItem.CDName1,
+                            CDName2 = electionItem.CDName2,
+                            CID1 = electionItem.CID1,
+                            CID2 = electionItem.CID2,
+                            Winner = "Not Elected Yet",
+                            WinnerVote = 0,
+                            WinnerID = 0
+                        });
+                    }                
+                }                            
             }
             return results;
         }

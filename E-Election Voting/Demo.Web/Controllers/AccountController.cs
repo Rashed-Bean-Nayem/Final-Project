@@ -39,7 +39,6 @@ namespace Demo.Web.Controllers
             _emailSender = emailSender;
         }
 
-
         //public async Task<IActionResult> Index()
         //{
         //    await _roleManager.CreateAsync(new Role { Name = "Admin" });
