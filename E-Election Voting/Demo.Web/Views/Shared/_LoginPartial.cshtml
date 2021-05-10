@@ -6,14 +6,11 @@
 <b>
     <ul class="navbar-nav">
         @if (SignInManager.IsSignedIn(User))
-        {
-        
-        <li class="nav-item dropdown">
-            
+        {  
+        <li class="nav-item dropdown">   
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <font color="white">Elections</font>
                 </a>
-            
                 <font color="white">
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="GetAllElection"><b>Vote</b></a>
@@ -21,24 +18,16 @@
                         <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="ViewResults"><b>Results</b></a>
                     </div>
                 </font>
-</li>
-      
-            @*<li class="nav-item">
-                <a asp-area="" asp-controller="Election" asp-action="GetAllElection" class="nav-link">Elections</a>
-            </li>
-            <li class="nav-item">
-                <a asp-area="" asp-controller="Election" asp-action="ViewResults" class="nav-link">Results</a>
-            </li>*@
+        </li>
             <li class="nav-item">
                 <a asp-area="" asp-controller="Voter" asp-action="VoterProfile" class="nav-link"><font color="white">Profile</font></a>
             </li>
-
             @*<li class="nav-item">
                 <a class="nav-link text-dark" asp-controller="Voter" asp-action="VoterProfile" title="Manage">Hello @User.Identity.Name!</a>
             </li>*@
             <li class="nav-item">
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                    <button type="submit" class="nav-link btn btn-link text-dark test"><b> <font color="white">Logout</font></b> </button>
+                    <button type="submit" class="nav-link btn btn-link text-dark test"><b><font color="white"><b>Logout</b></font></b> </button>
                 </form>
             </li>
         }
@@ -51,5 +40,5 @@
                 <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"><font color="white">Login</font></a>
             </li>
         }
-    </ul>
+      </ul>
 </b>

@@ -6,9 +6,9 @@
     dynamic data = ViewBag.Data;
 }
 @model ViewModel;
-<style>
 
-    /*body {
+<style>
+   /* body {
         background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     }*/
 
@@ -26,7 +26,7 @@
 
         .profile-img img {
             width: 30%;
-            height: 40%;
+            height: 10%;
         }
 
         .profile-img .file {
@@ -123,114 +123,121 @@
         color: #0062cc;
     }
 </style>
-
-<div class="container emp-profile">
-
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <div >
-                    <img src="@Model.ElectionCandidate.ImageUrl" width="80" height="70" alt="Profile Photo" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="@Model.ElectionCandidate.ImageUrl" width="100" height="50" alt="" />
+                       
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            @Model.ElectionCandidate.Name
+                        </h5>
+                        <h6>
+                            Registered Candidate
+                        </h6>
+                      
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li>*@
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    @*<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />*@
+                    <a asp-controller="Election" asp-action="GetAllElection" asp-route-id="" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Back</button></a>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="profile-head">
-                    <h5>
-                        </br>
-                        @Model.ElectionCandidate.Name
-                    </h5>
-                    <h6>
-                        Registered Candidate
-                    </h6>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Documents</p>
+                        <div class="col-md-6">
+                            @foreach (var item in Model.ElectionCandidate.PdfListUrl)
+                            {
+                                <a class="btn btn-outline-primary" href="@item.URL" target="_blank">Read Now</a>
+                            }
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="btn-group col-md-2">
-                <a asp-controller="Election" asp-action="GetAllElection" asp-route-id="" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Back</button></a>
-            </div>     
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Name</label>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                           
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>NID</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Model.ElectionCandidate.NID</p>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <p>@Model.ElectionCandidate.Name</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Address</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Model.ElectionCandidate.Address</p>
+                                </div>
                             </div>
-                        </div>
-                        @*<div class="row">
-            <div class="col-md-4">
-                <label>Email</label>
-            </div>
-            <div class="col-md-6">
-                <p>@User.Identity.Name</p>
-            </div>
-        </div>*@
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>NID</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Model.ElectionCandidate.Mobile</p>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <p>@Model.ElectionCandidate.NID</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>About</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Model.ElectionCandidate.Description</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@Model.ElectionCandidate.Mobile</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Address</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@Model.ElectionCandidate.Address</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>About</label>
-                            </div>
-                            <div class="col-md-8">
-                                <p>@Model.ElectionCandidate.Description</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Motto</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@Model.ElectionCandidate.Motto</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Logo</label>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="@Model.ElectionCandidate.LogoImageUrl" width="100" height="50" alt="Profile Photo" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Documents</label>
-                            </div>
-                            <div class="col-md-6">
-                                @foreach (var item in Model.ElectionCandidate.PdfListUrl)
-                                {
-                                    <a class="btn btn-outline-primary" href="@item.URL" target="_blank">Read Now</a>
-                                }
-
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Motto</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.ElectionCandidate.Motto</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Logo</label>
+                                    </div>
+                                    <div class="col-md-6">        
+                                        <img src="@Model.ElectionCandidate.LogoImageUrl" width="100" height="50" alt="Profile Photo" />
+                                    </div>
+                                </div>
+                                @*<div class="row">
+                                    <div class="col-md-6">
+                                        <label>Documents</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        @foreach (var item in Model.ElectionCandidate.PdfListUrl)
+                                        {
+                                            <a class="btn btn-outline-primary" href="@item.URL" target="_blank">Read Now</a>
+                                        }
+                                    </div>
+                                </div>*@
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>

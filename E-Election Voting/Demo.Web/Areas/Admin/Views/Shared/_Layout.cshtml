@@ -15,6 +15,70 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        li a:hover {
+            background-color: #5cb85c;
+        }
+
+        li form :hover {
+            background-color: #5cb85c;
+        }
+
+
+        html {
+            font-size: 14px;
+        }
+
+        .container {
+            font-size: 14px;
+            color: #666666;
+            font-family: "Open Sans";
+        }
+
+        .card-custom {
+            overflow: hidden;
+            min-height: 450px;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+        }
+
+        .card-custom-img {
+            height: 200px;
+            min-height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-color: inherit;
+        }
+
+            .card-custom-img::after {
+                position: absolute;
+                content: '';
+                top: 161px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-top-width: 40px;
+                border-right-width: 0;
+                border-bottom-width: 0;
+                border-left-width: 545px;
+                border-left-width: calc(575px - 5vw);
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-left-color: inherit;
+            }
+
+        .card-custom-avatar img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            top: 100px;
+            left: 1.25rem;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -93,7 +157,7 @@
             </footer>*@
         <footer class="border-top footer main-footer text-muted text-center">
             <div class="container">
-                &copy; @DateTime.Now.Year Election Commission
+                <b>&copy; @DateTime.Now.Year Election Commission</b>    
             </div>
         </footer>
         <aside class="control-sidebar control-sidebar-dark"></aside>

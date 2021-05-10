@@ -35,7 +35,7 @@ namespace Demo.Foundation.Contexts
         }
         public DbSet<ElectionCandidate> ElectionCandidates { get; set; }
         public DbSet<ElectionVoter> ElectionVoters { get; set; }
-        public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
+       // public DbSet<ElectionRegistration> ElectionRegistrations { get; set; }
         public DbSet<MakeElection> MakeElections { get; set; }
         public DbSet<PdfList> PdfLists { get; set; }
         public DbSet<VoterCheck> VoterChecks { get; set; }
