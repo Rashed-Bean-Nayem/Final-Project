@@ -30,6 +30,7 @@ namespace Demo.Web
               .InstancePerLifetimeScope();
 
             builder.RegisterType<AdditionModel>().AsSelf();
+            builder.RegisterType<DeleteModel>().AsSelf();
             builder.RegisterType<RegistrationData>().AsSelf();
             builder.RegisterType<ViewModel>().AsSelf();
             builder.RegisterType<MakeElection>().AsSelf();

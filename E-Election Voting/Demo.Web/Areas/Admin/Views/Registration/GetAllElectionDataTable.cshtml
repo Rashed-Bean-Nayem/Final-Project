@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Elections";
+}
+
+@model ViewModel;
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
+<div class="container">
+    <h1>Elections</h1>
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Election Name</th>
+                <th>Election Date</th>
+                <th>Action</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var elections in Model.ElectionsDataTable)
+            {
+                <tr>                   
+                    <td>@elections.ElectionName</td>
+                    <td>@elections.ElectionDate</td>
+                    <td><a asp-area="admin" asp-controller="Registration" asp-action="DeleteSingleElection" asp-route-id=@elections.Id class="btn btn-sm btn-danger">Delete</a></td>    
+                </tr>
+            }
+            </tbody>
+    </table>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+</script>
+

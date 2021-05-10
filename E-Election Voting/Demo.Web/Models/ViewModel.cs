@@ -22,6 +22,7 @@ namespace Demo.Web.Models
         public IList<NewGetElectionDataBO> MixedClass{ get; set; }
         public IList<ViewResultDataBO> ViewResults { get; set; }
         public IList<MakeElection> MakeElections { get; set; }
+        public IList<MakeElection> ElectionsDataTable { get; set; } 
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
         public VoterCheck VoterCheck { get; set; }
@@ -116,6 +117,34 @@ namespace Demo.Web.Models
             }
             return electionList;
         }
+
+
+        public void LoadElectionsDataTable() 
+        {
+            ElectionsDataTable = ConvertToElectionListDataTable(_getService.GetMakeElectionList()); 
+        }
+        private IList<MakeElection> ConvertToElectionListDataTable(IList<MakeElection> makeElections)
+        {
+           
+            IList<MakeElection> electionList = new List<MakeElection>();
+
+            foreach (var electionItem in makeElections)
+            {     
+                    electionList.Add(new MakeElection()
+                    {
+                        Id = electionItem.Id,
+                        ElectionName = electionItem.ElectionName,
+                        ElectionDate = electionItem.ElectionDate,
+                        CDName1 = electionItem.CDName1,
+                        CDName2 = electionItem.CDName2,
+                        CID1 = electionItem.CID1,
+                        CID2 = electionItem.CID2
+                    });                
+            }
+            return electionList;
+        }
+
+
         public void LoadVoterCheck(int eId, string userId)
         {
             VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId);

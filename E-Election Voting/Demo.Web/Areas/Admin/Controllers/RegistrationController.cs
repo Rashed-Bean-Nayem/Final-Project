@@ -36,5 +36,17 @@ namespace Demo.Web.Areas.Admin.Controllers
             }
             return View();
         }
+        public IActionResult GetAllElectionDataTable()
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadElectionsDataTable(); 
+            return View(model);
+        }
+        public IActionResult DeleteSingleElection(int id) 
+        {
+            var model = Startup.AutofacContainer.Resolve<DeleteModel>();
+            model.DeleteElection(id); 
+            return RedirectToAction(nameof(GetAllElectionDataTable));
+        }
     }
 }
