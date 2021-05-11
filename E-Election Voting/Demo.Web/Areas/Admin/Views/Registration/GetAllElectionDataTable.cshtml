@@ -13,6 +13,7 @@
             <tr>
                 <th>Election Name</th>
                 <th>Election Date</th>
+                <th>Status</th>
                 <th>Action</th>                
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <tr>                   
                     <td>@elections.ElectionName</td>
                     <td>@elections.ElectionDate</td>
+                    <td>@elections.CDName1</td>
                     <td><a asp-area="admin" asp-controller="Registration" asp-action="DeleteSingleElection" asp-route-id=@elections.Id class="btn btn-sm btn-danger">Delete</a></td>    
                 </tr>
             }

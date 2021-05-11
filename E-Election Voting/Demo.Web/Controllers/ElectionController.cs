@@ -23,6 +23,22 @@ namespace Demo.Web.Controllers
             model.LoadElections();
             return View(model);
         }
+        public IActionResult GetAllUpcomingElection() 
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadUpcomingElections();
+            return View(model);
+        }
+        public IActionResult GetSingleUpcomingElection(int id) 
+        {
+            
+           // var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+           // model.LoadVoterCheck(id, UserId);
+            model.LoadSingleMakeElection(id);
+
+            return View(model);
+        }
         public IActionResult GetElection(int id)
         {
             // var url = HttpContext.Request.Path.Value;

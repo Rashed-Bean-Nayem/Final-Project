@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Upcoming Election";
+}
+@model ViewModel;
+<div class="container">
+    <h5><b>Upcoming Elections</b></h5>
+    <div class="row">
+
+        @foreach (var elections in Model.UpcomingElections)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/images/thequint_2021-02_00c2feea-de12-4212-b58b-cd883723960c_Election.jpg" width="100%" height="200" alt="Photo" />
+                    <div class="card-body">
+                        <h3 class="card-title">@elections.ElectionName</h3>
+                        <p class="card-text">@elections.ElectionDate</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a asp-controller="Election" asp-action="GetSingleUpcomingElection" asp-route-id=@elections.Id class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

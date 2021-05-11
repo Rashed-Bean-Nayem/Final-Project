@@ -22,7 +22,8 @@ namespace Demo.Web.Models
         public IList<NewGetElectionDataBO> MixedClass{ get; set; }
         public IList<ViewResultDataBO> ViewResults { get; set; }
         public IList<MakeElection> MakeElections { get; set; }
-        public IList<MakeElection> ElectionsDataTable { get; set; } 
+        public IList<MakeElection> ElectionsDataTable { get; set; }
+        public IList<MakeElection> UpcomingElections { get; set; } 
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
         public VoterCheck VoterCheck { get; set; }
@@ -101,7 +102,35 @@ namespace Demo.Web.Models
             foreach (var electionItem in makeElections)
             {
                 result = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
-                if (result >= 0)
+                if (result == 0)
+                {
+                    electionList.Add(new MakeElection()
+                    {
+                        Id = electionItem.Id,
+                        ElectionName = electionItem.ElectionName,
+                        ElectionDate = electionItem.ElectionDate,
+                        CDName1 = electionItem.CDName1,
+                        CDName2 = electionItem.CDName2,
+                        CID1 = electionItem.CID1,
+                        CID2 = electionItem.CID2
+                    });
+                }
+            }
+            return electionList;
+        }
+        public void LoadUpcomingElections() 
+        {
+            UpcomingElections = ConvertToUpcomingElections(_getService.GetMakeElectionList());
+        }
+        private IList<MakeElection> ConvertToUpcomingElections(IList<MakeElection> makeElections)
+        {
+            int result;
+            IList<MakeElection> electionList = new List<MakeElection>();
+
+            foreach (var electionItem in makeElections)
+            {
+                result = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
+                if (result == 1)
                 {
                     electionList.Add(new MakeElection()
                     {
@@ -125,21 +154,43 @@ namespace Demo.Web.Models
         }
         private IList<MakeElection> ConvertToElectionListDataTable(IList<MakeElection> makeElections)
         {
-           
+            int result;
             IList<MakeElection> electionList = new List<MakeElection>();
-
+           
             foreach (var electionItem in makeElections)
-            {     
+            {
+                result = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
+                if (result==0)
+                {
                     electionList.Add(new MakeElection()
                     {
                         Id = electionItem.Id,
                         ElectionName = electionItem.ElectionName,
                         ElectionDate = electionItem.ElectionDate,
-                        CDName1 = electionItem.CDName1,
-                        CDName2 = electionItem.CDName2,
-                        CID1 = electionItem.CID1,
-                        CID2 = electionItem.CID2
-                    });                
+                        CDName1 = "Running",
+                    });
+                }
+                else if(result<0)
+                {
+                    electionList.Add(new MakeElection()
+                    {
+                        Id = electionItem.Id,
+                        ElectionName = electionItem.ElectionName,
+                        ElectionDate = electionItem.ElectionDate,
+                        CDName1 = "Concreted",
+                    });
+                }
+                else
+                {
+                    electionList.Add(new MakeElection()
+                    {
+                        Id = electionItem.Id,
+                        ElectionName = electionItem.ElectionName,
+                        ElectionDate = electionItem.ElectionDate,
+                        CDName1 = "Upcoming",
+                    });
+                }
+                        
             }
             return electionList;
         }

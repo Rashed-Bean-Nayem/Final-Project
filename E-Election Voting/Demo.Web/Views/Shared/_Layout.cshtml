@@ -75,27 +75,29 @@
 <body style="background-color: #B7BBCA;">
     <header>       
             <b>   
-                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #434B43;">
-                        <div class="container">                           
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #434B43;">
+                    <div class="container">                           
                             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <font color="white">E-Election Voting</font></a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                                    <partial name="_LoginPartial" />
-                                    <ul class="navbar-nav flex-grow-1 ml-auto topnav">
-                                        <li class="nav-item active">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"> <font color="white">Home</font> <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><font color="white">Privacy</font></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </font>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                            <partial name="_LoginPartial" />
+                            <ul class="navbar-nav flex-grow-1 ml-auto topnav">
+                                <li class="nav-item active">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><font color="white">Home</font> <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About"><font color="white">About</font></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><font color="white">Privacy</font></a>
+                                </li>
+                            </ul>
                         </div>
-                    </nav>                
+                    </div>
+                </nav>                
             </b>           
 </header>
     <div class="container"  >

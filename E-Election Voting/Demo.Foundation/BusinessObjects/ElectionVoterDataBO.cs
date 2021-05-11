@@ -17,7 +17,7 @@ namespace Demo.Foundation.BusinessObjects
         public string FirstName { get; set; }
         [StringLength(100, MinimumLength = 2)]
         [Required(ErrorMessage = "Please enter the Last Name")]
-        [Display(Name = "lAST Name")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; } 
         [StringLength(100, MinimumLength = 2)]
         [Required(ErrorMessage = "Please enter the Address")]
@@ -31,7 +31,7 @@ namespace Demo.Foundation.BusinessObjects
         [Display(Name = "Date Of Birth")]
         public DateTime? DateOfBirth { get; set; }
         [Required(ErrorMessage = "Please select the cover photo ")]
-        [Display(Name = "Cover Photo")]
+        [Display(Name = "Profile Photo")]
         public IFormFile CoverPhoto { get; set; }
     }
 }

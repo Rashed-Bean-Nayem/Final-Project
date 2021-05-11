@@ -2672,3 +2672,6 @@ E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Demo.Web.genruntimeconfig.cache
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Election\ViewResults.cshtml.g.cs
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Registration\GetAllElectionDataTable.cshtml.g.cs
+E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Election\GetAllUpcomingElection.cshtml.g.cs
+E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Election\GetSingleUpcomingElection.cshtml.g.cs
