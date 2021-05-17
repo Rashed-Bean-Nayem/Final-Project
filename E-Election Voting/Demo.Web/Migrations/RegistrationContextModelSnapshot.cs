@@ -19,6 +19,27 @@ namespace Demo.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Demo.Foundation.Entities.ApiClass", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("ApiDateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ApiName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ApiNid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApiClasses");
+                });
+
             modelBuilder.Entity("Demo.Foundation.Entities.ElectionCandidate", b =>
                 {
                     b.Property<int>("Id")
@@ -53,29 +74,6 @@ namespace Demo.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ElectionCandidates");
-                });
-
-            modelBuilder.Entity("Demo.Foundation.Entities.ElectionRegistration", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CandidateId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ElectionCandidateId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("EnrollDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ElectionCandidateId");
-
-                    b.ToTable("ElectionRegistrations");
                 });
 
             modelBuilder.Entity("Demo.Foundation.Entities.ElectionVoter", b =>
@@ -186,13 +184,6 @@ namespace Demo.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VoterChecks");
-                });
-
-            modelBuilder.Entity("Demo.Foundation.Entities.ElectionRegistration", b =>
-                {
-                    b.HasOne("Demo.Foundation.Entities.ElectionCandidate", "ElectionCandidate")
-                        .WithMany()
-                        .HasForeignKey("ElectionCandidateId");
                 });
 
             modelBuilder.Entity("Demo.Foundation.Entities.PdfList", b =>

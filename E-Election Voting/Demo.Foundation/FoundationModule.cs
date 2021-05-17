@@ -47,6 +47,8 @@ namespace Foundation
                 .InstancePerLifetimeScope();
             builder.RegisterType<VoterCheckRepository>().As<IVoterCheckRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<ApiEntityRepository>().As<IApiEntityRepository>()
+                .InstancePerLifetimeScope();
 
             base.Load(builder);
         }

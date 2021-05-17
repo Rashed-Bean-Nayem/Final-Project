@@ -14,5 +14,6 @@ namespace Demo.Foundation.UnitOfworks
         IRegistrationRepository RegistrationRepository { get; set; }
         IMakeElectionRepository MakeElectionRepository { get; set; }
         IVoterCheckRepository VoterCheckRepository { get; set; }
+        IApiEntityRepository ApiEntityRepository { get; set; }
     }
 }

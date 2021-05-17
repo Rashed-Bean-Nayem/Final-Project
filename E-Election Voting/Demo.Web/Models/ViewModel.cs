@@ -26,6 +26,8 @@ namespace Demo.Web.Models
         public IList<MakeElection> UpcomingElections { get; set; } 
         public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
+        public ApiClass ApiClass { get; set; }
+
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
         private const string IMAGE_PATH = "temp";
@@ -51,6 +53,7 @@ namespace Demo.Web.Models
             var electionVoterObj = new ElectionVoter();
             foreach (var item in electionVoter)
             {
+                electionVoterObj.Id = item.Id;
                 electionVoterObj.Name = item.Name;
                 electionVoterObj.NID = item.NID;
                 electionVoterObj.Mobile = item.Mobile;
@@ -146,8 +149,6 @@ namespace Demo.Web.Models
             }
             return electionList;
         }
-
-
         public void LoadElectionsDataTable() 
         {
             ElectionsDataTable = ConvertToElectionListDataTable(_getService.GetMakeElectionList()); 
@@ -189,13 +190,10 @@ namespace Demo.Web.Models
                         ElectionDate = electionItem.ElectionDate,
                         CDName1 = "Upcoming",
                     });
-                }
-                        
+                }                       
             }
             return electionList;
         }
-
-
         public void LoadVoterCheck(int eId, string userId)
         {
             VoterCheck = ConvertToVoterCheck(_getService.GetVoterCheck(userId), eId);

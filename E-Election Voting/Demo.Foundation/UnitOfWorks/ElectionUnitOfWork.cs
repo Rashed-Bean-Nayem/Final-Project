@@ -14,13 +14,16 @@ namespace Demo.Foundation.UnitOfworks
         public IRegistrationRepository RegistrationRepository { get; set; }
         public IMakeElectionRepository MakeElectionRepository { get; set; }
         public IVoterCheckRepository VoterCheckRepository { get; set; }
+        public IApiEntityRepository ApiEntityRepository { get; set; }
+
 
         public ElectionUnitOfWork(RegistrationContext context, 
             IVoterRepository productRepositroy,
             ICandidateRepository categoryRepository,
             IRegistrationRepository registrationRepository,
             IMakeElectionRepository makeElectionRepository,
-            IVoterCheckRepository voterCheckRepository
+            IVoterCheckRepository voterCheckRepository,
+            IApiEntityRepository apiEntityRepository
             )
             : base(context)
         {
@@ -29,6 +32,7 @@ namespace Demo.Foundation.UnitOfworks
             RegistrationRepository= registrationRepository;
             MakeElectionRepository = makeElectionRepository;
             VoterCheckRepository = voterCheckRepository;
+            ApiEntityRepository = apiEntityRepository;
         }
     }
 }

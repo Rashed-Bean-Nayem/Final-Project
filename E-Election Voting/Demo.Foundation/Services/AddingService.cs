@@ -39,6 +39,11 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.VoterCheckRepository.Add(voterCheck);
             _electionUnitOfWork.Save();
         }
+        public void AddApiClass(ApiClass apiClass)
+        {
+            _electionUnitOfWork.ApiEntityRepository.Add(apiClass);
+            _electionUnitOfWork.Save();
+        }
 
         public void EditElection(MakeElection makeElection)
         {

@@ -7,6 +7,7 @@ using Autofac;
 using Microsoft.AspNetCore.Mvc;
 using Demo.Web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Demo.Foundation.BusinessObjects;
 
 namespace Demo.Web.Areas.Admin.Controllers
 {
@@ -33,6 +34,22 @@ namespace Demo.Web.Areas.Admin.Controllers
                 var indexModel = Startup.AutofacContainer.Resolve<AdditionModel>();
                 indexModel.AddModelElection(registrationData);
                 return RedirectToAction(nameof(Registration), new { isSuccess = true });
+            }
+            return View();
+        }
+        public IActionResult ApiEntity(bool isSuccess = false) 
+        {
+            ViewBag.IsSuccess = isSuccess;
+            return View();
+        }
+        [ValidateAntiForgeryToken, HttpPost]
+        public IActionResult ApiEntity(ApiClassDataBO apiClassDataBO) 
+        {
+            if (ModelState.IsValid)
+            {
+                var model = Startup.AutofacContainer.Resolve<AdditionModel>();
+                model.AddModelApiClass(apiClassDataBO);
+                return RedirectToAction(nameof(ApiEntity), new { isSuccess = true });
             }
             return View();
         }

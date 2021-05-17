@@ -9,7 +9,7 @@ using Demo.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
 using System.Security.Claims;
-
+using Microsoft.AspNetCore.Http;
 
 namespace Demo.Web.Controllers
 {
@@ -19,21 +19,36 @@ namespace Demo.Web.Controllers
         {
             return View();
         }
-        public IActionResult AddVoter()
+        public IActionResult VoterApiForm()
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            model.LoadSingleVoter(UserId);
+            return View(model);
+        }
+       
+        [HttpPost]
+        [Route("AddVoter")]
+        public IActionResult AddVoter(IFormCollection collection)
+        {
+            string user2 = collection["username"];
+            var model = Startup.AutofacContainer.Resolve<ApiRecordFormData>();
+            model.LoadSingleApiRecord(user2);           
+            return View(model);
+        }
+        public IActionResult AddVoterUpdate()
         {
             return View();
         }
+      
         [HttpPost]
-        public IActionResult AddVoter(ElectionVoterDataBO electionVoterData)
+        [ValidateAntiForgeryToken]
+        public IActionResult AddVoterPost(ApiRecordFormData apiRecordFormData) 
         {
-            electionVoterData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (ModelState.IsValid)
-            {
-                var model = Startup.AutofacContainer.Resolve<AdditionModel>();
-                model.AddModelVoter(electionVoterData);
-                return RedirectToAction(nameof(VoterProfile));
-            }
-            return View();
+            apiRecordFormData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = Startup.AutofacContainer.Resolve<AdditionModel>();
+            model.AddModelVoter(apiRecordFormData);
+            return RedirectToAction(nameof(VoterProfile));
         }
         public ViewResult VoterProfile()
         {

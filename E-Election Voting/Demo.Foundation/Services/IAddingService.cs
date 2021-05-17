@@ -13,5 +13,6 @@ namespace Demo.Foundation.Services
         void AddElection(MakeElection makeElection);
         void AddVoterCheck(VoterCheck voterCheck); 
         void EditElection(MakeElection makeElection);
+        void AddApiClass(ApiClass apiClass);  
     }
 }

@@ -16,5 +16,6 @@ namespace Demo.Foundation.Services
         IList<MakeElection> GetMakeElectionList();
         MakeElection GetSingleMakeElection(int id);
         ElectionCandidate GetSingleElectionCandidate(int id);
+        IList<ApiClass> GetSingleApiRecord(string apiNid);
     }
 }

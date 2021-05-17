@@ -15,11 +15,23 @@ namespace Demo.Web
     {
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
+        public ElectionVoter ElectionVoter { get; set; }
+        public ElectionVoter ElectionVoter2 { get; set; }
         public AdditionModel(IAddingService addingService,
             IGetService getService)
         {
             _addingService = addingService;
             _getService = getService;
+        }
+
+        public void AddModelApiClass(ApiClassDataBO apiClassDataBO) 
+        {
+            _addingService.AddApiClass(new ApiClass
+            {
+                ApiName = apiClassDataBO.ApiName,
+                ApiNid= apiClassDataBO.ApiNid,
+                ApiDateOfBirth=apiClassDataBO.ApiDateOfBirth
+            });
         }
         public void AddModelCandidate(ElectionCandidateDataBO electionCandidateData)
         {
@@ -44,19 +56,56 @@ namespace Demo.Web
                 Motto=electionCandidateData.Motto,
                 LogoImageUrl= FilePath(electionCandidateData.LogoImageFile)
             });
-        }        
-        public void AddModelVoter(ElectionVoterDataBO electionVoterData)
+        }
+        public void AddModelVoter(ApiRecordFormData apiRecordFormData)
         {
-            _addingService.AddVoter(new ElectionVoter
+            ElectionVoter2= LoadSingleVoterPrivate(apiRecordFormData.UserId);
+
+            if (apiRecordFormData.NID==null)
             {
-                UserId = electionVoterData.UserId,
-                Name = electionVoterData.FirstName+" "+electionVoterData.LastName,
-                Address = electionVoterData.Address,
-                Mobile = electionVoterData.Mobile,
-                NID = electionVoterData.NID,
-                DateOfBirth = electionVoterData.DateOfBirth,
-                CoverPhotoUrl = FilePath(electionVoterData.CoverPhoto)
-            });
+                _addingService.AddVoter(new ElectionVoter
+                {
+                    UserId = apiRecordFormData.UserId,
+                    Name = ElectionVoter2.Name,
+                    Address = apiRecordFormData.Address,
+                    Mobile = apiRecordFormData.Mobile,
+                    NID = ElectionVoter2.NID,
+                    DateOfBirth=ElectionVoter2.DateOfBirth,
+                    CoverPhotoUrl = FilePath(apiRecordFormData.CoverPhoto)
+                });
+            }
+            else
+            {
+                _addingService.AddVoter(new ElectionVoter
+                {
+                    UserId = apiRecordFormData.UserId,
+                    Name = apiRecordFormData.FirstName,
+                    Address = apiRecordFormData.Address,
+                    Mobile = apiRecordFormData.Mobile,
+                    NID = apiRecordFormData.NID,
+                    DateOfBirth = apiRecordFormData.DateOfBirth,
+                    CoverPhotoUrl = FilePath(apiRecordFormData.CoverPhoto)
+                });
+            }
+        }
+        public ElectionVoter LoadSingleVoterPrivate(string userId) 
+        {
+           return ConvertToVoter(_getService.GetVoter(userId));
+        }
+        public ElectionVoter ConvertToVoter(IList<ElectionVoter> electionVoter)
+        {
+            var electionVoterObj = new ElectionVoter();
+            foreach (var item in electionVoter)
+            {
+                electionVoterObj.Id = item.Id;
+                electionVoterObj.Name = item.Name;
+                electionVoterObj.NID = item.NID;
+                electionVoterObj.Mobile = item.Mobile;
+                electionVoterObj.DateOfBirth = item.DateOfBirth;
+                electionVoterObj.Address = item.Address;
+                electionVoterObj.CoverPhotoUrl = FormatFileUrl(item.CoverPhotoUrl);
+            }
+            return electionVoterObj;
         }
         public void AddModelElection(RegistrationData registrationData)
         {

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "API Data Form";
+}
+@model ApiClassDataBO;
+
+<div class="container">
+    <div class="col-md-6">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">API Data Form</h3>
+            </div>
+            @if (ViewBag.IsSuccess == true)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Done! </strong>New API record is added successfully. <br />
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+            <form method="post" asp-area="Admin" asp-controller="Registration" asp-action="ApiEntity" asp-antiforgery="true" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="ApiNid"></label>
+                            <input asp-for="ApiNid" class="form-control" placeholder="NID">
+                            <span asp-validation-for="ApiNid" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="ApiName"></label>
+                            <input asp-for="ApiName" class="form-control" placeholder="Name">
+                            <span asp-validation-for="ApiName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="ApiDateOfBirth"></label>
+                            <input asp-for="ApiDateOfBirth" class="form-control" placeholder="Mobile">
+                            <span asp-validation-for="ApiDateOfBirth" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save Data" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
