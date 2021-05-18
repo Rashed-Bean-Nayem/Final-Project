@@ -8,36 +8,32 @@
         <h3><b>@Model.ElectionName's Candidates</b></h3>
         <h5><b>@Model.ElectionDate</b></h5>
     </b>
-        <div class="row">
+    <div class="row">
 
-            @foreach (var elections in Model.MixedClass)
-            {
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="@elections.LogoImageUrl" width="100%" height="200" alt="Photo" />
-                        <div class="card-custom-avatar">
-                            <img class="img-fluid" src="@elections.ImageUrl" alt="Avatar" />
-                        </div>
-                        <div class="card-body">
-                            <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@elections.CandidateId><h3 class="card-title">@elections.CandidateName</h3></a></font>
-                            <p class="card-text">@elections.Motto</p>
-                                <label asp-for="EId" hidden></label>
-                                <input hidden asp-for="EId" class="form-control" value="@elections.EId">
-                                <label asp-for="CandName" hidden></label>
-                                <input hidden asp-for="CandName" class="form-control" value="@elections.CandidateName">
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    @*<div class="btn-group">
-                                        <button class="btn btn-primary profile-button" type="submit">Vote</button>
-                                    </div>*@
-                                    <div class="btn-group">
-                                        <a asp-controller="Election" asp-action="GetAllUpcomingElection" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Back</button></a>
-                                    </div>
-                                </div>
+        @foreach (var elections in Model.MixedClass)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="@elections.LogoImageUrl" width="100%" height="200" alt="Photo" />
+                    <div class="card-custom-avatar">
+                        <img class="img-fluid" src="@elections.ImageUrl" alt="Avatar" />
+                    </div>
+                    <div class="card-body">
+                        <font color="blue"> <a asp-controller="Election" asp-action="GetCandidate" asp-route-id=@elections.CandidateId><h3 class="card-title">@elections.CandidateName</h3></a></font>
+                        <p class="card-text">@elections.Motto</p>
+                        <label asp-for="EId" hidden></label>
+                        <input hidden asp-for="EId" class="form-control" value="@elections.EId">
+                        <label asp-for="CandName" hidden></label>
+                        <input hidden asp-for="CandName" class="form-control" value="@elections.CandidateName">
+                        <div class="d-flex justify-content-between align-items-center">
                         </div>
                     </div>
                 </div>
-            }
+            </div>
+        }       
+        <div class="col-md-2">
+           <button class="btn btn-primary" onclick="history.go(-1)"> Back</button> 
         </div>
+    </div>
 </div>
 
