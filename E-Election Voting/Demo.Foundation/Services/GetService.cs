@@ -31,6 +31,10 @@ namespace Demo.Foundation.Services
         {
             return _registrationUnitOfWork.VoterRepository.Get(option => option.UserId == userId);
         }
+        public IList<ElectionVoter> GetApiDetails(string apiNid)  
+        {
+            return _registrationUnitOfWork.VoterRepository.Get(option => option.NID == apiNid);
+        }
         public IList<ApiClass> GetSingleApiRecord(string apiNid)
         {
             return _registrationUnitOfWork.ApiEntityRepository.Get(option => option.ApiNid == apiNid);

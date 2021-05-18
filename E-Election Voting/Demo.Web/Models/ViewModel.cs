@@ -24,9 +24,9 @@ namespace Demo.Web.Models
         public IList<MakeElection> MakeElections { get; set; }
         public IList<MakeElection> ElectionsDataTable { get; set; }
         public IList<MakeElection> UpcomingElections { get; set; } 
-        public MakeElection MakeSingleElection { get; set; }
+        //public MakeElection MakeSingleElection { get; set; }
         public ElectionVoter ElectionVoter { get; set; }
-        public ApiClass ApiClass { get; set; }
+       // public ApiClass ApiClass { get; set; }
 
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
@@ -247,7 +247,6 @@ namespace Demo.Web.Models
                 LogoImageUrl = electionCandidateOBJ2.LogoImageUrl,
                 Motto = electionCandidateOBJ2.Motto,
                 CandidateName = electionCandidateOBJ2.Name
-
             });
 
             return newGetElectionDataBO;

@@ -26,6 +26,10 @@ namespace Demo.Web.Models
         [Required(ErrorMessage = "Please select the cover photo ")]
         [Display(Name = "Profile Photo")]
         public IFormFile CoverPhoto { get; set; }
+
+        public ApiClass ApiClasses { get; set; }
+        public ElectionVoter ElectionVoterCheck { get; set; }
+
         private readonly IGetService _getService;
         public ApiRecordFormData(IGetService getService)
         {
@@ -35,7 +39,7 @@ namespace Demo.Web.Models
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
         }
-        public ApiClass ApiClasses { get; set; }
+       
         public void LoadSingleApiRecord(string apiNid)
         {
             ApiClasses = ConvertToSongleApiRecord(_getService.GetSingleApiRecord(apiNid));
@@ -50,6 +54,20 @@ namespace Demo.Web.Models
                 apiClassObj.ApiDateOfBirth = item.ApiDateOfBirth;
             }
             return apiClassObj;
+        }
+        public void LoadSingleCheckApiNid(string apiNid)
+        {
+            ElectionVoterCheck = ConvertToCheckApiNid(_getService.GetApiDetails(apiNid));
+        }
+        public ElectionVoter ConvertToCheckApiNid(IList<ElectionVoter> electionVoter)
+        {
+            var electionVoterObj = new ElectionVoter();
+            foreach (var item in electionVoter)
+            {
+                electionVoterObj.Id = item.Id;
+                electionVoterObj.NID = item.NID;
+            }
+            return electionVoterObj;
         }
     }
 }

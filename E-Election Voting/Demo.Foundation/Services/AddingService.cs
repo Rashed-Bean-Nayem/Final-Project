@@ -13,7 +13,6 @@ namespace Demo.Foundation.Services
         {
             _electionUnitOfWork = electionUnitOfWork;
         }
-
         public void AddCandidate(ElectionCandidate electionCandidate)
         {
             _electionUnitOfWork.CandidateRepository.Add(electionCandidate);
@@ -22,6 +21,15 @@ namespace Demo.Foundation.Services
         public void AddVoter(ElectionVoter electionVoter)
         {
             _electionUnitOfWork.VoterRepository.Add(electionVoter);
+            _electionUnitOfWork.Save();
+        }
+        public void EditVoter(ElectionVoter electionVoter)
+        {
+            var obj = _electionUnitOfWork.VoterRepository.GetById(electionVoter.Id);
+            obj.Mobile = electionVoter.Mobile;
+            obj.Address = electionVoter.Address;
+            obj.CoverPhotoUrl = electionVoter.CoverPhotoUrl;
+            _electionUnitOfWork.VoterRepository.Edit(obj);
             _electionUnitOfWork.Save();
         }
         public void AddRegistration(ElectionRegistration electionRegistration)
@@ -34,6 +42,14 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.MakeElectionRepository.Add(makeElection);
             _electionUnitOfWork.Save();
         }
+        public void EditElection(MakeElection makeElection)
+        {
+            var obj = _electionUnitOfWork.MakeElectionRepository.GetById(makeElection.Id);
+            obj.Count1 = makeElection.Count1;
+            obj.Count2 = makeElection.Count2;
+            _electionUnitOfWork.MakeElectionRepository.Edit(obj);
+            _electionUnitOfWork.Save();
+        }
         public void AddVoterCheck(VoterCheck voterCheck)
         {
             _electionUnitOfWork.VoterCheckRepository.Add(voterCheck);
@@ -43,15 +59,6 @@ namespace Demo.Foundation.Services
         {
             _electionUnitOfWork.ApiEntityRepository.Add(apiClass);
             _electionUnitOfWork.Save();
-        }
-
-        public void EditElection(MakeElection makeElection)
-        {
-            var obj = _electionUnitOfWork.MakeElectionRepository.GetById(makeElection.Id);
-            obj.Count1 = makeElection.Count1;
-            obj.Count2 = makeElection.Count2;
-            _electionUnitOfWork.MakeElectionRepository.Edit(obj);
-            _electionUnitOfWork.Save();
-        }
+        }                       
     }
 }

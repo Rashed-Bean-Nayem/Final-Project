@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Foundation", "Demo.Fou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Web", "Demo.Web\Demo.Web.csproj", "{D8AB7749-ECAA-4512-9885-5E741B175E8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Membership", "Demo.Membership\Demo.Membership.csproj", "{5895CA21-FB40-47CF-84AE-413F22C6120E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Membership", "Demo.Membership\Demo.Membership.csproj", "{5895CA21-FB40-47CF-84AE-413F22C6120E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.API", "Demo.API\Demo.API.csproj", "{DCD97A67-7BA8-4F22-A6E5-3218842456D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5895CA21-FB40-47CF-84AE-413F22C6120E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5895CA21-FB40-47CF-84AE-413F22C6120E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5895CA21-FB40-47CF-84AE-413F22C6120E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD97A67-7BA8-4F22-A6E5-3218842456D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD97A67-7BA8-4F22-A6E5-3218842456D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD97A67-7BA8-4F22-A6E5-3218842456D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD97A67-7BA8-4F22-A6E5-3218842456D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

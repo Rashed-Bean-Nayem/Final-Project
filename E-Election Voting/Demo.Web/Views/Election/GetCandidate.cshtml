@@ -156,8 +156,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    @*<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />*@
-                    <a asp-controller="Election" asp-action="GetAllElection" asp-route-id="" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Back</button></a>
+                    <input type="button" onclick="history.go(-1)" value="Back" />
                 </div>
             </div>
             <div class="row">

@@ -121,21 +121,19 @@
     }
 </style>
 
-@if (Model.ElectionVoter.NID == null)
-{
     <div class="container">
         <div class="container emp-profile">
             <form method="post" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
                 <span><label><b>NID</b></label></span>
                 <br />
-                <input type="number" name="username" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" />
+                <input type="number" name="userNid" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" />
                 <br />
                 <br />
                 <button type="submit" title="Login" class="btn btn-sm btn-primary">Search</button>
             </form>
         </div>
     </div>
-}
+
 
 
 

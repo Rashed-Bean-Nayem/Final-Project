@@ -31,12 +31,8 @@ namespace Demo.Web.Controllers
         }
         public IActionResult GetSingleUpcomingElection(int id) 
         {
-            
-           // var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var model = Startup.AutofacContainer.Resolve<ViewModel>();
-           // model.LoadVoterCheck(id, UserId);
             model.LoadSingleMakeElection(id);
-
             return View(model);
         }
         public IActionResult GetElection(int id)

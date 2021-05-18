@@ -121,7 +121,7 @@
         color: #0062cc;
     }
 </style>
-@if (@Model.ApiClasses.ApiName != null)
+@if (@Model.ApiClasses.ApiName != null && @Model.ElectionVoterCheck.NID == null)
 {
     <div class="container rounded bg-white mt-4 mb-5">
         <div class="row">

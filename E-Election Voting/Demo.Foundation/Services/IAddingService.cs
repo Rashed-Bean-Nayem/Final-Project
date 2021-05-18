@@ -10,9 +10,11 @@ namespace Demo.Foundation.Services
         void AddRegistration(ElectionRegistration studentRegistration);
         void AddCandidate(ElectionCandidate electionCandidate);
         void AddVoter(ElectionVoter electionVoter);
+        void EditVoter(ElectionVoter electionVoter); 
         void AddElection(MakeElection makeElection);
-        void AddVoterCheck(VoterCheck voterCheck); 
         void EditElection(MakeElection makeElection);
+        void AddVoterCheck(VoterCheck voterCheck); 
+       
         void AddApiClass(ApiClass apiClass);  
     }
 }

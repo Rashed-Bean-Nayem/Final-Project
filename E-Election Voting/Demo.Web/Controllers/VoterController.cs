@@ -31,25 +31,35 @@ namespace Demo.Web.Controllers
         [Route("AddVoter")]
         public IActionResult AddVoter(IFormCollection collection)
         {
-            string user2 = collection["username"];
+            string user2 = collection["userNid"];
             var model = Startup.AutofacContainer.Resolve<ApiRecordFormData>();
-            model.LoadSingleApiRecord(user2);           
+            model.LoadSingleApiRecord(user2);
+            model.LoadSingleCheckApiNid(user2);          
             return View(model);
         }
-        public IActionResult AddVoterUpdate()
-        {
-            return View();
-        }
-      
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddVoterPost(ApiRecordFormData apiRecordFormData) 
+        public IActionResult AddVoterPost(ApiRecordFormData apiRecordFormData)
         {
             apiRecordFormData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var model = Startup.AutofacContainer.Resolve<AdditionModel>();
             model.AddModelVoter(apiRecordFormData);
             return RedirectToAction(nameof(VoterProfile));
         }
+        public IActionResult AddVoterUpdate()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddVoterUpdate(ApiRecordFormData apiRecordFormData)
+        {
+            apiRecordFormData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = Startup.AutofacContainer.Resolve<AdditionModel>();
+            model.AddModelVoterUpdate(apiRecordFormData);
+            return RedirectToAction(nameof(VoterProfile));
+        }   
         public ViewResult VoterProfile()
         {
             var model = Startup.AutofacContainer.Resolve<ViewModel>();
