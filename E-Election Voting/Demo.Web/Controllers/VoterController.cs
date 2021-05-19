@@ -19,6 +19,10 @@ namespace Demo.Web.Controllers
         {
             return View();
         }
+        public IActionResult VoterSms() 
+        {
+            return View();
+        }
         public IActionResult VoterApiForm()
         {
             var model = Startup.AutofacContainer.Resolve<ViewModel>();

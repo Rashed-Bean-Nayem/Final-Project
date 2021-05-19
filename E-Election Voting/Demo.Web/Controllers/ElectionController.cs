@@ -37,12 +37,11 @@ namespace Demo.Web.Controllers
         }
         public IActionResult GetElection(int id)
         {
-            // var url = HttpContext.Request.Path.Value;
             var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var model = Startup.AutofacContainer.Resolve<ViewModel>();
             model.LoadVoterCheck(id, UserId);
             model.LoadSingleMakeElection(id);
-
+            model.LoadSingleVoter(UserId);
             return View(model);
         }
         [HttpPost]
