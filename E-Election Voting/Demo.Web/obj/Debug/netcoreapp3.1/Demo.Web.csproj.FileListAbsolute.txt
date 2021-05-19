@@ -2679,3 +2679,4 @@ E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Voter\VoterApiForm.cshtml.g.cs
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Voter\AddVoterUpdate.cshtml.g.cs
 E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Voter\VoterSms.cshtml.g.cs
+E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Candidate\GetAllCandidateDataTable.cshtml.g.cs

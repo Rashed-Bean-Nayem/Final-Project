@@ -23,15 +23,12 @@ namespace Demo.Web.Models
         public IList<ViewResultDataBO> ViewResults { get; set; }
         public IList<MakeElection> MakeElections { get; set; }
         public IList<MakeElection> ElectionsDataTable { get; set; }
-        public IList<MakeElection> UpcomingElections { get; set; } 
-        //public MakeElection MakeSingleElection { get; set; }
+        public IList<MakeElection> UpcomingElections { get; set; }   
         public ElectionVoter ElectionVoter { get; set; }
-       // public ApiClass ApiClass { get; set; }
-
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
-        private const string IMAGE_PATH = "temp";
 
+        private const string IMAGE_PATH = "temp";
         private readonly IGetService _getService;
         private readonly RegistrationContext _registrationContext; 
         public ViewModel(IGetService getService, RegistrationContext registrationContext)

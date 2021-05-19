@@ -35,5 +35,11 @@ namespace Demo.Web.Areas.Admin.Controllers
             }                
             return View();
         }
+        public IActionResult GetAllCandidateDataTable()
+        {
+            var model = Startup.AutofacContainer.Resolve<RegistrationData>();
+            model.LoadCandidates();
+            return View(model);
+        }
     }
 }

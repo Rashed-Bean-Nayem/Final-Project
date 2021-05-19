@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Demo.Foundation.Contexts;
+using System.IO;
 
 namespace Demo.Web.Models
 {
@@ -23,19 +25,55 @@ namespace Demo.Web.Models
         [Required(ErrorMessage = "Please select the Candidate")]
         public int? CID2 { get; set; }
         public IList<ElectionCandidate> ElectionCandidates { get; set; }
-
+        private const string IMAGE_PATH = "temp";
         private readonly IGetService _getService;
-        public RegistrationData(IGetService getService)
+        private readonly RegistrationContext _registrationContext;
+        public RegistrationData(IGetService getService, RegistrationContext registrationContext)
         {
             _getService = getService;
+            _registrationContext = registrationContext;
         }
         public RegistrationData()
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
+            _registrationContext = Startup.AutofacContainer.Resolve<RegistrationContext>();
         }
         public void LoadCandidates()
         {
-            ElectionCandidates = _getService.GetCandidateList();
+            ElectionCandidates = ConvertToCandidates( _getService.GetCandidateList());
+        }
+        public List<ElectionCandidate>  ConvertToCandidates(IList<ElectionCandidate> electionCandidates)
+        {
+            var electionCandidateObj = new List<ElectionCandidate>();
+          
+            foreach (var itemS in electionCandidates)
+            {
+                electionCandidateObj.Add(
+                    _registrationContext.ElectionCandidates.Where(x => x.Id == itemS.Id).Select(item => new ElectionCandidate()
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Address = item.Address,
+                        Description = item.Description,
+                        Mobile = item.Mobile,
+                        NID = item.NID,
+                        ImageUrl = FormatFileUrl(item.ImageUrl),
+                        Motto = item.Motto,
+                        LogoImageUrl = FormatFileUrl(item.LogoImageUrl),
+                        PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
+                        {
+                            Id = g.Id,
+                            Name = g.Name,
+                            URL = FormatFileUrl(g.URL)
+                        }).ToList()
+                    }).FirstOrDefault()                 
+                    );
+            }
+            return electionCandidateObj;
+        }
+        private static string FormatFileUrl(string filePath)
+        {
+            return $"/{IMAGE_PATH}/{Path.GetFileName(filePath)}";
         }
     }
 }
