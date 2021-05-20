@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"]</title>
+
     <style>
         li a:hover {
             background-color: #5cb85c;
@@ -15,7 +16,6 @@
             background-color: #5cb85c;
         }
 
-        
         html {
             font-size: 14px;
         }
@@ -69,39 +69,38 @@
             width: 100px;
             height: 100px;
         }
-    
     </style>
 </head>
 <body style="background-color: #B7BBCA;">
-    <header>       
-            <b>   
-                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #434B43;">
-                    <div class="container">                           
-                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <font color="white">E-Election Voting</font></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                            <partial name="_LoginPartial" />
-                            <ul class="navbar-nav flex-grow-1 ml-auto topnav">
-                                <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><font color="white">Home</font> <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About"><font color="white">About</font></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><font color="white">Privacy</font></a>
-                                </li>
-                            </ul>
-                        </div>
+    <header>
+        <b>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow" style="background-color: #434B43;" width="500">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <font color="white">E-Election Voting</font></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1 ml-auto topnav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><font color="white">Home</font> <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About"><font color="white">About</font></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><font color="white">Privacy</font></a>
+                            </li>
+                        </ul>
                     </div>
-                </nav>                
-            </b>           
-</header>
-    <div class="container"  >
-        <main role="main" class="pb-3" >
+                </div>
+            </nav>
+        </b>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>

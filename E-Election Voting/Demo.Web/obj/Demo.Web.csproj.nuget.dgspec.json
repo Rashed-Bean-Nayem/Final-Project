@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {}
+    "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {}
   },
   "projects": {
-    "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
+    "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
+        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
         "projectName": "Demo.DataAccessLayer",
-        "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
+        "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-        "outputPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\obj\\",
+        "outputPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -72,14 +72,14 @@
         }
       }
     },
-    "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
+    "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj",
+        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj",
         "projectName": "Demo.Foundation",
-        "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj",
+        "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj",
         "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-        "outputPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\obj\\",
+        "outputPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -99,8 +99,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
-                "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
+              "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
+                "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
+    "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
+        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
         "projectName": "Demo.Membership",
-        "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
+        "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj",
         "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-        "outputPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\obj\\",
+        "outputPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -222,14 +222,14 @@
         }
       }
     },
-    "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {
+    "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
+        "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
         "projectName": "Demo.Web",
-        "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
+        "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj",
         "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-        "outputPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Web\\obj\\",
+        "outputPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -249,14 +249,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
-                "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
+              "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
+                "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
               },
-              "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
-                "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
+              "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
+                "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
               },
-              "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
-                "projectPath": "E:\\6_DIU\\DIU PROJECT\\Project Final\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
+              "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
+                "projectPath": "E:\\6_DIU\\DIU PROJECT\\PROJECT\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
               }
             }
           }

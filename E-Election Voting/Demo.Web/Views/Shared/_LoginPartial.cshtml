@@ -1,32 +1,34 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Demo.Membership.Entities 
+@using Demo.Membership.Entities
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
 
 <b>
     <ul class="navbar-nav">
         @if (SignInManager.IsSignedIn(User))
-        {  
-        <li class="nav-item dropdown">   
+        {
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <font color="white">Elections</font>
                 </a>
                 <font color="white">
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="GetAllElection"><b>Vote</b></a>
-                        <div class="dropdown-divider"></div> 
-                        <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="GetAllUpcomingElection"><b>Upcoming Elections</b></a> 
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="GetAllUpcomingElection"><b>Upcoming Elections</b></a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" asp-area="" asp-controller="Election" asp-action="ViewResults"><b>Results</b></a>
                     </div>
                 </font>
-        </li>
+            </li>
             <li class="nav-item">
                 <a asp-area="" asp-controller="Voter" asp-action="VoterProfile" class="nav-link"><font color="white">Profile</font></a>
             </li>
             @*<li class="nav-item">
-                <a class="nav-link text-dark" asp-controller="Voter" asp-action="VoterProfile" title="Manage">Hello @User.Identity.Name!</a>
-            </li>*@
+                    <a class="nav-link text-dark" asp-controller="Voter" asp-action="VoterProfile" title="Manage">Hello @User.Identity.Name!</a>
+                </li>*@
             <li class="nav-item">
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                     <button type="submit" class="nav-link btn btn-link text-dark test"><b><font color="white"><b>Logout</b></font></b> </button>
@@ -42,5 +44,8 @@
                 <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"><font color="white">Login</font></a>
             </li>
         }
-      </ul>
+    </ul>
 </b>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

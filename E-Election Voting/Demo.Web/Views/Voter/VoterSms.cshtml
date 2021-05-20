@@ -2,10 +2,15 @@
 @{
     ViewData["Title"] = "VoterSms";
 }
+<div class="container">
 
-<h1>To vote you need to update your profile</h1>
-<div class="btn-group col-md-2">
-    <a asp-controller="Voter" asp-action="VoterApiForm" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></a>
+    <h1>To vote you need to update your profile</h1>
+    <div class="btn-group col-md-2">
+        <a asp-controller="Voter" asp-action="VoterApiForm" name="btnAddMore"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></a>
+    </div>
 </div>
 
-
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
