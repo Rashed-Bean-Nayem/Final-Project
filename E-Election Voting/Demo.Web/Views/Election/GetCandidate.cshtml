@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Get Candidate";
+    ViewData["Title"] = "Candidate Deta";
 }
 @{
     dynamic data = ViewBag.Data;
@@ -167,6 +167,7 @@
                         @foreach (var item in Model.ElectionCandidate.PdfListUrl)
                         {
                             <a class="btn btn-outline-primary" href="@item.URL" target="_blank">@item.Name</a>
+                            <p></p>
                         }
                     </div>
                 </div>
