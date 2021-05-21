@@ -4,5 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.DataAccessLayer\Demo.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Demo.Foundation\Demo.Foundation.csproj" />
+    <ProjectReference Include="..\Demo.Membership\Demo.Membership.csproj" />
+    <ProjectReference Include="..\Demo.Web\Demo.Web.csproj" />
+  </ItemGroup>
+
 
 </Project>

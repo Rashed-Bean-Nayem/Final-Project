@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Candidate Deta";
+    ViewData["Title"] = "Candidate Details";
 }
 @{
     dynamic data = ViewBag.Data;
@@ -162,7 +162,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-work">
-                    <p>Documents</p>
+                    <p><b>Documents</b></p>
                     <div class="col-md-6">
                         @foreach (var item in Model.ElectionCandidate.PdfListUrl)
                         {
