@@ -1,138 +1,156 @@
 ﻿@{
-    ViewData["Title"] = "NID Check";
+    ViewData["Title"] = "NID Verification";
 }
-@model ViewModel;
 
 <style>
-
-    /* body {
-        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    }*/
-
-    .emp-profile {
-        padding: 3%;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        border-radius: 0.5rem;
-        background: #fff;
+    body {
+        font-family: 'Roboto', sans-serif;
     }
 
-    .profile-img {
-        text-align: center;
+    .form-control {
+        height: 30px;
+        box-shadow: none;
+        color: #969fa4;
     }
 
-        .profile-img img {
-            width: 30%;
-            height: 40%;
-        }
+    .error {
+        color: red;
+    }
 
-        .profile-img .file {
+    .form-control:focus {
+        border-color: #5cb85c;
+    }
+
+    .form-control, .btn {
+        border-radius: 3px;
+    }
+
+    .signup-form {
+        width: 450px;
+        margin: 0 auto;
+        padding: 20px 0;
+        font-size: 15px;
+    }
+
+        .signup-form h5 {
+            color: #636363;
+            margin: 0 0 15px;
             position: relative;
-            overflow: hidden;
-            margin-top: -20%;
-            width: 70%;
-            border: none;
-            border-radius: 0;
-            font-size: 15px;
-            background: #212529b8;
+            text-align: center;
         }
 
-            .profile-img .file input {
+            .signup-form h5:before, .signup-form h5:after {
+                content: "";
+                height: 2px;
+                width: 30%;
+                background: #d4d4d4;
                 position: absolute;
-                opacity: 0;
+                top: 50%;
+                z-index: 2;
+            }
+
+            .signup-form h5:before {
+                left: 0;
+            }
+
+            .signup-form h5:after {
                 right: 0;
-                top: 0;
             }
 
-    .profile-head h5 {
-        color: #333;
-    }
-
-    .profile-head h6 {
-        color: #0062cc;
-    }
-
-    .profile-edit-btn {
-        border: none;
-        border-radius: 1.5rem;
-        width: 70%;
-        padding: 2%;
-        font-weight: 600;
-        color: #6c757d;
-        cursor: pointer;
-    }
-
-    .proile-rating {
-        font-size: 12px;
-        color: #818182;
-        margin-top: 5%;
-    }
-
-        .proile-rating span {
-            color: #495057;
-            font-size: 15px;
-            font-weight: 600;
+        .signup-form .hint-text {
+            color: #999;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-    .profile-head .nav-tabs {
-        margin-bottom: 5%;
-    }
-
-        .profile-head .nav-tabs .nav-link {
-            font-weight: 600;
-            border: none;
+        .signup-form form {
+            color: #999;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #f2f3f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 25px;
         }
 
-            .profile-head .nav-tabs .nav-link.active {
-                border: none;
-                border-bottom: 2px solid #0062cc;
+        .signup-form .form-group {
+            margin-bottom: 0px;
+        }
+
+        .signup-form input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 140px;
+            outline: none !important;
+        }
+
+        .signup-form .row div:first-child {
+            padding-right: 10px;
+        }
+
+        .signup-form .row div:last-child {
+            padding-left: 10px;
+        }
+
+        .signup-form a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+            .signup-form a:hover {
+                text-decoration: none;
             }
 
-    .profile-work {
-        padding: 14%;
-        margin-top: -15%;
-    }
-
-        .profile-work p {
-            font-size: 12px;
-            color: #818182;
-            font-weight: 600;
-            margin-top: 10%;
-        }
-
-        .profile-work a {
+        .signup-form form a {
+            color: #5cb85c;
             text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            font-size: 14px;
         }
 
-        .profile-work ul {
-            list-style: none;
-        }
-
-    .profile-tab label {
-        font-weight: 600;
-    }
-
-    .profile-tab p {
-        font-weight: 600;
-        color: #0062cc;
-    }
+            .signup-form form a:hover {
+                text-decoration: underline;
+            }
 </style>
-
-<div class="container">
-    <div class="container emp-profile">
-        <form method="post" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
-            <span><label><b>NID</b></label></span>
-            <br />
-            <input type="number" name="userNid" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" />
-            <br />
-            <br />
-            <button type="submit" title="Login" class="btn btn-sm btn-primary">Search</button>
-        </form>
+<body>
+    <div class="container">
+        <br />
+        <br />
+        <h5> <b> Provide your National Identity Card number in the form below and click on the "Verify" button.Then, you can see voting registration further status.</b> </h5>
     </div>
-</div>
+        <div class="signup-form">
+            <form method="post" asp-area="" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
+                <label><b>National Identity Card Number:</b></label>
+                <div class="form-group">
+                    <input type="number" name="userNid" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" placeholder="Example-1234567890" class="form-control" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="submit" title="Login" class="btn btn-sm btn-primary">Verify</button>
+                </div>
+                    <div class="text-center">Already have an account? <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Sign in</a></div>
+            </form>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

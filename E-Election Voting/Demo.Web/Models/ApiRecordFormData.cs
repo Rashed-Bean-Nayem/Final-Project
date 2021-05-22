@@ -7,26 +7,39 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Demo.Web.Models
 {
     public class ApiRecordFormData
-    {
-        public int Id { get; set; }
+    {   
         public string UserId { get; set; }
         [Display(Name = "Name")]
         public string FirstName { get; set; }
         [StringLength(100, MinimumLength = 2)]
-        [Required(ErrorMessage = "Please enter the Address")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Please enter the Mobile Number")]
         public string Mobile { get; set; }
-        public string NID { get; set; }     
+        public string NID { get; set; }
+        [Display(Name = "Date Of Birth")]
         public DateTime? DateOfBirth { get; set; }
-        [Required(ErrorMessage = "Please select the cover photo ")]
         [Display(Name = "Profile Photo")]
         public IFormFile CoverPhoto { get; set; }
-
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
+        public string ReturnUrl { get; set; }
+        public string FullName { get; set; }
         public ApiClass ApiClasses { get; set; }
         public ElectionVoter ElectionVoterCheck { get; set; }
 
@@ -38,8 +51,7 @@ namespace Demo.Web.Models
         public ApiRecordFormData() 
         {
             _getService = Startup.AutofacContainer.Resolve<IGetService>();
-        }
-       
+        }       
         public void LoadSingleApiRecord(string apiNid)
         {
             ApiClasses = ConvertToSongleApiRecord(_getService.GetSingleApiRecord(apiNid));

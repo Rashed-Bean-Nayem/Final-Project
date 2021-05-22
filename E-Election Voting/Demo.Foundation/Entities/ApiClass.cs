@@ -10,7 +10,7 @@ namespace Demo.Foundation.Entities
         public int Id { get; set; }
         public string ApiNid { get; set; }
         public string ApiName { get; set; }
-        public DateTime? ApiDateOfBirth { get; set; }
+        public string ApiDateOfBirth { get; set; }
 
     }
 }

@@ -28,7 +28,7 @@ namespace Demo.Web
             {
                 ApiName = apiClassDataBO.ApiName,
                 ApiNid= apiClassDataBO.ApiNid,
-                ApiDateOfBirth=apiClassDataBO.ApiDateOfBirth
+                ApiDateOfBirth= Convert.ToDateTime(apiClassDataBO.ApiDateOfBirth).Date.ToString("d")
             });
         }
         public void AddModelCandidate(ElectionCandidateDataBO electionCandidateData)
@@ -61,11 +61,9 @@ namespace Demo.Web
             {
                 UserId = apiRecordFormData.UserId,
                 Name = apiRecordFormData.FirstName,
-                Address = apiRecordFormData.Address,
-                Mobile = apiRecordFormData.Mobile,
                 NID = apiRecordFormData.NID,
                 DateOfBirth = apiRecordFormData.DateOfBirth,
-                CoverPhotoUrl = FilePath(apiRecordFormData.CoverPhoto)
+                
             });
         }
         public void AddModelVoterUpdate(ApiRecordFormData apiRecordFormData) 

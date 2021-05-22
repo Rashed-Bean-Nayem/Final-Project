@@ -26,8 +26,8 @@ namespace Demo.Web.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("ApiDateOfBirth")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ApiDateOfBirth")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ApiName")
                         .HasColumnType("nvarchar(max)");

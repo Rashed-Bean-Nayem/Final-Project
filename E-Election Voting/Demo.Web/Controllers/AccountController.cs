@@ -14,6 +14,10 @@ using System.Threading.Tasks;
 using Demo.Membership.Services;
 using Demo.Web.Models.AccountModels;
 using Microsoft.AspNetCore.Identity;
+using Demo.Web.Models;
+using System.Security.Claims;
+using Autofac;
+using Microsoft.AspNetCore.Routing;
 
 namespace Demo.Web.Controllers
 {
@@ -50,14 +54,14 @@ namespace Demo.Web.Controllers
 
         public async Task<IActionResult> Register(string returnUrl = null)
         {
-            var model = new RegisterModel();
+            var model = new ApiRecordFormData();
             model.ReturnUrl = returnUrl;
             model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterModel model, string returnUrl = null)
+        public async Task<IActionResult> Register(ApiRecordFormData model, string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             model.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -92,7 +96,11 @@ namespace Demo.Web.Controllers
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
+                        model.UserId = user.Id.ToString();
+                        var modelx = Startup.AutofacContainer.Resolve<AdditionModel>();
+                        modelx.AddModelVoter(model);
                         return LocalRedirect(returnUrl);
+                        //return RedirectToAction("AddVoterPost", new RouteValueDictionary(model));
                     }
                 }
                 foreach (var error in result.Errors)
@@ -100,12 +108,10 @@ namespace Demo.Web.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        public async Task<IActionResult> Login(string returnUrl = null)
+         public async Task<IActionResult> Login(string returnUrl = null)
         {
             var model = new LoginModel();
 
@@ -156,7 +162,6 @@ namespace Demo.Web.Controllers
                     return View(model);
                 }
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
