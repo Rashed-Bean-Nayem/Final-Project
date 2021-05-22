@@ -117,19 +117,20 @@
     <div class="container">
         <br />
         <br />
-        <h5> <b> Provide your National Identity Card number in the form below and click on the "Verify" button.Then, you can see voting registration further status.</b> </h5>
-    </div>
+        <font color="black">
+            <h4> <b> Provide your National Identity Card number in the form below and click on the "Verify" button.Then, you can see voting registration further status.</b> </h4>
+        </font>    </div>
         <div class="signup-form">
             <form method="post" asp-area="" asp-controller="Voter" asp-action="AddVoter" asp-antiforgery="true" enctype="multipart/form-data">
-                <label><b>National Identity Card Number:</b></label>
+                <font color="black"><b>National Identity Card Number:</b></font>
                 <div class="form-group">
                     <input type="number" name="userNid" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" placeholder="Example-1234567890" class="form-control" />
                 </div>
                 <br />
                 <div class="form-group">
-                    <button type="submit" title="Login" class="btn btn-sm btn-primary">Verify</button>
+                    <input type="submit" title="Login" value="Verify" class="btn btn-success form-control"/>
                 </div>
-                    <div class="text-center">Already have an account? <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Sign in</a></div>
+                <div class="text-center"><b>Already have an account?</b> <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"><b>Sign in</b></a></div>
             </form>
     </div>
 </body>

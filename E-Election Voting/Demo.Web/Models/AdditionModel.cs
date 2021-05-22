@@ -92,6 +92,21 @@ namespace Demo.Web
             }
             return electionVoterObj;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void AddModelElection(RegistrationData registrationData)
         {
             var getVoterObj1 = new ElectionCandidate();

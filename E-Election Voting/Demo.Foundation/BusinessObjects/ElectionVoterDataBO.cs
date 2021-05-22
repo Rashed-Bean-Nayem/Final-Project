@@ -12,26 +12,26 @@ namespace Demo.Foundation.BusinessObjects
         public int Id { get; set; }        
         public string UserId { get; set; }
         [StringLength(100, MinimumLength = 2)]
-        [Required(ErrorMessage = "Please enter the First Name")]
+        
         [Display(Name = "First Name")]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
+        //[StringLength(100, MinimumLength = 2)]
+        //[Required(ErrorMessage = "Please enter the Last Name")]
+        //[Display(Name = "Last Name")]
+        //public string LastName { get; set; } 
         [StringLength(100, MinimumLength = 2)]
-        [Required(ErrorMessage = "Please enter the Last Name")]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; } 
-        [StringLength(100, MinimumLength = 2)]
-        [Required(ErrorMessage = "Please enter the Address")]
+       
         public string Address { get; set; }  
-        [Required(ErrorMessage = "Please enter the Mobile Number")]
+      
         public string Mobile { get; set; }
-        [Required(ErrorMessage = "Please enter the NID Number")]
+     
         public string NID { get; set; }
-        [Required(ErrorMessage = "Please select the DOB")]
+       
         [DataType(DataType.Date)]
         [Display(Name = "Date Of Birth")]
-        public DateTime? DateOfBirth { get; set; }
-        [Required(ErrorMessage = "Please select the cover photo ")]
+        public string DateOfBirth { get; set; }
+     
         [Display(Name = "Profile Photo")]
-        public IFormFile CoverPhoto { get; set; }
+        public string CoverPhotoUrl { get; set; } 
     }
 }

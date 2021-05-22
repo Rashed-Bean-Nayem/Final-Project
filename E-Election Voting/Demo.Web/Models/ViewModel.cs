@@ -24,7 +24,7 @@ namespace Demo.Web.Models
         public IList<MakeElection> MakeElections { get; set; }
         public IList<MakeElection> ElectionsDataTable { get; set; }
         public IList<MakeElection> UpcomingElections { get; set; }   
-        public ElectionVoter ElectionVoter { get; set; }
+        public ElectionVoterDataBO ElectionVoter { get; set; }
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
 
@@ -45,16 +45,16 @@ namespace Demo.Web.Models
         {
             ElectionVoter = ConvertToVoter(_getService.GetVoter(userId));
         }
-        public ElectionVoter ConvertToVoter(IList<ElectionVoter> electionVoter)
+        public ElectionVoterDataBO ConvertToVoter(IList<ElectionVoter> electionVoter)
         {
-            var electionVoterObj = new ElectionVoter();
+            var electionVoterObj = new ElectionVoterDataBO();
             foreach (var item in electionVoter)
             {
                 electionVoterObj.Id = item.Id;
                 electionVoterObj.Name = item.Name;
                 electionVoterObj.NID = item.NID;
                 electionVoterObj.Mobile = item.Mobile;
-                electionVoterObj.DateOfBirth = item.DateOfBirth;
+                electionVoterObj.DateOfBirth = Convert.ToDateTime(item.DateOfBirth).Date.ToString("d");
                 electionVoterObj.Address = item.Address;
                 electionVoterObj.CoverPhotoUrl = FormatFileUrl(item.CoverPhotoUrl);
             }
@@ -69,7 +69,6 @@ namespace Demo.Web.Models
             var electionCandidateObj = new ElectionCandidate();
             electionCandidateObj = _registrationContext.ElectionCandidates.Where(x => x.Id == id).Select(item => new ElectionCandidate()
             {
-
                 Id = item.Id,
                 Name = item.Name,
                 Address = item.Address,
