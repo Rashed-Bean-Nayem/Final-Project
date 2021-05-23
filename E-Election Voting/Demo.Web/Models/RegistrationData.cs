@@ -60,6 +60,7 @@ namespace Demo.Web.Models
                         ImageUrl = FormatFileUrl(item.ImageUrl),
                         Motto = item.Motto,
                         LogoImageUrl = FormatFileUrl(item.LogoImageUrl),
+                        DateOfBirth=item.DateOfBirth,
                         PdfListUrl = item.PdfListUrl.Select(g => new PdfList()
                         {
                             Id = g.Id,

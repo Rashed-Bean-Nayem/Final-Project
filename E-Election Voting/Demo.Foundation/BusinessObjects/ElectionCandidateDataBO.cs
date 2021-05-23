@@ -38,6 +38,9 @@ namespace Demo.Foundation.BusinessObjects
         public string Motto { get; set; }
         [Required(ErrorMessage = "Please select the Logo")]
         [Display(Name = "Logo")]
-        public IFormFile LogoImageFile { get; set; } 
+        public IFormFile LogoImageFile { get; set; }
+        [Required(ErrorMessage = "Please select the DOB")]
+        [Display(Name = "Date Of Birth")]
+        public DateTime? DateOfBirth { get; set; }
     }
 }

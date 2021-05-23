@@ -15,10 +15,6 @@ namespace Demo.Foundation.BusinessObjects
         
         [Display(Name = "First Name")]
         public string Name { get; set; }
-        //[StringLength(100, MinimumLength = 2)]
-        //[Required(ErrorMessage = "Please enter the Last Name")]
-        //[Display(Name = "Last Name")]
-        //public string LastName { get; set; } 
         [StringLength(100, MinimumLength = 2)]
        
         public string Address { get; set; }  

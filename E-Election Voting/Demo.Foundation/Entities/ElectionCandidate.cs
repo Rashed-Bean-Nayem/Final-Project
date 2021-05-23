@@ -16,6 +16,8 @@ namespace Demo.Foundation.Entities
         public string ImageUrl { get; set; }
         public IList<PdfList> PdfListUrl { get; set; }
         public string Motto { get; set; }
-        public string LogoImageUrl { get; set; } 
+        public string LogoImageUrl { get; set; }
+        public string DateOfBirth { get; set; }
+
     }
 }

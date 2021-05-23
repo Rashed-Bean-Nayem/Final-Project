@@ -52,7 +52,8 @@ namespace Demo.Web
                 ImageUrl = FilePath(electionCandidateData.ImageFile),
                 PdfListUrl=list,
                 Motto=electionCandidateData.Motto,
-                LogoImageUrl= FilePath(electionCandidateData.LogoImageFile)
+                LogoImageUrl= FilePath(electionCandidateData.LogoImageFile),
+                DateOfBirth=Convert.ToDateTime(electionCandidateData.DateOfBirth).Date.ToString("d")
             });
         }
         public void AddModelVoter(ApiRecordFormData apiRecordFormData)

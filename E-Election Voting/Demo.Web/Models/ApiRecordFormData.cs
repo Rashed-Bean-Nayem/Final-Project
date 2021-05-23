@@ -76,7 +76,6 @@ namespace Demo.Web.Models
             var electionVoterObj = new ElectionVoter();
             foreach (var item in electionVoter)
             {
-                electionVoterObj.Id = item.Id;
                 electionVoterObj.NID = item.NID;
             }
             return electionVoterObj;

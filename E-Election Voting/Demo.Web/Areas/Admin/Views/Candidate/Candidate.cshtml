@@ -42,6 +42,11 @@
                             <span asp-validation-for="NID" class="text-danger"></span>
                         </div>
                         <div class="col">
+                            <label asp-for="DateOfBirth"></label>
+                            <input asp-for="DateOfBirth" class="form-control" placeholder="DOB">
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="col">
                             <label asp-for="PdfListBOfiles"></label>
                             <input type="file" asp-for="PdfListBOfiles" class="form-control" multiple>
                             <span asp-validation-for="PdfListBOfiles" class="text-danger"></span>

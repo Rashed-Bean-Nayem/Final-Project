@@ -1,0 +1,7 @@
+2021-05-23 11:00:46.597 +06:00 [INF] Application Starting up
+2021-05-23 12:15:34.077 +06:00 [INF] Application Starting up
+2021-05-23 12:35:47.906 +06:00 [INF] Application Starting up
+2021-05-23 12:37:42.488 +06:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-23 12:37:42.647 +06:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-23 12:37:42.657 +06:00 [WRN] Role null validation failed: DuplicateRoleName.
+2021-05-23 12:41:50.751 +06:00 [INF] User created a new account with password.
