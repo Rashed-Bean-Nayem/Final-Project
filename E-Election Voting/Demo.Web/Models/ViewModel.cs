@@ -27,6 +27,12 @@ namespace Demo.Web.Models
         public ElectionVoterDataBO ElectionVoter { get; set; }
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
+        public int TotalElectionsCount { get; set; }
+        public int RunningElectionCount { get; set; }
+        public int UpcomingElectionCount { get; set; } 
+        public int ConcretedElectionCount { get; set; } 
+         
+
 
         private const string IMAGE_PATH = "temp";
         private readonly IGetService _getService;
@@ -96,6 +102,8 @@ namespace Demo.Web.Models
         }
         private IList<MakeElection> ConvertToElectionList(IList<MakeElection> makeElections)
         {
+            TotalElectionsCount = 0;
+            RunningElectionCount = 0;
             int result;
             IList<MakeElection> electionList = new List<MakeElection>();
 
@@ -114,7 +122,9 @@ namespace Demo.Web.Models
                         CID1 = electionItem.CID1,
                         CID2 = electionItem.CID2
                     });
+                    RunningElectionCount++;
                 }
+                TotalElectionsCount++;
             }
             return electionList;
         }
@@ -124,6 +134,7 @@ namespace Demo.Web.Models
         }
         private IList<MakeElection> ConvertToUpcomingElections(IList<MakeElection> makeElections)
         {
+            UpcomingElectionCount = 0;
             int result;
             IList<MakeElection> electionList = new List<MakeElection>();
 
@@ -142,6 +153,7 @@ namespace Demo.Web.Models
                         CID1 = electionItem.CID1,
                         CID2 = electionItem.CID2
                     });
+                    UpcomingElectionCount++;
                 }
             }
             return electionList;
@@ -254,8 +266,10 @@ namespace Demo.Web.Models
         }
         private IList<ViewResultDataBO> ConvertToViewResultList(IList<MakeElection> makeElections)
         {
-            var results = new List<ViewResultDataBO>();
+            ConcretedElectionCount = 0;
             int resultCheck;
+            var results = new List<ViewResultDataBO>();
+           
             foreach (var electionItem in makeElections)
             {
                 resultCheck = DateTime.Compare((DateTime)electionItem.ElectionDate, DateTime.Now.Date);
@@ -293,7 +307,8 @@ namespace Demo.Web.Models
                             WinnerVote = 0,
                             WinnerID = 0
                         });
-                    }                
+                    }
+                    ConcretedElectionCount++;
                 }                            
             }
             return results;

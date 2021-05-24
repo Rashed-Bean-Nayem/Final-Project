@@ -21,8 +21,11 @@ namespace Demo.Web.Controllers
 
         public IActionResult Index()
         {
-            
-            return View();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadResults();
+            model.LoadUpcomingElections();
+            model.LoadElections();
+            return View(model);
         }
 
         public IActionResult Privacy()
