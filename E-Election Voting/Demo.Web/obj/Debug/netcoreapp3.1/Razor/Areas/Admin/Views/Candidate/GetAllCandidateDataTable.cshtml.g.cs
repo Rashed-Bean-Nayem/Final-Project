@@ -33,8 +33,15 @@ using Demo.Foundation.BusinessObjects;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using Demo.Web.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8f9f6ada35a10cee5b99f0da4f3d00232a4a5dcb", @"/Areas/Admin/Views/Candidate/GetAllCandidateDataTable.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"00b2a19cb125cbda36186d0594e50b4d63244770", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c79d12f445238b3316c34cb3469cf9829a65e141", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Candidate_GetAllCandidateDataTable : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<RegistrationData>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -125,7 +132,7 @@ WriteAttributeValue("", 800, candidate.ImageUrl, 800, 19, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f9f6ada35a10cee5b99f0da4f3d00232a4a5dcb7231", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f9f6ada35a10cee5b99f0da4f3d00232a4a5dcb7455", async() => {
                 WriteLiteral("Details");
             }
             );

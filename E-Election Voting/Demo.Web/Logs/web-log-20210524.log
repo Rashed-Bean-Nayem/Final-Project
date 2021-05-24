@@ -108,3 +108,8 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2021-05-24 18:10:11.180 +06:00 [INF] User created a new account with password.
 2021-05-24 18:13:06.388 +06:00 [INF] User logged in.
 2021-05-24 18:34:09.905 +06:00 [INF] User logged in.
+2021-05-24 22:52:10.089 +06:00 [INF] Application Starting up
+2021-05-24 22:54:46.126 +06:00 [INF] User logged in.
+2021-05-24 23:07:51.644 +06:00 [INF] User logged in.
+2021-05-24 23:35:34.641 +06:00 [INF] Application Starting up
+2021-05-24 23:38:37.638 +06:00 [INF] User logged in.

@@ -8,6 +8,8 @@ using Demo.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Demo.Foundation.BusinessObjects;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
+using Demo.Web.Areas.Admin.Models;
 
 namespace Demo.Web.Areas.Admin.Controllers
 {
@@ -19,19 +21,41 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        public IActionResult Candidate(bool isSuccess = false) 
-        {
-            ViewBag.IsSuccess = isSuccess;
+        public IActionResult CandidateApiForm()
+        {         
             return View();
         }
+
+       
+        //public IActionResult AddVoter()
+        //{
+        //    string user2 = collection["userNid"];
+        //    var model = Startup.AutofacContainer.Resolve<ApiRecordFormData>();
+        //    model.LoadSingleApiRecord(user2);
+        //    model.LoadSingleCheckApiNid(user2);
+        //    return View(model);
+        //}
+
+
+
+        [HttpPost]
+        [Route("AddCandidate")]
+        public IActionResult AddCandidate(IFormCollection collection)  
+        {
+            string user2 = collection["userNid"];
+            var model = Startup.AutofacContainer.Resolve<ApiRecordForCandidateData>();
+            model.LoadSingleApiRecord(user2);
+            model.LoadSingleCheckApiNid(user2);
+            return View(model);
+        }
         [ValidateAntiForgeryToken, HttpPost]
-        public IActionResult Candidate(ElectionCandidateDataBO electionCandidateData) 
+        public IActionResult CandidatePost(ApiRecordForCandidateData data) 
         {
             if (ModelState.IsValid)
             {
                 var model = Startup.AutofacContainer.Resolve<AdditionModel>();
-                model.AddModelCandidate(electionCandidateData);
-                return RedirectToAction(nameof(Candidate), new { isSuccess = true });
+                model.AddModelCandidate(data);
+                return RedirectToAction(nameof(GetAllCandidateDataTable));
             }                
             return View();
         }

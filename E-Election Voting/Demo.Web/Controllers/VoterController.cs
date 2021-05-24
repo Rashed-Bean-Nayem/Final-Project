@@ -24,11 +24,8 @@ namespace Demo.Web.Controllers
             return View();
         }
         public IActionResult VoterApiForm()
-        {
-            var model = Startup.AutofacContainer.Resolve<ViewModel>();
-            var UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            model.LoadSingleVoter(UserId);
-            return View(model);
+        {          
+            return View();
         }
        
         [HttpPost]

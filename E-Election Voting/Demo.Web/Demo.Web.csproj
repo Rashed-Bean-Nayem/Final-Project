@@ -61,8 +61,4 @@
     <ProjectReference Include="..\Demo.Membership\Demo.Membership.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
-  </ItemGroup>
-
 </Project>

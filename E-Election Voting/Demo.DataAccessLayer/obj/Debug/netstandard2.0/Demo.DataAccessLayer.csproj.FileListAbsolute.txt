@@ -55,7 +55,6 @@ E:\6_DIU\DIU PROJECT\Project Final\Final-Project\E-Election Voting\Demo.DataAcce
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.deps.json
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.dll
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\bin\Debug\netstandard2.0\Demo.DataAccessLayer.pdb
-E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.csprojAssemblyReference.cache
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.AssemblyInfoInputs.cache
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.AssemblyInfo.cs
 E:\6_DIU\DIU PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.DataAccessLayer\obj\Debug\netstandard2.0\Demo.DataAccessLayer.csproj.CoreCompileInputs.cache

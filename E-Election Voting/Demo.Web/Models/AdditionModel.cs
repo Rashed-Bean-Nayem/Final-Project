@@ -2,6 +2,7 @@
 using Demo.Foundation.Contexts;
 using Demo.Foundation.Entities;
 using Demo.Foundation.Services;
+using Demo.Web.Areas.Admin.Models;
 using Demo.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -31,7 +32,7 @@ namespace Demo.Web
                 ApiDateOfBirth= Convert.ToDateTime(apiClassDataBO.ApiDateOfBirth).Date.ToString("d")
             });
         }
-        public void AddModelCandidate(ElectionCandidateDataBO electionCandidateData)
+        public void AddModelCandidate(ApiRecordForCandidateData electionCandidateData)
         {
             var list = new List<PdfList>();
             foreach (var item in electionCandidateData.PdfListBOfiles)
@@ -44,7 +45,7 @@ namespace Demo.Web
             }
             _addingService.AddCandidate(new ElectionCandidate
             {
-                Name = electionCandidateData.FirstName+" "+electionCandidateData.LastName,
+                Name = electionCandidateData.FirstName,
                 Address = electionCandidateData.Address,
                 Description = electionCandidateData.Description,
                 Mobile = electionCandidateData.Mobile,

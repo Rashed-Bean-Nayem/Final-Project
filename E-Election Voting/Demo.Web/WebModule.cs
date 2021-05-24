@@ -2,6 +2,7 @@
 using Demo.Foundation.BusinessObjects;
 using Demo.Foundation.Contexts;
 using Demo.Foundation.Entities;
+using Demo.Web.Areas.Admin.Models;
 using Demo.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -36,6 +37,7 @@ namespace Demo.Web
             builder.RegisterType<MakeElection>().AsSelf();
             builder.RegisterType<NewGetElectionDataBO>().AsSelf();
             builder.RegisterType<ApiRecordFormData>().AsSelf(); 
+            builder.RegisterType<ApiRecordForCandidateData>().AsSelf(); 
 
             base.Load(builder);
         }

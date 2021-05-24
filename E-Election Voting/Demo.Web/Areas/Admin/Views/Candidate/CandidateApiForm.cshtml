@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "NID Verification";
+}
+<body>
+    <div class="container">
+        <div class="col-md-10">
+            <div class="container">
+                <br />
+                <br />
+                <font color="black">
+                    <h5> <b> Provide the National Identity Card number in the form below and click on the "Verify" button.Then, can see candidate registration further status.</b> </h5>
+                </font>
+            </div>
+            <div class="signup-form">
+                <form method="post" asp-area="admin" asp-controller="Candidate" asp-action="AddCandidate" asp-antiforgery="true" enctype="multipart/form-data">
+                    <font color="black"><b>National Identity Card Number:</b></font>
+                    <div class="form-group">
+                        <input type="number" name="userNid" id="korisnik" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10)  return false;" required="required" placeholder="Example-1234567890" class="form-control" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" title="Login" value="Verify" class="btn btn-primary form-control" />
+                    </div>
+                    <div class="text-center"><b>Already have an account?</b> <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"><b>Sign in</b></a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+

@@ -1,12 +1,10 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Add Candidate";
 }
 @model ApiRecordForCandidateData;
 
 @if (@Model.ApiClasses.ApiName != null && @Model.ElectionVoterCheck.NID == null)
 {
-
     <div class="container">
         <div class="col-md-10">
             <div class="card card-primary">
@@ -18,20 +16,17 @@
                         <div class="row">
                             <div class="col">
                                 <label asp-for="FirstName"></label>
-                                <input asp-for="FirstName" class="form-control" value="@Model.ApiClasses.ApiName" readonly">
-                                
+                                <input asp-for="FirstName" class="form-control" value="@Model.ApiClasses.ApiName" readonly>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label asp-for="NID"></label>
-                                <input asp-for="NID" class="form-control" value="@Model.ApiClasses.ApiNid">
-                               
+                                <input asp-for="NID" class="form-control" value="@Model.ApiClasses.ApiNid" readonly>
                             </div>
                             <div class="col">
                                 <label asp-for="DateOfBirth"></label>
-                                <input asp-for="DateOfBirth" class="form-control" value="@Model.ApiClasses.ApiDateOfBirth" readonly>
-                              
+                                <input type="datetime" asp-for="DateOfBirth" class="form-control" value="@Model.ApiClasses.ApiDateOfBirth" readonly>
                             </div>
                             <div class="col">
                                 <label asp-for="PdfListBOfiles"></label>
@@ -83,7 +78,6 @@
             </div>
         </div>
     </div>
-
 }
 else
 {
@@ -93,3 +87,5 @@ else
         <font color="red"><h3><b>Please enter your valid NID number for registration.</b></h3></font>
     </div>
 }
+
+
