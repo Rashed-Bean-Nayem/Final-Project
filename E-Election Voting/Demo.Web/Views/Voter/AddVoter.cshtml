@@ -5,9 +5,9 @@
 @model ApiRecordFormData;
 
 <style>
-    body {
+    /*body {
         font-family: 'Roboto', sans-serif;
-    }
+    }*/
 
     .form-control {
         height: 30px;
@@ -118,35 +118,36 @@
 @if (@Model.ApiClasses.ApiName != null && @Model.ElectionVoterCheck.NID == null)
 {
     <body>
-        <div class="signup-form">
-            <form method="post" asp-route-returnUrl="@Model.ReturnUrl" asp-area="" asp-controller="Account" asp-action="Register" asp-antiforgery="true" enctype="multipart/form-data">
-                <h5>Sign Up</h5>
-                <div class="form-group">
-                    <b><label asp-for="FirstName"></label></b>
-                    <input asp-for="FirstName" class="form-control" value="@Model.ApiClasses.ApiName" readonly>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                            <b><label asp-for="DateOfBirth"></label></b>
-                            <input type="datetime" asp-for="DateOfBirth" class="form-control" value="@Model.ApiClasses.ApiDateOfBirth" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <b><label asp-for="NID"></label></b>
-                            <input asp-for="NID" class="form-control" value="@Model.ApiClasses.ApiNid" readonly>
+        <b>
+            <div class="signup-form">
+                <form method="post" asp-route-returnUrl="@Model.ReturnUrl" asp-area="" asp-controller="Account" asp-action="Register" asp-antiforgery="true" enctype="multipart/form-data">
+                    <h5>Sign Up</h5>
+                    <div class="form-group">
+                        <b><label asp-for="FirstName"></label></b>
+                        <input asp-for="FirstName" class="form-control" value="@Model.ApiClasses.ApiName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <b><label asp-for="DateOfBirth"></label></b>
+                                <input type="datetime" asp-for="DateOfBirth" class="form-control" value="@Model.ApiClasses.ApiDateOfBirth" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <b><label asp-for="NID"></label></b>
+                                <input asp-for="NID" class="form-control" value="@Model.ApiClasses.ApiNid" readonly>
+                            </div>
                         </div>
                     </div>
-                 </div>
-                <div class="form-group">
-                    <b><label asp-for="Email"></label></b>
-                    <input asp-for="Email" class="form-control"/>
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
+                    <div class="form-group">
+                        <b><label asp-for="Email"></label></b>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
                                 <b><label asp-for="Password"></label></b>
-                                <input asp-for="Password" class="form-control"/>
+                                <input asp-for="Password" class="form-control" />
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                             <div class="col">
@@ -157,15 +158,16 @@
                         </div>
                     </div>
                     @*<div class="form-group">
-                <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></label>
-            </div>*@
+                    <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></label>
+                </div>*@
                     <br />
                     <div class="form-group">
                         <button type="submit" value="Send" class="btn btn-success btn-lg btn-block">Register Now</button>
                     </div>
                     <div class="text-center">Already have an account? <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Sign in</a></div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </b>
     </body>
 }
 else

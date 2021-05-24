@@ -109,9 +109,10 @@ namespace Demo.Web.Controllers
                 }
             }
             // If we got this far, something failed, redisplay form
-            return View(model);
+            //return View(model);
+            return RedirectToAction("VoterApiForm", "Voter"/*new RouteValueDictionary(model)*/);
         }
-         public async Task<IActionResult> Login(string returnUrl = null)
+        public async Task<IActionResult> Login(string returnUrl = null)
         {
             var model = new LoginModel();
 
