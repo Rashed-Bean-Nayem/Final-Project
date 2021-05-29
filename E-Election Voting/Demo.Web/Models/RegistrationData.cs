@@ -20,6 +20,20 @@ namespace Demo.Web.Models
         [Display(Name = "Election Date")]
         [DataType(DataType.Date)]
         public DateTime? ElectionDate { get; set; }
+
+
+        public IList<PdfList> PdfListUrl { get; set; }
+
+
+
+
+
+
+
+
+
+
+
         [Required(ErrorMessage = "Please select the Candidate")]
         public int? CID1 { get; set; }
         [Required(ErrorMessage = "Please select the Candidate")]

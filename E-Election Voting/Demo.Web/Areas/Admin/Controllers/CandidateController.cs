@@ -49,15 +49,12 @@ namespace Demo.Web.Areas.Admin.Controllers
             return View(model);
         }
         [ValidateAntiForgeryToken, HttpPost]
+        [Route("CandidatePost")]
         public IActionResult CandidatePost(ApiRecordForCandidateData data) 
-        {
-            if (ModelState.IsValid)
-            {
-                var model = Startup.AutofacContainer.Resolve<AdditionModel>();
-                model.AddModelCandidate(data);
-                return RedirectToAction(nameof(GetAllCandidateDataTable));
-            }                
-            return View();
+        {     
+            var model = Startup.AutofacContainer.Resolve<AdditionModel>();
+            model.AddModelCandidate(data);
+            return RedirectToAction(nameof(GetAllCandidateDataTable));
         }
         public IActionResult GetAllCandidateDataTable()
         {

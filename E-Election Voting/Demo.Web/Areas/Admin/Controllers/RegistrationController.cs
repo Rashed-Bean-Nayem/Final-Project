@@ -65,5 +65,11 @@ namespace Demo.Web.Areas.Admin.Controllers
             model.DeleteElection(id); 
             return RedirectToAction(nameof(GetAllElectionDataTable));
         }
+        public IActionResult ViewResults()
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadResults();
+            return View(model);
+        }
     }
 }
