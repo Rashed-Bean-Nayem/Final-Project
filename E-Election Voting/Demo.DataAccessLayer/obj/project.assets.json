@@ -6183,11 +6183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
+      "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
       "projectName": "Demo.DataAccessLayer",
-      "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
+      "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-      "outputPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.DataAccessLayer\\obj\\",
+      "outputPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

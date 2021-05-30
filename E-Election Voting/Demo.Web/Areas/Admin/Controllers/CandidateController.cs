@@ -25,8 +25,12 @@ namespace Demo.Web.Areas.Admin.Controllers
         {         
             return View();
         }
-
-       
+        public IActionResult GetCandidate(int id)
+        {
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadSingleCandidate(id);
+            return View(model);
+        }
         //public IActionResult AddVoter()
         //{
         //    string user2 = collection["userNid"];
@@ -35,8 +39,6 @@ namespace Demo.Web.Areas.Admin.Controllers
         //    model.LoadSingleCheckApiNid(user2);
         //    return View(model);
         //}
-
-
 
         [HttpPost]
         [Route("AddCandidate")]

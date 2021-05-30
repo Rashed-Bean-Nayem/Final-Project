@@ -119,3 +119,13 @@ System.InvalidOperationException: The view 'CandidatePost' was not found. The fo
 2021-05-29 16:04:05.508 +06:00 [INF] User logged in.
 2021-05-29 16:33:59.373 +06:00 [INF] Application Starting up
 2021-05-29 16:35:08.666 +06:00 [INF] User logged in.
+2021-05-29 21:08:35.246 +06:00 [INF] Application Starting up
+2021-05-29 21:14:14.877 +06:00 [INF] User logged in.
+2021-05-29 21:42:59.183 +06:00 [INF] Application Starting up
+2021-05-29 21:45:15.805 +06:00 [INF] User logged in.
+2021-05-29 22:30:05.069 +06:00 [INF] Application Starting up
+2021-05-29 22:31:27.653 +06:00 [INF] User logged in.
+2021-05-29 23:31:17.216 +06:00 [INF] Application Starting up
+2021-05-29 23:40:48.168 +06:00 [WRN] Invalid password for user 6a4c4025-0d17-485e-6846-08d91db5d74c.
+2021-05-29 23:40:48.176 +06:00 [WRN] User 6a4c4025-0d17-485e-6846-08d91db5d74c failed to provide the correct password.
+2021-05-29 23:40:58.674 +06:00 [INF] User logged in.

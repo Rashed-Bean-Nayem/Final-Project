@@ -9520,11 +9520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.API\\Demo.API.csproj",
+      "projectUniqueName": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.API\\Demo.API.csproj",
       "projectName": "Demo.API",
-      "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.API\\Demo.API.csproj",
+      "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.API\\Demo.API.csproj",
       "packagesPath": "C:\\Users\\DCL\\.nuget\\packages\\",
-      "outputPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.API\\obj\\",
+      "outputPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9544,17 +9544,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
-              "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
+            "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj": {
+              "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.DataAccessLayer\\Demo.DataAccessLayer.csproj"
             },
-            "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
-              "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
+            "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj": {
+              "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Foundation\\Demo.Foundation.csproj"
             },
-            "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
-              "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
+            "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj": {
+              "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Membership\\Demo.Membership.csproj"
             },
-            "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {
-              "projectPath": "E:\\6_DIU\\DIU PROJECT\\BackUp---26-5-2021\\E-Election Voting\\Demo.Web\\Demo.Web.csproj"
+            "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj": {
+              "projectPath": "E:\\6_DIU\\DIU PROJECT\\Final Project\\Final-Project\\E-Election Voting\\Demo.Web\\Demo.Web.csproj"
             }
           }
         }
