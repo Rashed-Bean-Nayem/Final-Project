@@ -18,6 +18,18 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.CandidateRepository.Add(electionCandidate);
             _electionUnitOfWork.Save();
         }
+        public void EditCandidate(ElectionCandidate electionCandidate) 
+        {
+            var obj = _electionUnitOfWork.CandidateRepository.GetById(electionCandidate.Id);
+            obj.Mobile = electionCandidate.Mobile;
+            obj.Address = electionCandidate.Address;
+            obj.Description = electionCandidate.Description;
+            obj.Motto = electionCandidate.Motto;
+            obj.ImageUrl = electionCandidate.ImageUrl;
+            obj.LogoImageUrl = electionCandidate.LogoImageUrl;
+            _electionUnitOfWork.CandidateRepository.Edit(obj);
+            _electionUnitOfWork.Save();
+        }
         public void AddVoter(ElectionVoter electionVoter)
         {
             _electionUnitOfWork.VoterRepository.Add(electionVoter);

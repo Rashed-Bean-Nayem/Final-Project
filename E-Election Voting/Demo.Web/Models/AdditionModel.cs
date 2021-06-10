@@ -17,6 +17,7 @@ namespace Demo.Web
         private readonly IAddingService _addingService;
         private readonly IGetService _getService;
         public ElectionVoter ElectionVoter { get; set; }
+        public ElectionCandidate ElectionCandidate { get; set; }
         public AdditionModel(IAddingService addingService,
             IGetService getService)
         {
@@ -94,21 +95,19 @@ namespace Demo.Web
             }
             return electionVoterObj;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public void AddModelCandidateUpdate(ElectionCandidateDataBO electionCandidateDataBO) 
+        {
+            _addingService.EditCandidate(new ElectionCandidate
+            {
+                Id = electionCandidateDataBO.Id,
+                Mobile = electionCandidateDataBO.Mobile,
+                Address = electionCandidateDataBO.Address,
+                Description = electionCandidateDataBO.Description,
+                Motto = electionCandidateDataBO.Motto,
+                ImageUrl = FilePath(electionCandidateDataBO.ImageFile),
+                LogoImageUrl= FilePath(electionCandidateDataBO.LogoImageFile)
+            });
+        }
         public void AddModelElection(RegistrationData registrationData)
         {
             var getVoterObj1 = new ElectionCandidate();

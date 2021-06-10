@@ -4569,3 +4569,4 @@ E:\6_DIU\DIU FINAL PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\obj\
 E:\6_DIU\DIU FINAL PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Demo.Web.dll
 E:\6_DIU\DIU FINAL PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Demo.Web.pdb
 E:\6_DIU\DIU FINAL PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Demo.Web.genruntimeconfig.cache
+E:\6_DIU\DIU FINAL PROJECT\PROJECT\Final-Project\E-Election Voting\Demo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Candidate\CandidateProfileUpdate.cshtml.g.cs

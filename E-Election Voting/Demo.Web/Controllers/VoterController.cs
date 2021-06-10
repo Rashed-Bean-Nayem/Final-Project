@@ -38,16 +38,6 @@ namespace Demo.Web.Controllers
             model.LoadSingleCheckApiNid(user2);          
             return View(model);
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult AddVoterPost(ApiRecordFormData apiRecordFormData)
-        //{
-        //    apiRecordFormData.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-        //    var model = Startup.AutofacContainer.Resolve<AdditionModel>();
-        //    model.AddModelVoter(apiRecordFormData);
-        //    return RedirectToAction(nameof(VoterProfile));
-        //}
         public IActionResult AddVoterUpdate()
         {
             return View();

@@ -31,14 +31,6 @@ namespace Demo.Web.Areas.Admin.Controllers
             model.LoadSingleCandidate(id);
             return View(model);
         }
-        //public IActionResult AddVoter()
-        //{
-        //    string user2 = collection["userNid"];
-        //    var model = Startup.AutofacContainer.Resolve<ApiRecordFormData>();
-        //    model.LoadSingleApiRecord(user2);
-        //    model.LoadSingleCheckApiNid(user2);
-        //    return View(model);
-        //}
 
         [HttpPost]
         [Route("AddCandidate")]
@@ -63,6 +55,19 @@ namespace Demo.Web.Areas.Admin.Controllers
             var model = Startup.AutofacContainer.Resolve<RegistrationData>();
             model.LoadCandidates();
             return View(model);
+        }
+        public IActionResult CandidateProfileUpdate(int id)
+        {
+            ViewBag.CanId = id;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CandidateProfileUpdate(ElectionCandidateDataBO electionCandidateDataBO) 
+        {
+            var model = Startup.AutofacContainer.Resolve<AdditionModel>();
+            model.AddModelCandidateUpdate(electionCandidateDataBO);
+            return RedirectToAction(nameof(GetAllCandidateDataTable));
         }
     }
 }
