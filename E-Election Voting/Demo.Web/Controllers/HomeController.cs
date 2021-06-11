@@ -18,7 +18,6 @@ namespace Demo.Web.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             var model = Startup.AutofacContainer.Resolve<ViewModel>();
@@ -27,7 +26,6 @@ namespace Demo.Web.Controllers
             model.LoadElections();
             return View(model);
         }
-
         public IActionResult Privacy()
         {
             return View();

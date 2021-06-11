@@ -3,7 +3,7 @@
 }
 @model ApiRecordForCandidateData;
 
-@if (@Model.ApiClasses.ApiName != null && @Model.ElectionVoterCheck.NID == null)
+@if (@Model.ApiClasses.ApiName != null && @Model.ElectionVoterCheck.Count == 0 && @Model.ElectionCandidateCheck.Count == 0)
 {
     <div class="container">
         <div class="col-md-10">

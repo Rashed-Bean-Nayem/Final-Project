@@ -31,7 +31,6 @@ namespace Demo.Web.Areas.Admin.Controllers
             model.LoadSingleCandidate(id);
             return View(model);
         }
-
         [HttpPost]
         [Route("AddCandidate")]
         public IActionResult AddCandidate(IFormCollection collection)  
@@ -67,6 +66,12 @@ namespace Demo.Web.Areas.Admin.Controllers
         {
             var model = Startup.AutofacContainer.Resolve<AdditionModel>();
             model.AddModelCandidateUpdate(electionCandidateDataBO);
+            return RedirectToAction(nameof(GetCandidate), new { id = electionCandidateDataBO.Id });
+        }
+        public IActionResult DeleteSingleCandidate(int id) 
+        {
+            var model = Startup.AutofacContainer.Resolve<DeleteModel>();
+            model.DeleteCandidate(id);
             return RedirectToAction(nameof(GetAllCandidateDataTable));
         }
     }

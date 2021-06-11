@@ -20,7 +20,7 @@ namespace Demo.Foundation.BusinessObjects
         [Display(Name = "About")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Please select the Image")]
-        [Display(Name = "Photo")]
+        [Display(Name = "Profile Photo")]
         public IFormFile ImageFile { get; set; }
         [Required(ErrorMessage = "Please enter the Motto")]
         public string Motto { get; set; }

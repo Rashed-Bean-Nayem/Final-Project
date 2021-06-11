@@ -14,9 +14,12 @@ namespace Demo.Foundation.Services
         IList<VoterCheck> GetVoterCheck(string userId);
         ElectionCandidate GetElectionCandidate(int id);
         IList<MakeElection> GetMakeElectionList();
+        IList<MakeElection> GetElectionList1(int canId);
+        IList<MakeElection> GetElectionList2(int canId);
         MakeElection GetSingleMakeElection(int id);
         ElectionCandidate GetSingleElectionCandidate(int id);
         IList<ApiClass> GetSingleApiRecord(string apiNid);
-        IList<ElectionVoter> GetApiDetails(string apiNid);
+        IList<ElectionVoter> GetApiDetails1(string apiNid);
+        IList<ElectionCandidate> GetApiDetails2(string apiNid);
     }
 }

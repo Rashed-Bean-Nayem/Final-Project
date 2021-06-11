@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Autofac;
+using Demo.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,13 @@ namespace Demo.Web.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var model = Startup.AutofacContainer.Resolve<ViewModel>();
+            model.LoadResults();
+            model.LoadUpcomingElections();
+            model.LoadElections();
+            model.LoadCandidatesCount();
+            model.LoadVotersCount();
+            return View(model);
         }
     }
 }

@@ -28,7 +28,7 @@
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <a asp-controller="Election" asp-action="GetAllElection" class="btn-get-started scrollto">Get Started</a>
-                            }
+                        }
                         else
                         {
                             <a asp-controller="Account" asp-action="Login" class="btn-get-started scrollto">Get Started</a>

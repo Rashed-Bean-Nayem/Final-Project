@@ -43,8 +43,9 @@ namespace Demo.Web.Areas.Admin.Models
         public DateTime? DateOfBirth { get; set; }
 
         public ApiClass ApiClasses { get; set; }
-        public ElectionVoter ElectionVoterCheck { get; set; }
-
+        public IList<ElectionVoter> ElectionVoterCheck { get; set; }
+        public IList<ElectionCandidate> ElectionCandidateCheck { get; set; } 
+         
         private readonly IGetService _getService;
         public ApiRecordForCandidateData(IGetService getService)
         {
@@ -70,17 +71,9 @@ namespace Demo.Web.Areas.Admin.Models
             return apiClassObj;
         }
         public void LoadSingleCheckApiNid(string apiNid)
-        {
-            ElectionVoterCheck = ConvertToCheckApiNid(_getService.GetApiDetails(apiNid));
-        }
-        public ElectionVoter ConvertToCheckApiNid(IList<ElectionVoter> electionVoter)
-        {
-            var electionVoterObj = new ElectionVoter();
-            foreach (var item in electionVoter)
-            {
-                electionVoterObj.NID = item.NID;
-            }
-            return electionVoterObj;
+        {            
+            ElectionVoterCheck = _getService.GetApiDetails1(apiNid);
+            ElectionCandidateCheck = _getService.GetApiDetails2(apiNid); 
         }
     }
 }

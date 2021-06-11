@@ -3,29 +3,40 @@
 }
 @model ViewModel;
 <div class="container">
-    <h3><b>Running Elections</b></h3>
-    <div class="row">
-        @foreach (var elections in Model.MakeElections)
-        {
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="~/images/thequint_2021-02_00c2feea-de12-4212-b58b-cd883723960c_Election.jpg" width="100%" height="200" alt="Photo" />
-                    <div class="card-body">
-                        <h3 class="card-title"><b>@elections.ElectionName</b></h3>
-                       
-                        <p class="card-text">  <b>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", elections.ElectionDate)) </b> </p>
-                       
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a asp-controller="Election" asp-action="GetElection" asp-route-id=@elections.Id class="btn btn-sm btn-outline-primary">Vote</a>
+    @if (Model.MakeElections.Count != 0)
+    {
+        <h3><b>Running Elections</b></h3>
+    }
+        <div class="row">
+            @if (Model.MakeElections.Count != 0)
+            {
+                @foreach (var elections in Model.MakeElections)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="~/images/thequint_2021-02_00c2feea-de12-4212-b58b-cd883723960c_Election.jpg" width="100%" height="200" alt="Photo" />
+                            <div class="card-body">
+                                <h3 class="card-title"><b>@elections.ElectionName</b></h3>
+
+                                <p class="card-text">  <b>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", elections.ElectionDate)) </b> </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="Election" asp-action="GetElection" asp-route-id=@elections.Id class="btn btn-sm btn-outline-primary">Vote</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        }
+                }
+            }
+            else
+            {
+                <h2><b>There is no running election.</b></h2>
+            }
+
+        </div>
     </div>
-</div>
 
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" />

@@ -163,7 +163,7 @@
             <div class="col-md-4">
                 <div class="profile-work">
                     <p><b>Documents</b></p>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         @foreach (var item in Model.ElectionCandidate.PdfListUrl)
                         {
                             <a class="btn btn-outline-primary" href="@item.URL" target="_blank">@item.Name</a>
@@ -234,8 +234,12 @@
                         </div> 
                         <div class="row">
                             <div class="col-md-6">
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <p></p>
                                 <input type="button" onclick="history.go(-1)" value="Back" />
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>

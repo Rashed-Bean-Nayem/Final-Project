@@ -27,12 +27,14 @@ namespace Demo.Web.Models
         public ElectionVoterDataBO ElectionVoter { get; set; }
         public VoterCheck VoterCheck { get; set; }
         public ElectionCandidate ElectionCandidate { get; set; }
+        public IList<ElectionCandidate> ElectionCandidates { get; set; }
+        public IList<ElectionVoter> ElectionVoters { get; set; }
         public int TotalElectionsCount { get; set; }
         public int RunningElectionCount { get; set; }
         public int UpcomingElectionCount { get; set; } 
-        public int ConcretedElectionCount { get; set; } 
-         
-
+        public int ConcretedElectionCount { get; set; }
+        public int TotalCandidateCount { get; set; }
+        public int TotalVoterCount { get; set; }
 
         private const string IMAGE_PATH = "temp";
         private readonly IGetService _getService;
@@ -187,7 +189,7 @@ namespace Demo.Web.Models
                         Id = electionItem.Id,
                         ElectionName = electionItem.ElectionName,
                         ElectionDate = electionItem.ElectionDate,
-                        CDName1 = "Concreted",
+                        CDName1 = "Completed",
                     });
                 }
                 else
@@ -312,6 +314,16 @@ namespace Demo.Web.Models
                 }                            
             }
             return results;
+        }
+        public void LoadCandidatesCount() 
+        {
+            ElectionCandidates = _getService.GetCandidateList();
+            TotalCandidateCount = ElectionCandidates.Count;
+        }
+        public void LoadVotersCount()  
+        {
+            ElectionVoters = _getService.GetVoterList();
+            TotalVoterCount = ElectionVoters.Count;
         }
         private static string FormatFileUrl(string filePath)
         {

@@ -8,5 +8,6 @@ namespace Demo.Foundation.Services
     public interface IDeleteService
     {
         void DeleteSingleElection(int id);
+        void DeleteSingleCandidate(int id);
     }
 }

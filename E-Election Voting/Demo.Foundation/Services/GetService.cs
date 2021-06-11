@@ -31,9 +31,13 @@ namespace Demo.Foundation.Services
         {
             return _registrationUnitOfWork.VoterRepository.Get(option => option.UserId == userId);
         }
-        public IList<ElectionVoter> GetApiDetails(string apiNid)  
+        public IList<ElectionVoter> GetApiDetails1(string apiNid)  
         {
             return _registrationUnitOfWork.VoterRepository.Get(option => option.NID == apiNid);
+        }
+        public IList<ElectionCandidate> GetApiDetails2(string apiNid)   
+        {
+            return _registrationUnitOfWork.CandidateRepository.Get(option => option.NID == apiNid);
         }
         public IList<ApiClass> GetSingleApiRecord(string apiNid)
         {
@@ -51,6 +55,14 @@ namespace Demo.Foundation.Services
         public IList<MakeElection> GetMakeElectionList() 
         {
             return _registrationUnitOfWork.MakeElectionRepository.GetAll(); 
+        }
+        public IList<MakeElection> GetElectionList1(int canId)  
+        {
+            return _registrationUnitOfWork.MakeElectionRepository.Get(option => option.CID1 == canId);
+        }
+        public IList<MakeElection> GetElectionList2(int canId)   
+        {
+            return _registrationUnitOfWork.MakeElectionRepository.Get(option => option.CID2 == canId);
         }
         public MakeElection GetSingleMakeElection(int id)
         {

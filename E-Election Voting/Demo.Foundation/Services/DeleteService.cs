@@ -17,5 +17,10 @@ namespace Demo.Foundation.Services
             _electionUnitOfWork.MakeElectionRepository.Remove(id);
             _electionUnitOfWork.Save();
         }
+        public void DeleteSingleCandidate(int id) 
+        {
+            _electionUnitOfWork.CandidateRepository.Remove(id);
+            _electionUnitOfWork.Save();
+        }
     }
 }

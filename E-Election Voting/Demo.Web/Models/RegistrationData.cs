@@ -20,19 +20,7 @@ namespace Demo.Web.Models
         [Display(Name = "Election Date")]
         [DataType(DataType.Date)]
         public DateTime? ElectionDate { get; set; }
-
-
         public IList<PdfList> PdfListUrl { get; set; }
-
-
-
-
-
-
-
-
-
-
 
         [Required(ErrorMessage = "Please select the Candidate")]
         public int? CID1 { get; set; }
@@ -58,8 +46,7 @@ namespace Demo.Web.Models
         }
         public List<ElectionCandidate>  ConvertToCandidates(IList<ElectionCandidate> electionCandidates)
         {
-            var electionCandidateObj = new List<ElectionCandidate>();
-          
+            var electionCandidateObj = new List<ElectionCandidate>();     
             foreach (var itemS in electionCandidates)
             {
                 electionCandidateObj.Add(

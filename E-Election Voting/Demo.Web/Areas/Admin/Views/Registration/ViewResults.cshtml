@@ -11,10 +11,10 @@
             <table id="example" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Election Name</th>
-                        <th>Election Date</th>
-                        <th>Winner</th>
-                        <th>Vote</th>
+                        <th><h5><b>Election Name</b></h5></th>
+                        <th><h5><b>Election Date</b></h5></th>
+                        <th><h5><b>Winner</b></h5></th>
+                        <th><h5><b>Vote</b></h5></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,19 +25,19 @@
                         if (results.WinnerID != 0)
                         {
                             <tr>
-                                <td>@results.ElectionName</td>
-                                <td>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", results.ElectionDate))</td>
-                                <td><a asp-area="admin" asp-controller="Candidate" asp-action="GetCandidate" asp-route-id=@results.WinnerID>@results.Winner</a></td>
-                                <td>@results.WinnerVote</td>
+                                <td><b>@results.ElectionName</b></td>
+                                <td><b>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", results.ElectionDate))</b></td>
+                                <td><b><a asp-area="admin" asp-controller="Candidate" asp-action="GetCandidate" asp-route-id=@results.WinnerID>@results.Winner</a></b></td>
+                                <td><b>@results.WinnerVote</b></td>
                             </tr>
                         }
                         else
                         {
                             <tr>
-                                <td>@results.ElectionName</td>
-                                <td>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", results.ElectionDate))</td>
-                                <td>@results.Winner</td>
-                                <td>@results.WinnerVote</td>
+                                <td><b>@results.ElectionName</b></td>
+                                <td><b>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", results.ElectionDate))</b></td>
+                                <td><b>@results.Winner</b></td>
+                                <td><b>@results.WinnerVote</b></td>
                             </tr> 
                         }
                     }

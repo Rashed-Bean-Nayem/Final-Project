@@ -7,25 +7,27 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
 
 <div class="container">
-    <h3>Candidates</h3>
+    <h3><b>Candidates</b></h3>
     <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Candidate Photo</th>
-                <th>Candidate Name</th>
-                <th>Candidate Address</th>
-                <th>Action</th>
+                <th><h5><b>Candidate Photo</b></h5></th>
+                <th><h5><b>Candidate Name</b></h5></th>
+                <th><h5><b>Candidate Address</b></h5></th>
+                <th><h5><b>Action</b></h5></th>
+                <th><h5><b>Action</b></h5></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var candidate in Model.ElectionCandidates)
             {
-                <tr>
-                    <td><img src="@candidate.ImageUrl" alt="Profile Photo" width="40" height="40" /></td> 
-                    <td>@candidate.Name</td>
-                    <td>@candidate.Address</td>
-                    <td><a asp-area="admin" asp-controller="Candidate" asp-action="GetCandidate" asp-route-id=@candidate.Id class="btn btn-sm btn-primary">Details</a></td>
-                </tr>
+            <tr>
+                <td><b></b><img src="@candidate.ImageUrl" alt="Profile Photo" width="40" height="40" /></td>
+                <td><b>@candidate.Name</b></td>
+                <td><b>@candidate.Address</b></td>
+                <td><b><a asp-area="admin" asp-controller="Candidate" asp-action="GetCandidate" asp-route-id=@candidate.Id class="btn btn-sm btn-primary">Details</a></b></td>
+                <td><b><a asp-area="admin" asp-controller="Candidate" asp-action="DeleteSingleCandidate" asp-route-id=@candidate.Id class="btn btn-sm btn-danger">Delete</a></b></td>
+            </tr>
             }
         </tbody>
     </table>
