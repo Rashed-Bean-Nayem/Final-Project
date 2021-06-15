@@ -113,13 +113,16 @@
                                 </p>
                             </a>
                         </li>
-                        @*<li class="nav-header">FORMS</li>
-                        <li class="nav-item">
-                            <a asp-area="admin" asp-controller="Candidate" asp-action="Candidate" class="nav-link">
-                                <i class="fas fa-circle nav-icon"></i>
-                                <p>Add Candidate</p>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+
+                                <p>
+
+
+                                </p>
                             </a>
-                        </li>*@ 
+
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -163,17 +166,28 @@
                                         <i class="fas fa-circle nav-icon"></i>
                                         <p>All Elections</p>
                                     </a>
-                                </li> 
-                                <li class="nav-item">
-                                    <a asp-area="admin" asp-controller="Registration" asp-action="ViewResults" class="nav-link">
-                                        <i class="fas fa-circle nav-icon"></i>
-                                        <p>Election Results</p>
-                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a asp-area="Admin" asp-controller="Registration" asp-action="ApiEntity" class="nav-link">
                                         <i class="fas fa-circle nav-icon"></i>
                                         <p>Add Data</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Result Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-area="admin" asp-controller="Registration" asp-action="ViewResults" class="nav-link">
+                                        <i class="fas fa-circle nav-icon"></i>
+                                        <p>Election Results</p>
                                     </a>
                                 </li>
                             </ul>
